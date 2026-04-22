@@ -34,9 +34,9 @@ from services.parser import (
     parse_query,
     ODQuery, TrainQuery, ConsistOnlyQuery, HelpQuery,
     MyIdQuery, AuthAddQuery, AuthRemoveQuery, AuthListQuery,
-    UnknownQuery,
+    RichMenuGuideQuery, UnknownQuery,
 )
-from services.ai import ClaudeAIService, GeminiService
+from services.ai import GemmaAIService
 from services.formatter import (
     PAGE_SIZE,
     build_schedule_flex,
@@ -89,14 +89,10 @@ async def lifespan(app: FastAPI):
         _consist_svc.version,
     )
 
-    anthropic_key = os.getenv("ANTHROPIC_API_KEY", "")
     gemini_key = os.getenv("GEMINI_API_KEY", "")
-    if anthropic_key:
-        _ai_svc = ClaudeAIService(api_key=anthropic_key, tdx=_tdx, consist=_consist_svc)
-        logger.info("Claude Haiku AI service initialized (with tool use).")
-    elif gemini_key:
-        _ai_svc = GeminiService(api_key=gemini_key)
-        logger.info("Gemini AI service initialized (fallback).")
+    if gemini_key:
+        _ai_svc = GemmaAIService(api_key=gemini_key, tdx=_tdx, consist=_consist_svc)
+        logger.info("Gemma AI service initialized (gemma-4-31b-it, tool use).")
     yield
 
 
@@ -265,6 +261,23 @@ async def handle_my_id(reply_token: str, user_id: str) -> None:
     )])
 
 
+async def _switch_rich_menu(user_id: str, authorized: bool) -> None:
+    menu_id = os.getenv(
+        "RICHMENU_AUTHORIZED_ID" if authorized else "RICHMENU_GENERAL_ID", ""
+    )
+    if not menu_id:
+        return
+    try:
+        async with AsyncApiClient(_line_config) as api_client:
+            api = AsyncMessagingApi(api_client)
+            if authorized:
+                await api.link_rich_menu_id_to_user(user_id, menu_id)
+            else:
+                await api.unlink_rich_menu_id_from_user(user_id)
+    except Exception as exc:
+        logger.warning("Rich menu switch failed for %s: %s", user_id, exc)
+
+
 async def handle_auth_add(reply_token: str, sender_id: str, target_id: str) -> None:
     if not _auth_svc.is_admin(sender_id):
         await _reply(reply_token, [TextMessage(text="⛔ 僅管理員可執行此指令。")])
@@ -272,6 +285,8 @@ async def handle_auth_add(reply_token: str, sender_id: str, target_id: str) -> N
     added = _auth_svc.add(target_id)
     msg = f"✅ 已授權 {target_id}" if added else f"ℹ️ {target_id} 已在授權清單中"
     await _reply(reply_token, [TextMessage(text=msg)])
+    if added:
+        await _switch_rich_menu(target_id, authorized=True)
 
 
 async def handle_auth_remove(reply_token: str, sender_id: str, target_id: str) -> None:
@@ -281,6 +296,8 @@ async def handle_auth_remove(reply_token: str, sender_id: str, target_id: str) -
     removed = _auth_svc.remove(target_id)
     msg = f"✅ 已移除 {target_id}" if removed else f"ℹ️ {target_id} 不在授權清單中"
     await _reply(reply_token, [TextMessage(text=msg)])
+    if removed:
+        await _switch_rich_menu(target_id, authorized=False)
 
 
 async def handle_auth_list(reply_token: str, sender_id: str) -> None:
@@ -353,6 +370,9 @@ async def webhook(request: Request):
 
                 elif isinstance(intent, TrainQuery):
                     await handle_train_query(event.reply_token, intent.train_no, intent.date, user_id)
+
+                elif isinstance(intent, RichMenuGuideQuery):
+                    await _reply(event.reply_token, [TextMessage(text=intent.guide_text)])
 
                 elif isinstance(intent, UnknownQuery):
                     if _ai_svc:

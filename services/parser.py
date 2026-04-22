@@ -57,6 +57,12 @@ class AuthListQuery:
 
 
 @dataclass
+class RichMenuGuideQuery:
+    """圖文選單按鈕觸發的使用提示。"""
+    guide_text: str
+
+
+@dataclass
 class UnknownQuery:
     text: str
 
@@ -64,8 +70,34 @@ class UnknownQuery:
 QueryIntent = Union[
     ODQuery, TrainQuery, ConsistOnlyQuery, HelpQuery,
     MyIdQuery, AuthAddQuery, AuthRemoveQuery, AuthListQuery,
-    UnknownQuery,
+    RichMenuGuideQuery, UnknownQuery,
 ]
+
+_RICHMENU_GUIDES: dict[str, str] = {
+    "查時刻": (
+        "查詢時刻請輸入：\n"
+        "出發站 目的站\n\n"
+        "例如：\n"
+        "  台北 高雄\n"
+        "  台北 高雄 明天\n"
+        "  台北 高雄 0501"
+    ),
+    "查車次": (
+        "查詢車次請輸入：\n"
+        "車次號碼\n\n"
+        "例如：\n"
+        "  105\n"
+        "  105 明天"
+    ),
+    "查編組": (
+        "查詢編組請輸入：\n"
+        "##車次\n\n"
+        "例如：\n"
+        "  ##105\n"
+        "  ##1035\n\n"
+        "⚠️ 此功能需授權員工身份"
+    ),
+}
 
 _HELP_WORDS = {"help", "幫助", "說明", "使用說明", "指令", "?", "？", "#說明", "##說明"}
 _MYID_WORDS = {"/myid", "myid", "/我的id", "我的id"}
@@ -106,6 +138,9 @@ def _parse_date(token: str) -> str | None:
 
 def parse_query(text: str) -> QueryIntent:
     text = text.strip()
+
+    if text in _RICHMENU_GUIDES:
+        return RichMenuGuideQuery(guide_text=_RICHMENU_GUIDES[text])
 
     if text.lower() in _HELP_WORDS:
         return HelpQuery()
