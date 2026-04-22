@@ -6,6 +6,34 @@ from typing import Optional
 PAGE_SIZE = 10
 WEEKDAY_ZH = ["一", "二", "三", "四", "五", "六", "日"]
 
+# type_name keyword → image filename（順序優先：越具體越前）
+_TYPE_IMAGE_MAP = [
+    ("普悠瑪",      "TEMU1000.png"),
+    ("太魯閣",      "TEMU2000.png"),
+    ("EMU3000",     "EMU3000.png"),
+    ("優化EMU500",  "EMU500_A.png"),
+    ("EMU900",      "EMU900.png"),
+    ("EMU800",      "EMU800.png"),
+    ("EMU700",      "EMU700.png"),
+    ("EMU500",      "EMU500.png"),
+    ("E1000",       "E1000.png"),
+    ("E500",        "E500.png"),
+    ("DRC",         "DMU3100.png"),
+    ("DMU",         "DMU3100.png"),
+    ("R200",        "R200-L.png"),
+    ("R180",        "R180-190-R_Later.png"),
+]
+
+
+def train_image_url(type_name: str, base_url: str) -> Optional[str]:
+    """Return absolute image URL for a train type, or None if no match."""
+    if not base_url:
+        return None
+    for keyword, filename in _TYPE_IMAGE_MAP:
+        if keyword in (type_name or ""):
+            return f"{base_url.rstrip('/')}/static/trains/{filename}"
+    return None
+
 
 def _weekday(date_str: str) -> str:
     d = datetime.strptime(date_str, "%Y-%m-%d")
@@ -158,6 +186,8 @@ def build_train_detail_flex(
     train: dict,
     consist: Optional[dict],
     date: str,
+    authorized: bool = False,
+    image_url: Optional[str] = None,
 ) -> dict:
     train_no_disp = train["train_no"].lstrip("0") or "0"
     wd = _weekday(date)
@@ -185,7 +215,7 @@ def build_train_detail_flex(
         },
     ]
 
-    if consist:
+    if authorized and consist:
         if consist.get("formation"):
             header_contents.append({
                 "type": "text",
@@ -199,6 +229,22 @@ def build_train_detail_flex(
                 "text": f"區間：{consist['route']}",
                 "color": "#ffe082",
                 "size": "xs",
+                "wrap": True,
+            })
+        if consist.get("crew_mech"):
+            header_contents.append({
+                "type": "text",
+                "text": f"機務：{consist['crew_mech']}",
+                "color": "#b0bec5",
+                "size": "xxs",
+                "wrap": True,
+            })
+        if consist.get("crew_ops"):
+            header_contents.append({
+                "type": "text",
+                "text": f"運務：{consist['crew_ops']}",
+                "color": "#b0bec5",
+                "size": "xxs",
                 "wrap": True,
             })
 
@@ -240,7 +286,7 @@ def build_train_detail_flex(
         if not is_last:
             stop_rows.append({"type": "separator", "color": "#eeeeee"})
 
-    return {
+    bubble: dict = {
         "type": "bubble",
         "size": "kilo",
         "header": {
@@ -261,12 +307,28 @@ def build_train_detail_flex(
         },
     }
 
+    if image_url:
+        bubble["hero"] = {
+            "type": "image",
+            "url": image_url,
+            "size": "full",
+            "aspectRatio": "20:9",
+            "aspectMode": "cover",
+        }
+
+    return bubble
+
 
 # ── 編組詳細 Flex（純編組查詢，無需 TDX）─────────────────────────────────────
 
-def build_consist_flex(train_no: str, consist: dict, version_date: str) -> dict:
+def build_consist_flex(
+    train_no: str,
+    consist: dict,
+    version_date: str,
+    image_url: Optional[str] = None,
+) -> dict:
     """給 ## 指令用，顯示完整編組運用資訊。"""
-    return {
+    bubble: dict = {
         "type": "bubble",
         "size": "kilo",
         "header": {
@@ -296,14 +358,25 @@ def build_consist_flex(train_no: str, consist: dict, version_date: str) -> dict:
             "spacing": "sm",
             "paddingAll": "12px",
             "contents": [
-                _info_row("車型",   consist.get("type_name", "—")),
-                _info_row("編組",   consist.get("formation", "—")),
-                _info_row("區間",   consist.get("route", "—")),
+                _info_row("車型",     consist.get("type_name", "—")),
+                _info_row("編組",     consist.get("formation", "—")),
+                _info_row("區間",     consist.get("route", "—")),
                 _info_row("機務乘務", consist.get("crew_mech", "—"), wrap=True),
                 _info_row("運務乘務", consist.get("crew_ops", "—"), wrap=True),
             ],
         },
     }
+
+    if image_url:
+        bubble["hero"] = {
+            "type": "image",
+            "url": image_url,
+            "size": "full",
+            "aspectRatio": "20:9",
+            "aspectMode": "cover",
+        }
+
+    return bubble
 
 
 def _info_row(label: str, value: str, wrap: bool = False) -> dict:

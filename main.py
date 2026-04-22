@@ -6,6 +6,7 @@ from typing import Optional
 from dotenv import load_dotenv
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.responses import PlainTextResponse
+from fastapi.staticfiles import StaticFiles
 from linebot.v3 import WebhookParser
 from linebot.v3.exceptions import InvalidSignatureError
 from linebot.v3.messaging import (
@@ -42,11 +43,14 @@ from services.formatter import (
     build_train_detail_flex,
     build_consist_flex,
     build_help_text,
+    train_image_url,
 )
 
 load_dotenv()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+STATIC_BASE_URL = os.getenv("STATIC_BASE_URL", "")
 
 _tdx: Optional[TDXClient] = None
 _consist_svc: Optional[ConsistService] = None
@@ -65,7 +69,7 @@ def _require_env(name: str) -> str:
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    global _tdx, _consist_svc, _ai_svc, _webhook_parser, _line_config
+    global _tdx, _consist_svc, _auth_svc, _ai_svc, _webhook_parser, _line_config
 
     _line_config = Configuration(access_token=_require_env("LINE_CHANNEL_ACCESS_TOKEN"))
     _webhook_parser = WebhookParser(_require_env("LINE_CHANNEL_SECRET"))
@@ -92,6 +96,10 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(lifespan=lifespan)
+
+_train_png_dir = os.path.join(os.path.dirname(__file__), "TRAIN_png")
+if os.path.isdir(_train_png_dir):
+    app.mount("/static/trains", StaticFiles(directory=_train_png_dir), name="trains")
 
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
@@ -132,7 +140,8 @@ def _schedule_quick_reply(
 # ── Query handlers ─────────────────────────────────────────────────────────────
 
 async def handle_od_query(
-    reply_token: str, origin_raw: str, dest_raw: str, date: str, page: int = 0
+    reply_token: str, origin_raw: str, dest_raw: str, date: str, page: int = 0,
+    user_id: str = "",
 ) -> None:
     origin = _tdx.find_station(origin_raw)
     dest = _tdx.find_station(dest_raw)
@@ -152,7 +161,12 @@ async def handle_od_query(
         await _reply(reply_token, [TextMessage(text=f"{date} {origin_name}→{dest_name} 無班次資料。")])
         return
 
-    consists = {t["train_no"]: _consist_svc.get(t["train_no"]) for t in trains}
+    authorized = _auth_svc.is_authorized(user_id)
+    consists = (
+        {t["train_no"]: _consist_svc.get(t["train_no"]) for t in trains}
+        if authorized
+        else {}
+    )
     bubble_dict = build_schedule_flex(trains, origin_name, dest_name, date, page, consists)
     quick_reply = _schedule_quick_reply(origin_raw, dest_raw, date, page, len(trains))
 
@@ -166,20 +180,52 @@ async def handle_od_query(
 
 
 async def handle_train_query(reply_token: str, train_no: str, date: str, user_id: str = "") -> None:
+    authorized = _auth_svc.is_authorized(user_id)
+    no_disp = train_no.lstrip("0") or train_no
+
+    try:
+        is_freight = int(no_disp) >= 7000
+    except ValueError:
+        is_freight = False
+
+    if is_freight and not authorized:
+        await _reply(reply_token, [TextMessage(text="此車次資訊不對外開放。")])
+        return
+
+    if is_freight:
+        consist = _consist_svc.get(train_no)
+        if not consist:
+            await _reply(reply_token, [TextMessage(text=f"查無 {no_disp} 次的編組資料。\n資料版本：{_consist_svc.updated_at}")])
+            return
+        img_url = train_image_url(consist.get("type_name", ""), STATIC_BASE_URL)
+        bubble_dict = build_consist_flex(no_disp, consist, _consist_svc.updated_at, image_url=img_url)
+        await _reply(reply_token, [
+            FlexMessage(
+                alt_text=f"{no_disp} 次編組運用",
+                contents=FlexBubble.from_dict(bubble_dict),
+            )
+        ])
+        return
+
     train = await _tdx.query_train(train_no, date)
     consist = _consist_svc.get(train_no)
 
     if not train:
         if consist:
-            await handle_consist_only(reply_token, train_no.lstrip("0") or train_no, user_id)
+            await handle_consist_only(reply_token, no_disp, user_id)
         else:
-            await _reply(reply_token, [TextMessage(text=f"{date} 查無 {train_no.lstrip('0')} 次資料。")])
+            await _reply(reply_token, [TextMessage(text=f"{date} 查無 {no_disp} 次資料。")])
         return
 
-    bubble_dict = build_train_detail_flex(train, consist, date)
+    img_url = train_image_url(train.get("type_name", ""), STATIC_BASE_URL)
+    bubble_dict = build_train_detail_flex(
+        train, consist, date,
+        authorized=authorized,
+        image_url=img_url,
+    )
     await _reply(reply_token, [
         FlexMessage(
-            alt_text=f"{train['type_name']} {train_no.lstrip('0')} 次 {date}",
+            alt_text=f"{train['type_name']} {no_disp} 次 {date}",
             contents=FlexBubble.from_dict(bubble_dict),
         )
     ])
@@ -198,7 +244,8 @@ async def handle_consist_only(reply_token: str, train_no: str, user_id: str) -> 
         await _reply(reply_token, [TextMessage(text=f"查無 {train_no} 次的編組資料。\n資料版本：{_consist_svc.updated_at}")])
         return
 
-    bubble_dict = build_consist_flex(train_no, consist, _consist_svc.updated_at)
+    img_url = train_image_url(consist.get("type_name", ""), STATIC_BASE_URL)
+    bubble_dict = build_consist_flex(train_no, consist, _consist_svc.updated_at, image_url=img_url)
     await _reply(reply_token, [
         FlexMessage(
             alt_text=f"{train_no} 次編組運用",
@@ -295,7 +342,8 @@ async def webhook(request: Request):
 
                 elif isinstance(intent, ODQuery):
                     await handle_od_query(
-                        event.reply_token, intent.origin_raw, intent.dest_raw, intent.date
+                        event.reply_token, intent.origin_raw, intent.dest_raw, intent.date,
+                        user_id=user_id,
                     )
 
                 elif isinstance(intent, TrainQuery):
@@ -312,8 +360,10 @@ async def webhook(request: Request):
                 data = event.postback.data
                 if data.startswith("schedule:"):
                     _, origin_raw, dest_raw, date, page_str = data.split(":", 4)
+                    pb_user_id = event.source.user_id if event.source else ""
                     await handle_od_query(
-                        event.reply_token, origin_raw, dest_raw, date, int(page_str)
+                        event.reply_token, origin_raw, dest_raw, date, int(page_str),
+                        user_id=pb_user_id,
                     )
 
         except Exception as exc:
