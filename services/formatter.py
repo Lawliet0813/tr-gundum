@@ -331,6 +331,13 @@ def build_consist_flex(
     """橫向卡片：左圖右文（有圖時），或純直向資訊（無圖時）。"""
     type_name = consist.get("type_name", "—")
 
+    def _crew_section(label: str, crew_text: str) -> list:
+        items = [
+            {"type": "text", "text": label, "size": "xs", "color": "#888888", "margin": "sm"},
+        ]
+        items.extend(_crew_route_body(crew_text or "—"))
+        return items
+
     info_items = [
         {"type": "text", "text": f"{train_no} 次", "weight": "bold",
          "size": "md", "color": "#1a1a2e"},
@@ -339,8 +346,10 @@ def build_consist_flex(
         {"type": "separator", "margin": "sm"},
         _info_row("編組", consist.get("formation", "—")),
         _info_row("區間", consist.get("route", "—"), wrap=True),
-        _info_row("機務乘務", consist.get("crew_mech", "—"), wrap=True),
-        _info_row("運務乘務", consist.get("crew_ops", "—"), wrap=True),
+        {"type": "separator", "margin": "sm"},
+        *_crew_section("機務乘務（司機員）", consist.get("crew_mech", "")),
+        {"type": "separator", "margin": "sm"},
+        *_crew_section("運務乘務（車長）", consist.get("crew_ops", "")),
         {"type": "text", "text": version_date,
          "size": "xxs", "color": "#aaaaaa", "margin": "sm"},
     ]
