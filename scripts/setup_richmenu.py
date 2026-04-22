@@ -50,8 +50,10 @@ def _draw_menu(path: Path, labels: list[str]) -> None:
     # 嘗試載入支援中文的字型
     font = None
     font_candidates = [
-        "/System/Library/Fonts/PingFang.ttc",          # macOS
-        "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",  # Linux
+        "/System/Library/Fonts/PingFang.ttc",                         # macOS (newer)
+        "/System/Library/Fonts/STHeiti Medium.ttc",                   # macOS (fallback)
+        "/System/Library/Fonts/Hiragino Sans GB.ttc",                 # macOS
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",    # Linux
         "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
         "/usr/share/fonts/noto-cjk/NotoSansCJKtc-Regular.otf",
     ]
@@ -128,9 +130,11 @@ def _set_default(token: str, menu_id: str) -> None:
 
 # ── 選單定義 ───────────────────────────────────────────────────────────────────
 
-def _menu_body_3btn() -> dict:
-    """一般用戶：3 鈕橫排"""
-    W3 = W // 3
+def _menu_body_general(liff_id: str) -> dict:
+    """一般用戶：上排 2 鈕 + 下排 2 鈕（含 LIFF 邀請碼）"""
+    hw = W // 2
+    hh = H // 2
+    liff_uri = f"https://liff.line.me/{liff_id}" if liff_id else "https://line.me"
     return {
         "size": {"width": W, "height": H},
         "selected": True,
@@ -138,16 +142,20 @@ def _menu_body_3btn() -> dict:
         "chatBarText": "功能選單",
         "areas": [
             {
-                "bounds": {"x": 0, "y": 0, "width": W3, "height": H},
+                "bounds": {"x": 0, "y": 0, "width": hw, "height": hh},
                 "action": {"type": "message", "label": "查時刻", "text": "查時刻"},
             },
             {
-                "bounds": {"x": W3, "y": 0, "width": W3, "height": H},
+                "bounds": {"x": hw, "y": 0, "width": hw, "height": hh},
                 "action": {"type": "message", "label": "查車次", "text": "查車次"},
             },
             {
-                "bounds": {"x": W3 * 2, "y": 0, "width": W3, "height": H},
+                "bounds": {"x": 0, "y": hh, "width": hw, "height": hh},
                 "action": {"type": "message", "label": "使用說明", "text": "幫助"},
+            },
+            {
+                "bounds": {"x": hw, "y": hh, "width": hw, "height": hh},
+                "action": {"type": "uri", "label": "輸入邀請碼", "uri": liff_uri},
             },
         ],
     }
@@ -191,6 +199,10 @@ def main() -> None:
         print("❌ 請設定環境變數 LINE_CHANNEL_ACCESS_TOKEN", file=sys.stderr)
         sys.exit(1)
 
+    liff_id = os.getenv("LIFF_ID", "")
+    if not liff_id:
+        print("⚠️  未設定 LIFF_ID，邀請碼按鈕將指向 line.me（建議先建立 LIFF App）")
+
     data_dir = Path(__file__).parent.parent / "data"
     data_dir.mkdir(exist_ok=True)
 
@@ -198,11 +210,11 @@ def main() -> None:
     img_authorized = data_dir / "richmenu_authorized.png"
 
     print("📐 生成圖文選單圖片…")
-    _draw_menu(img_general,    ["查時刻", "查車次", "使用說明"])
+    _draw_menu(img_general,    ["查時刻", "查車次", "使用說明", "輸入邀請碼"])
     _draw_menu(img_authorized, ["查時刻", "查車次", "查編組", "使用說明"])
 
     print("\n📤 上傳至 LINE…")
-    gid = _create_menu(token, _menu_body_3btn())
+    gid = _create_menu(token, _menu_body_general(liff_id))
     _upload_image(token, gid, img_general)
     print(f"  一般用戶選單 ID：{gid}")
 

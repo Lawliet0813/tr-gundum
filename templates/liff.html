@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>臺鐵小鋼彈 — 員工授權</title>
+  <script>var LIFF_ID = "{{LIFF_ID}}";</script>
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, "PingFang TC", sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px 24px;
+      width: 100%;
+      max-width: 360px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    .logo { font-size: 2.5rem; margin-bottom: 8px; }
+    h1 { font-size: 1.1rem; color: #1a3a6b; margin-bottom: 4px; }
+    .subtitle { font-size: 0.85rem; color: #888; margin-bottom: 28px; }
+    .input-group { margin-bottom: 16px; text-align: left; }
+    label { display: block; font-size: 0.8rem; color: #555; margin-bottom: 6px; }
+    input[type=text] {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #d0d8e8;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      outline: none;
+      transition: border-color .2s;
+    }
+    input[type=text]:focus { border-color: #1a3a6b; }
+    button {
+      width: 100%;
+      padding: 13px;
+      background: #1a3a6b;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:disabled { background: #aab; cursor: not-allowed; }
+    #msg {
+      margin-top: 18px;
+      font-size: 0.95rem;
+      min-height: 24px;
+      font-weight: 500;
+    }
+    .success { color: #19a350; }
+    .error   { color: #d43a3a; }
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">🚂</div>
+  <h1>臺鐵小鋼彈</h1>
+  <div class="subtitle">輸入員工邀請碼以啟用完整功能</div>
+
+  <div class="input-group">
+    <label>邀請碼（6 位）</label>
+    <input type="text" id="code" maxlength="6" placeholder="XXXXXX"
+           autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false">
+  </div>
+  <button id="btn" onclick="submitCode()">確認啟用</button>
+  <div id="msg"></div>
+</div>
+
+<script>
+  var userId = null;
+
+  async function init() {
+    try {
+      await liff.init({ liffId: LIFF_ID });
+      if (!liff.isLoggedIn()) { liff.login(); return; }
+      var profile = await liff.getProfile();
+      userId = profile.userId;
+    } catch (e) {
+      showMsg("初始化失敗，請關閉後重試。", false);
+    }
+  }
+
+  async function submitCode() {
+    var code = document.getElementById("code").value.trim().toUpperCase();
+    if (code.length !== 6) { showMsg("請輸入完整的 6 位邀請碼。", false); return; }
+    if (!userId) { showMsg("尚未取得用戶資訊，請關閉後重試。", false); return; }
+
+    var btn = document.getElementById("btn");
+    btn.disabled = true;
+    btn.textContent = "驗證中…";
+
+    try {
+      var res = await fetch("/api/redeem", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ code: code, user_id: userId })
+      });
+      var data = await res.json();
+      if (data.ok) {
+        showMsg("✅ 授權成功！選單已更新，請關閉此頁面。", true);
+        btn.style.display = "none";
+        setTimeout(function() { liff.closeWindow(); }, 2500);
+      } else {
+        showMsg(data.message || "❌ 邀請碼無效或已使用。", false);
+        btn.disabled = false;
+        btn.textContent = "確認啟用";
+      }
+    } catch (e) {
+      showMsg("網路錯誤，請稍後再試。", false);
+      btn.disabled = false;
+      btn.textContent = "確認啟用";
+    }
+  }
+
+  function showMsg(text, ok) {
+    var el = document.getElementById("msg");
+    el.textContent = text;
+    el.className = ok ? "success" : "error";
+  }
+
+  document.getElementById("code").addEventListener("keydown", function(e) {
+    if (e.key === "Enter") submitCode();
+  });
+
+  init();
+</script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>臺鐵小鋼彈 — 管理面板</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, "PingFang TC", sans-serif;
+      background: #f0f4f8;
+      padding: 24px 16px;
+      color: #222;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    header h1 { font-size: 1.2rem; color: #1a3a6b; }
+    .section {
+      background: #fff;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .section h2 { font-size: 0.95rem; color: #555; margin-bottom: 14px; }
+    .gencode-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .gencode-row input[type=number] {
+      width: 70px;
+      padding: 8px 10px;
+      border: 1.5px solid #d0d8e8;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    button {
+      padding: 9px 18px;
+      background: #1a3a6b;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button.danger { background: #c0392b; }
+    .stats { font-size: 0.85rem; color: #888; margin-top: 6px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    th {
+      text-align: left;
+      padding: 6px 8px;
+      border-bottom: 2px solid #e8edf3;
+      color: #888;
+      font-weight: 600;
+    }
+    td { padding: 8px 8px; border-bottom: 1px solid #f0f4f8; }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 99px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .badge.unused { background: #e8f5e9; color: #2e7d32; }
+    .badge.used   { background: #fce4ec; color: #c62828; }
+    .uid { font-size: 0.75rem; color: #aaa; word-break: break-all; }
+    .empty { color: #aaa; font-size: 0.9rem; padding: 16px 0; text-align: center; }
+  </style>
+</head>
+<body>
+<header>
+  <span style="font-size:1.5rem">🚂</span>
+  <h1>臺鐵小鋼彈 — 管理面板</h1>
+</header>
+
+<!-- 產生邀請碼 -->
+<div class="section">
+  <h2>產生邀請碼</h2>
+  <form method="POST" action="/admin/gencode">
+    <div class="gencode-row">
+      <input type="number" name="n" value="1" min="1" max="20">
+      <button type="submit">產生</button>
+    </div>
+  </form>
+  <div class="stats">
+    未使用：{{unused_count}} 張 ／ 已使用：{{used_count}} 張
+  </div>
+</div>
+
+<!-- 邀請碼清單 -->
+<div class="section">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+    <h2 style="margin:0">邀請碼清單</h2>
+    <form method="POST" action="/admin/delete_unused" onsubmit="return confirm('確定刪除所有未使用的碼？')">
+      <button type="submit" class="danger" style="font-size:0.8rem;padding:6px 12px">刪除未使用</button>
+    </form>
+  </div>
+  {{#if codes}}
+  <table>
+    <tr>
+      <th>邀請碼</th>
+      <th>狀態</th>
+      <th>使用者 ID</th>
+    </tr>
+    {{#each codes}}
+    <tr>
+      <td><strong>{{code}}</strong></td>
+      <td>
+        {{#if used}}
+        <span class="badge used">已使用</span>
+        {{else}}
+        <span class="badge unused">未使用</span>
+        {{/if}}
+      </td>
+      <td class="uid">{{user_id}}</td>
+    </tr>
+    {{/each}}
+  </table>
+  {{else}}
+  <div class="empty">尚無邀請碼，點上方按鈕產生。</div>
+  {{/if}}
+</div>
+
+<!-- 授權用戶清單 -->
+<div class="section">
+  <h2>已授權用戶（{{auth_count}} 人）</h2>
+  {{#if auth_users}}
+  <table>
+    <tr><th>User ID</th></tr>
+    {{#each auth_users}}
+    <tr><td class="uid">{{this}}</td></tr>
+    {{/each}}
+  </table>
+  {{else}}
+  <div class="empty">目前無授權用戶。</div>
+  {{/if}}
+</div>
+</body>
+</html>
