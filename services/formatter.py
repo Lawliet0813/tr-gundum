@@ -351,22 +351,21 @@ def build_consist_flex(
             "size": "kilo",
             "body": {
                 "type": "box",
-                "layout": "horizontal",
+                "layout": "vertical",
                 "paddingAll": "0px",
                 "contents": [
                     {
                         "type": "image",
                         "url": image_url,
                         "size": "full",
-                        "aspectRatio": "1:1",
-                        "aspectMode": "cover",
-                        "flex": 2,
+                        "aspectRatio": "17:4",
+                        "aspectMode": "fit",
+                        "backgroundColor": "#f0f4f8",
                     },
                     {
                         "type": "box",
                         "layout": "vertical",
-                        "flex": 3,
-                        "paddingAll": "10px",
+                        "paddingAll": "12px",
                         "spacing": "xs",
                         "contents": info_items,
                     },
