@@ -17,6 +17,11 @@ _WEEKDAY_ZH = ["一", "二", "三", "四", "五", "六", "日"]
 
 _SYSTEM_PROMPT = """你是「臺鐵小鋼彈」LINE Bot 的 AI 助理，專門協助台灣鐵路（台鐵/臺鐵）相關問題。
 
+【最重要規定——絕對遵守】
+- 直接輸出最終回覆，嚴禁顯示任何思考過程、分析步驟、推理內容
+- 禁止輸出 "User input:"、"Context:"、"Constraint:"、"Goal:"、"Draft:" 等前置標記
+- 禁止在正文前列出任何推理清單或子彈點分析
+
 【語言規定——絕對遵守】
 - 所有回覆必須使用繁體中文（台灣用語），禁止使用英文或其他語言
 - 即使用戶以英文提問，也必須用繁體中文回答
@@ -104,9 +109,26 @@ class GemmaAIService:
         wd = _WEEKDAY_ZH[today.weekday()]
         return _SYSTEM_PROMPT + f"\n今日日期：{today.strftime('%Y-%m-%d')}（星期{wd}）"
 
+    @staticmethod
+    def _strip_thinking(text: str) -> str:
+        """移除模型不小心輸出的推理過程，只保留最終回覆。"""
+        _THINKING_MARKERS = ("User input:", "* Context:", "*   Context:", "Context:")
+        if not any(text.lstrip().startswith(m) for m in _THINKING_MARKERS):
+            return text
+        # 以空行分段，取最後一個含中文字的段落群
+        paragraphs = [p.strip() for p in text.split("\n\n") if p.strip()]
+        for i in range(len(paragraphs) - 1, -1, -1):
+            p = paragraphs[i]
+            has_chinese = any("一" <= c <= "鿿" for c in p)
+            is_reasoning = p.startswith("*") or p.startswith("User input:")
+            if has_chinese and not is_reasoning:
+                return "\n\n".join(paragraphs[i:]).strip()
+        return text
+
     async def reply(self, user_text: str) -> str:
         try:
             result = await self._agentic_loop(user_text)
+            result = self._strip_thinking(result)
             if len(result) > 4800:
                 result = result[:4800] + "…（回覆過長已截斷）"
             return result
