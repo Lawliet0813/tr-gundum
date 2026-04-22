@@ -2,7 +2,7 @@
 
 ## 專案概覽
 
-台鐵員工專用 LINE Bot（`tr_gundum`）。FastAPI + LINE Bot SDK v3，部署在 Railway.app。
+臺鐵員工專用 LINE Bot（`tr_gundum`）。FastAPI + LINE Bot SDK v3，部署在 Railway.app。
 主要功能：OD 時刻查詢、車次詳情、編組速查、機務 / 運務乘務查詢、Gemma AI 自然語言問答。
 
 ## 目錄結構
