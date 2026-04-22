@@ -379,6 +379,90 @@ def build_consist_flex(
     return bubble
 
 
+def _crew_route_body(crew_text: str) -> list:
+    """將 '臺北=(花H20)=花蓮=...' 轉為 Flex body contents（時刻線格式）。"""
+    # 複合格式（含逗號），分段顯示
+    segments_raw = [s.strip() for s in crew_text.split("，") if s.strip()]
+    contents = []
+    for seg_idx, seg_text in enumerate(segments_raw):
+        if seg_idx > 0:
+            contents.append({"type": "separator", "margin": "sm"})
+        if "=" in seg_text:
+            parts = [p.strip() for p in seg_text.split("=") if p.strip()]
+            for i, part in enumerate(parts):
+                if i % 2 == 0:  # 站名
+                    contents.append({
+                        "type": "box",
+                        "layout": "horizontal",
+                        "spacing": "sm",
+                        "contents": [
+                            {"type": "text", "text": "●", "color": "#1a73e8",
+                             "size": "xs", "flex": 0},
+                            {"type": "text", "text": part, "size": "sm",
+                             "weight": "bold", "color": "#1a1a2e", "flex": 1},
+                        ],
+                    })
+                else:  # 段次代號
+                    seg = part.strip("()")
+                    contents.append({
+                        "type": "box",
+                        "layout": "horizontal",
+                        "spacing": "sm",
+                        "paddingStart": "4px",
+                        "contents": [
+                            {"type": "text", "text": "│", "color": "#c0c8d8",
+                             "size": "xs", "flex": 0},
+                            {"type": "text", "text": seg, "size": "xs",
+                             "color": "#555577", "flex": 1},
+                        ],
+                    })
+        else:
+            contents.append({
+                "type": "text",
+                "text": seg_text,
+                "size": "sm",
+                "color": "#1a1a2e",
+                "wrap": True,
+            })
+    return contents
+
+
+def build_crew_route_flex(
+    train_no: str,
+    type_name: str,
+    crew_type: str,
+    crew_text: str,
+    version_date: str,
+) -> dict:
+    label = "機務乘務（司機員）" if crew_type == "mech" else "運務乘務（車長）"
+    header_text = f"{train_no} 次　{type_name}" if type_name else f"{train_no} 次"
+
+    return {
+        "type": "bubble",
+        "size": "kilo",
+        "header": {
+            "type": "box",
+            "layout": "vertical",
+            "backgroundColor": "#1a3a6b",
+            "paddingAll": "12px",
+            "contents": [
+                {"type": "text", "text": header_text, "color": "#ffffff",
+                 "weight": "bold", "size": "md"},
+                {"type": "text", "text": label, "color": "#b0bec5", "size": "xs"},
+                {"type": "text", "text": f"資料日期：{version_date}",
+                 "color": "#7090b0", "size": "xxs"},
+            ],
+        },
+        "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "xs",
+            "paddingAll": "12px",
+            "contents": _crew_route_body(crew_text),
+        },
+    }
+
+
 def _info_row(label: str, value: str, wrap: bool = False) -> dict:
     return {
         "type": "box",

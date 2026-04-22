@@ -51,6 +51,7 @@ from services.formatter import (
     build_schedule_flex,
     build_train_detail_flex,
     build_consist_flex,
+    build_crew_route_flex,
     build_help_text,
     train_image_url,
 )
@@ -375,18 +376,24 @@ async def handle_crew_query(reply_token: str, train_no: str, crew_type: str, use
         )])
         return
 
-    if crew_type == "mech":
-        crew = consist.get("crew_mech") or "—"
-        label = "機務乘務（司機員）"
-    else:
-        crew = consist.get("crew_ops") or "—"
-        label = "運務乘務（車長）"
-
+    crew_field = "crew_mech" if crew_type == "mech" else "crew_ops"
+    crew_text = consist.get(crew_field) or "—"
     type_name = consist.get("type_name", "")
-    header = f"{train_no} 次　{type_name}" if type_name else f"{train_no} 次"
-    await _reply(reply_token, [TextMessage(
-        text=f"{header}\n{label}\n\n{crew}\n\n資料日期：{_consist_svc.updated_at}"
-    )])
+
+    bubble_dict = build_crew_route_flex(
+        train_no=train_no,
+        type_name=type_name,
+        crew_type=crew_type,
+        crew_text=crew_text,
+        version_date=_consist_svc.updated_at,
+    )
+    label = "機務乘務" if crew_type == "mech" else "運務乘務"
+    await _reply(reply_token, [
+        FlexMessage(
+            alt_text=f"{train_no} 次　{label}",
+            contents=FlexBubble.from_dict(bubble_dict),
+        )
+    ])
 
 
 async def handle_my_id(reply_token: str, user_id: str) -> None:
