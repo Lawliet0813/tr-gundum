@@ -57,6 +57,13 @@ class AuthListQuery:
 
 
 @dataclass
+class CrewQuery:
+    """乘務查詢：機務（司機員/機班）或運務（車長）。"""
+    train_no: str
+    crew_type: str  # "mech" 或 "ops"
+
+
+@dataclass
 class RichMenuGuideQuery:
     """圖文選單按鈕觸發的使用提示。"""
     keyword: str
@@ -71,7 +78,7 @@ class UnknownQuery:
 QueryIntent = Union[
     ODQuery, TrainQuery, ConsistOnlyQuery, HelpQuery,
     MyIdQuery, AuthAddQuery, AuthRemoveQuery, AuthListQuery,
-    RichMenuGuideQuery, UnknownQuery,
+    CrewQuery, RichMenuGuideQuery, UnknownQuery,
 ]
 
 _RICHMENU_GUIDES: dict[str, str] = {
@@ -182,6 +189,24 @@ def parse_query(text: str) -> QueryIntent:
         if date:
             return TrainQuery(train_no=m.group(1).zfill(4) if m.group(1).isdigit() else m.group(1),
                               date=date)
+
+    # 乘務查詢：車次 + 機務/運務關鍵字（或反序）
+    _CREW_MECH = r"(?:司機員|司機|機班|誰開|機務乘務|機務)"
+    _CREW_OPS  = r"(?:列車長|車長|車班|運務乘務|運務)"
+    _TRAIN_PAT = r"(\d{1,4}[AB]?)"
+
+    def _norm_no(s: str) -> str:
+        return s.zfill(4) if s.isdigit() else s
+
+    for pat, ctype in [
+        (rf"{_TRAIN_PAT}(?:的|[\s　])*{_CREW_MECH}", "mech"),
+        (rf"{_CREW_MECH}(?:[\s　]*){_TRAIN_PAT}", "mech"),
+        (rf"{_TRAIN_PAT}(?:的|[\s　])*{_CREW_OPS}", "ops"),
+        (rf"{_CREW_OPS}(?:[\s　]*){_TRAIN_PAT}", "ops"),
+    ]:
+        m = re.fullmatch(pat, text)
+        if m:
+            return CrewQuery(train_no=_norm_no(m.group(1)), crew_type=ctype)
 
     # OD 查詢：用空格、→、-> 分隔
     parts = re.split(r"[\s→\->]+", text)

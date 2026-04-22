@@ -43,7 +43,7 @@ from services.parser import (
     parse_query,
     ODQuery, TrainQuery, ConsistOnlyQuery, HelpQuery,
     MyIdQuery, AuthAddQuery, AuthRemoveQuery, AuthListQuery,
-    RichMenuGuideQuery, UnknownQuery,
+    CrewQuery, RichMenuGuideQuery, UnknownQuery,
 )
 from services.ai import GemmaAIService
 from services.formatter import (
@@ -361,6 +361,34 @@ async def handle_consist_only(reply_token: str, train_no: str, user_id: str) -> 
     ])
 
 
+async def handle_crew_query(reply_token: str, train_no: str, crew_type: str, user_id: str) -> None:
+    if not _auth_svc.is_authorized(user_id):
+        await _reply(reply_token, [TextMessage(
+            text="⛔ 乘務查詢為員工授權功能。\n\n持有邀請碼者請點選單的「輸入邀請碼」按鈕啟用。"
+        )])
+        return
+
+    consist = _consist_svc.get(train_no)
+    if not consist:
+        await _reply(reply_token, [TextMessage(
+            text=f"查無 {train_no} 次的編組資料。\n資料版本：{_consist_svc.updated_at}"
+        )])
+        return
+
+    if crew_type == "mech":
+        crew = consist.get("crew_mech") or "—"
+        label = "機務乘務（司機員）"
+    else:
+        crew = consist.get("crew_ops") or "—"
+        label = "運務乘務（車長）"
+
+    type_name = consist.get("type_name", "")
+    header = f"{train_no} 次　{type_name}" if type_name else f"{train_no} 次"
+    await _reply(reply_token, [TextMessage(
+        text=f"{header}\n{label}\n\n{crew}\n\n資料日期：{_consist_svc.updated_at}"
+    )])
+
+
 async def handle_my_id(reply_token: str, user_id: str) -> None:
     await _reply(reply_token, [TextMessage(
         text=f"您的 LINE User ID：\n{user_id}"
@@ -627,6 +655,11 @@ async def webhook(request: Request):
 
                 elif isinstance(intent, ConsistOnlyQuery):
                     await handle_consist_only(event.reply_token, intent.train_no, user_id)
+
+                elif isinstance(intent, CrewQuery):
+                    await handle_crew_query(
+                        event.reply_token, intent.train_no, intent.crew_type, user_id
+                    )
 
                 elif isinstance(intent, ODQuery):
                     await handle_od_query(

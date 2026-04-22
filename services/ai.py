@@ -230,9 +230,14 @@ class GemmaAIService:
             return f"查無 {train_no} 次編組資料（資料版本：{self._consist.updated_at}）。"
 
         type_name = consist.get("type_name", "未知車種")
-        formation = consist.get("formation", "")
-        result = f"{train_no} 次：{type_name}"
-        if formation:
-            result += f"，{formation}"
-        result += f"。\n（輸入 ##{train_no} 可查詢詳細授權資訊）"
-        return result
+        parts = [f"{train_no} 次：{type_name}"]
+        if consist.get("formation"):
+            parts.append(f"編組：{consist['formation']}")
+        if consist.get("route"):
+            parts.append(f"區間：{consist['route']}")
+        if consist.get("crew_mech"):
+            parts.append(f"機務乘務（司機員）：{consist['crew_mech']}")
+        if consist.get("crew_ops"):
+            parts.append(f"運務乘務（車長）：{consist['crew_ops']}")
+        parts.append(f"（資料版本：{self._consist.updated_at}）")
+        return "\n".join(parts)
