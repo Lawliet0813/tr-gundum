@@ -1,0 +1,15 @@
+{
+  "1000": {"name_zh": "臺北", "name_en": "Taipei"},
+  "1001": {"name_zh": "台北", "name_en": "Taipei"},
+  "1100": {"name_zh": "板橋", "name_en": "Banqiao"},
+  "1200": {"name_zh": "新竹", "name_en": "Hsinchu"},
+  "2100": {"name_zh": "台中", "name_en": "Taichung"},
+  "2101": {"name_zh": "臺中", "name_en": "Taichung"},
+  "3100": {"name_zh": "台南", "name_en": "Tainan"},
+  "3101": {"name_zh": "臺南", "name_en": "Tainan"},
+  "3200": {"name_zh": "高雄", "name_en": "Kaohsiung"},
+  "1300": {"name_zh": "花蓮", "name_en": "Hualien"},
+  "1400": {"name_zh": "台東", "name_en": "Taitung"},
+  "1401": {"name_zh": "臺東", "name_en": "Taitung"},
+  "1500": {"name_zh": "蘇澳", "name_en": "Su'ao"}
+}

@@ -26,7 +26,11 @@ class TDXClient:
     async def init(self) -> None:
         if self._client_id and self._client_secret:
             await self._ensure_token()
-        await self._load_stations()
+        try:
+            await self._load_stations()
+        except Exception as exc:
+            import logging
+            logging.getLogger(__name__).warning("Station data unavailable: %s", exc)
 
     # ── Token management ──────────────────────────────────────────────────────
 

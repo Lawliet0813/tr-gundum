@@ -5,7 +5,6 @@
 __pycache__/
 *.pyc
 *.pyo
-data/stations_cache.json
 *.pdf
 *.xls
 *.xlsx
