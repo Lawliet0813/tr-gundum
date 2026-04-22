@@ -36,7 +36,7 @@ from services.parser import (
     MyIdQuery, AuthAddQuery, AuthRemoveQuery, AuthListQuery,
     UnknownQuery,
 )
-from services.ai import GeminiService
+from services.ai import ClaudeAIService, GeminiService
 from services.formatter import (
     PAGE_SIZE,
     build_schedule_flex,
@@ -75,10 +75,6 @@ async def lifespan(app: FastAPI):
     _webhook_parser = WebhookParser(_require_env("LINE_CHANNEL_SECRET"))
     _consist_svc = ConsistService()
     _auth_svc = AuthService()
-    gemini_key = os.getenv("GEMINI_API_KEY", "")
-    if gemini_key:
-        _ai_svc = GeminiService(api_key=gemini_key)
-        logger.info("Gemini AI service initialized.")
 
     _tdx = TDXClient(
         client_id=os.getenv("TDX_CLIENT_ID", ""),
@@ -92,6 +88,15 @@ async def lifespan(app: FastAPI):
         _consist_svc.train_count,
         _consist_svc.version,
     )
+
+    anthropic_key = os.getenv("ANTHROPIC_API_KEY", "")
+    gemini_key = os.getenv("GEMINI_API_KEY", "")
+    if anthropic_key:
+        _ai_svc = ClaudeAIService(api_key=anthropic_key, tdx=_tdx, consist=_consist_svc)
+        logger.info("Claude Haiku AI service initialized (with tool use).")
+    elif gemini_key:
+        _ai_svc = GeminiService(api_key=gemini_key)
+        logger.info("Gemini AI service initialized (fallback).")
     yield
 
 
