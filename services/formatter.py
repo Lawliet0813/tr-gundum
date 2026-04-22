@@ -8,8 +8,8 @@ WEEKDAY_ZH = ["一", "二", "三", "四", "五", "六", "日"]
 
 # type_name keyword → image filename（順序優先：越具體越前）
 _TYPE_IMAGE_MAP = [
-    ("普悠瑪",      "TEMU1000.png"),
-    ("太魯閣",      "TEMU2000.png"),
+    ("太魯閣",      "TEMU1000.png"),
+    ("普悠瑪",      "TEMU2000.png"),
     ("EMU3000",     "EMU3000.png"),
     ("優化EMU500",  "EMU500_A.png"),
     ("EMU900",      "EMU900.png"),

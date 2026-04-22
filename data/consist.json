@@ -1,41 +1,41 @@
 {
   "version": "1140626",
-  "updated_at": "2025-06-26",
-  "source": "extracted from new.py TEMP3",
+  "updated_at": "2024-12-21",
+  "source": "車次乘務員、機車運用速查表_20241221.xlsx",
   "trains": {
     "1": {
       "type_name": "E200/400+BCK商務",
       "formation": "七機14+七機C11",
       "route": "臺北=臺北(逆環島)",
-      "crew_mech": "臺北=(彰513)=彰化=(彰521)=新左營=(一五日東T73/六東TR6)=臺東=(花H72)=花蓮=(花H20)=臺北",
+      "crew_mech": "臺北=(彰513)=彰化=(彰521)=新左營=(一至五日東T73/六東TR6)=臺東=(花H72)=花蓮=(花H20)=臺北",
       "crew_ops": "臺北=(彰)=彰化=(高)=台東=(花)=花蓮=(北)=臺北"
     },
     "2": {
       "type_name": "E200/400+BCK商務",
       "formation": "七機13+七機C12",
       "route": "臺北=臺北(順環島)",
-      "crew_mech": "臺北=(花H20)=花蓮=(花H88)=臺東=(東T73)=新左營=(彰521)=彰化=(七123)=臺北",
+      "crew_mech": "臺北=(花H20)=花蓮=(花H88)=臺東=(東T73)=新左營=(彰521)=彰化=(七131)=七堵",
       "crew_ops": "臺北=(花)=臺東=(高)=彰化=(彰)=臺北"
     },
     "21": {
       "type_name": "EMU3000騰雲",
-      "formation": "七機E62",
+      "formation": "七機E63",
       "route": "臺東=樹林",
       "crew_mech": "臺東=(花HR16)=花蓮=(七1R7)=樹林",
       "crew_ops": "全區間(花)"
     },
     "22": {
       "type_name": "EMU3000騰雲",
-      "formation": "七機E62",
+      "formation": "七機E63",
       "route": "樹林=臺東",
       "crew_mech": "樹林=(七1R8)=花蓮=(花HR16)=臺東",
       "crew_ops": "全區間(花)"
     },
     "101": {
-      "type_name": "E500+PP+E500",
+      "type_name": "E1000+PP+E1000",
       "formation": "高機P24",
       "route": "臺中=潮州基地",
-      "crew_mech": "臺中=(彰539)=彰化=(彰523)=潮州基地",
+      "crew_mech": "臺中=(彰547)=彰化=(彰523)=潮州基地",
       "crew_ops": "全區間(高)"
     },
     "102": {
@@ -43,21 +43,21 @@
       "formation": "七機P4",
       "route": "斗六=七堵",
       "crew_mech": "斗六=(彰537)=彰化=(七111)=七堵",
-      "crew_ops": "斗六=(嘉)=彰化=(基)=七堵"
+      "crew_ops": "全區間(基)"
     },
     "103": {
       "type_name": "E1000+PP+E1000",
       "formation": "高機P23",
-      "route": "汐止=潮州基地",
-      "crew_mech": "汐止=(七103)=彰化=(高815)=潮州基地",
-      "crew_ops": "汐止=(基)=彰化=(嘉)=潮州"
+      "route": "七堵=潮州基地",
+      "crew_mech": "七堵=(七103)=彰化=(高815)=潮州基地",
+      "crew_ops": "七堵=(基)=彰化=(嘉)=潮州"
     },
     "105": {
       "type_name": "E1000+PP+E1000",
-      "formation": "高機P23",
-      "route": "基隆=潮州基地",
-      "crew_mech": "基隆=(彰505)=樹林=(彰514)=彰化=(彰524)=潮州基地",
-      "crew_ops": "基隆=(彰)=嘉義=(嘉)=潮州"
+      "formation": "七機P2",
+      "route": "基隆=屏東",
+      "crew_mech": "基隆=(彰505)=樹林=(彰514)=彰化=(彰524)=屏東",
+      "crew_ops": "全區間(彰)"
     },
     "107": {
       "type_name": "普悠瑪",
@@ -67,31 +67,31 @@
       "crew_ops": "全區間(高)"
     },
     "108": {
-      "type_name": "E500+PP+E500",
-      "formation": "七機P3",
+      "type_name": "EMU3000特仕",
+      "formation": "七機E51",
       "route": "潮州基地=七堵",
-      "crew_mech": "潮州基地=(高842)=新左營=(彰522)=彰化=(彰501)=七堵",
+      "crew_mech": "潮州基地=(彰522)=彰化=(彰501)=七堵",
       "crew_ops": "潮州=(嘉)=彰化=(基)=七堵"
     },
     "109": {
       "type_name": "E1000+PP+E1000",
-      "formation": "七機P5",
-      "route": "基隆=屏東",
-      "crew_mech": "基隆=(彰510)=彰化=(彰525)=新左營=(左959)=屏東",
-      "crew_ops": "基隆=(彰)=彰化=(嘉)=屏東"
+      "formation": "七機P6",
+      "route": "基隆=彰化",
+      "crew_mech": "全區間(彰510)",
+      "crew_ops": "全區間(彰)"
     },
     "110": {
-      "type_name": "EMU3000特仕",
-      "formation": "七機E51",
-      "route": "潮州=七堵",
-      "crew_mech": "潮州=(高802)=彰化=(彰519)=七堵",
+      "type_name": "EMU3000騰雲",
+      "formation": "七機E61",
+      "route": "潮州基地=七堵",
+      "crew_mech": "潮州基地=(高802)=彰化=(彰519)=七堵",
       "crew_ops": "潮州=(嘉)=嘉義=(基)=七堵"
     },
     "111": {
       "type_name": "EMU3000騰雲",
-      "formation": "七機E61",
+      "formation": "七機E62",
       "route": "七堵=潮州",
-      "crew_mech": "七堵=(彰512)=臺中=(彰529)=潮州=(高875)=枋寮",
+      "crew_mech": "七堵=(彰512)=臺中=(彰529)=潮州=(高859)=枋寮",
       "crew_ops": "全區間(嘉)"
     },
     "112": {
@@ -102,144 +102,144 @@
       "crew_ops": "全區間(竹)"
     },
     "114": {
-      "type_name": "E500+PP+E500",
+      "type_name": "E1000+PP+E1000",
       "formation": "七機P3",
       "route": "潮州基地=七堵",
       "crew_mech": "潮州基地=(高803)=彰化=(彰507)=七堵",
-      "crew_ops": "潮州=(嘉)=新竹=(基)=七堵"
+      "crew_ops": "潮州=(嘉)=彰化=(基)=七堵"
     },
     "115": {
-      "type_name": "E500+PP+E500",
+      "type_name": "E1000+PP+E1000",
       "formation": "七機P1",
       "route": "基隆=屏東",
       "crew_mech": "基隆=(彰518)=彰化=(彰528)=新左營=(左945)=屏東",
       "crew_ops": "全區間(嘉)"
     },
     "116": {
-      "type_name": "EMU3000特仕",
-      "formation": "七機E51",
-      "route": "潮州基地=七堵",
-      "crew_mech": "潮州基地=(高804)=彰化=(彰516)=七堵",
-      "crew_ops": "潮州=(嘉)=嘉義=(基)=七堵"
+      "type_name": "E1000+PP+E1000",
+      "formation": "高機P25",
+      "route": "屏東=七堵",
+      "crew_mech": "屏東=(高804)=彰化=(彰516)=七堵",
+      "crew_ops": "屏東=(嘉)=嘉義=(基)=七堵"
     },
     "117": {
-      "type_name": "EMU3000騰雲",
-      "formation": "七機E61",
+      "type_name": "EMU3000特仕",
+      "formation": "七機E52",
       "route": "基隆=潮州基地",
-      "crew_mech": "基隆=(七117)=彰化=(左937)=新左營=(左928)=潮州基地",
+      "crew_mech": "基隆=(七117)=彰化=(左937)=新左營=(左926)=潮州基地",
       "crew_ops": "基隆=(彰)=彰化=(高)=潮州"
     },
     "118": {
       "type_name": "E1000+PP+E1000",
       "formation": "高機P25",
-      "route": "屏東=七堵",
-      "crew_mech": "屏東=(左959)=新左營=(左933)=彰化=(彰504)=七堵",
-      "crew_ops": "屏東=(高)=彰化=(彰)=七堵"
+      "route": "潮州基地=七堵",
+      "crew_mech": "潮州基地=(左959)=新左營=(左933)=彰化=(彰506)=七堵",
+      "crew_ops": "潮州=(高)=彰化=(彰)=七堵"
     },
     "119": {
       "type_name": "EMU3000騰雲",
-      "formation": "七機E63",
+      "formation": "七機E65",
       "route": "七堵=彰化",
       "crew_mech": "全區間(七1R4)",
       "crew_ops": "全區間(基)"
     },
     "120": {
-      "type_name": "EMU3000騰雲",
-      "formation": "高機E83",
-      "route": "潮州基地=七堵",
-      "crew_mech": "潮州基地=(高805)=彰化=(彰515)=七堵",
+      "type_name": "EMU3000特仕",
+      "formation": "七機E51",
+      "route": "潮州=七堵",
+      "crew_mech": "潮州=(高805)=彰化=(彰515)=七堵",
       "crew_ops": "全區間(竹)"
     },
     "121": {
       "type_name": "E500+PP+E500",
-      "formation": "七機P1",
+      "formation": "七機P7",
       "route": "七堵=屏東",
       "crew_mech": "七堵=(七121)=彰化=(高801)=屏東",
       "crew_ops": "七堵=(基)=彰化=(高)=屏東"
     },
     "122": {
-      "type_name": "E500+PP+E500",
-      "formation": "高機P26",
+      "type_name": "E1000+PP+E1000",
+      "formation": "高機P22",
       "route": "潮州基地=基隆",
       "crew_mech": "潮州基地=(高807)=彰化=(彰505)=基隆",
       "crew_ops": "潮州=(彰)=七堵=(基)=基隆"
     },
     "123": {
       "type_name": "E500+PP+E500",
-      "formation": "七機P2",
+      "formation": "七機P5",
       "route": "七堵=屏東",
       "crew_mech": "七堵=(七123)=彰化=(高802)=屏東",
-      "crew_ops": "七堵=(基)=新竹=(嘉)=屏東"
+      "crew_ops": "全區間(嘉)"
     },
     "124": {
       "type_name": "普悠瑪",
-      "formation": "北機T7",
+      "formation": "北機T6",
       "route": "潮州基地=南港",
       "crew_mech": "潮州基地=(左961)=高雄=(左935)=臺中=(北215)=南港",
       "crew_ops": "全區間(北)"
     },
     "125": {
       "type_name": "E500+PP+E500",
-      "formation": "七機P3",
-      "route": "七堵=潮州基地",
-      "crew_mech": "七堵=(七125)=彰化=(高803)=潮州基地",
+      "formation": "七機P5",
+      "route": "七堵=屏東",
+      "crew_mech": "七堵=(七125)=彰化=(高803)=屏東",
       "crew_ops": "全區間(嘉)"
     },
     "127": {
-      "type_name": "EMU3000特仕",
-      "formation": "七機E52",
+      "type_name": "EMU3000騰雲",
+      "formation": "七機日E64/五E66",
       "route": "七堵=彰化",
       "crew_mech": "全區間(彰5R1)",
       "crew_ops": "全區間(基)"
     },
     "128": {
       "type_name": "E1000+PP+E1000",
-      "formation": "高機P25",
-      "route": "潮州基地=基隆",
-      "crew_mech": "潮州基地=(高808)=彰化=(彰513)=基隆",
-      "crew_ops": "潮州=(高)=彰化=(基)=基隆"
+      "formation": "七機P2",
+      "route": "屏東=基隆",
+      "crew_mech": "屏東=(高808)=彰化=(彰513)=基隆",
+      "crew_ops": "屏東=(高)=彰化=(基)=基隆"
     },
     "129": {
       "type_name": "E1000+PP+E1000",
       "formation": "高機P22",
-      "route": "基隆=潮州基地",
-      "crew_mech": "基隆=(七112)=彰化=(高804)=潮州基地",
+      "route": "基隆=枋寮",
+      "crew_mech": "基隆=(七112)=彰化=(高804)=潮州=(高865)=枋寮",
       "crew_ops": "全區間(竹)"
     },
     "131": {
       "type_name": "EMU3000騰雲",
       "formation": "高機E82",
       "route": "七堵=潮州基地",
-      "crew_mech": "七堵=(七131)=彰化=(彰526)=潮州=(高875)=潮州基地",
+      "crew_mech": "七堵=(七131)=彰化=(彰526)=屏東=(高855)=潮州基地",
       "crew_ops": "七堵=(彰)=彰化=(嘉)=潮州"
     },
     "132": {
       "type_name": "EMU3000騰雲",
-      "formation": "七機E61",
+      "formation": "七機E62",
       "route": "枋寮=七堵",
-      "crew_mech": "枋寮=(高875)=潮州=(左930)=彰化=(彰509)=七堵",
+      "crew_mech": "枋寮=(高859)=潮州=(左930)=臺中=(七113)=七堵",
       "crew_ops": "全區間(嘉)"
     },
     "133": {
       "type_name": "EMU3000特仕",
       "formation": "七機E51",
-      "route": "七堵=潮州基地",
-      "crew_mech": "七堵=(七133)=彰化=(高805)=潮州基地",
+      "route": "七堵=潮州",
+      "crew_mech": "七堵=(七133)=彰化=(高805)=潮州",
       "crew_ops": "全區間(竹)"
     },
     "134": {
       "type_name": "E1000+PP+E1000",
-      "formation": "七機P5",
+      "formation": "高機P23",
       "route": "屏東=基隆",
       "crew_mech": "屏東=(高813)=彰化=(彰512)=基隆",
-      "crew_ops": "屏東=(嘉)=嘉義=(彰)=彰化=(基)=基隆"
+      "crew_ops": "屏東=(彰)=彰化=(基)=基隆"
     },
     "135": {
       "type_name": "E1000+PP+E1000",
       "formation": "七機P4",
       "route": "七堵=屏東",
-      "crew_mech": "七堵=(彰508)=彰化=(左933)=屏東",
-      "crew_ops": "七堵=(基)=彰化=(嘉)=屏東"
+      "crew_mech": "七堵=(彰508)=彰化=(左933)=新左營=(左959)=屏東",
+      "crew_ops": "七堵=(基)=嘉義=(嘉)=屏東"
     },
     "136": {
       "type_name": "普悠瑪",
@@ -250,49 +250,49 @@
     },
     "137": {
       "type_name": "普悠瑪",
-      "formation": "北機T7",
+      "formation": "北機T6",
       "route": "南港=潮州基地",
       "crew_mech": "南港=(北216)=臺中=(彰527)=潮州基地",
       "crew_ops": "全區間(北)"
     },
     "138": {
-      "type_name": "E500+PP+E500",
+      "type_name": "E1000+PP+E1000",
       "formation": "七機P1",
       "route": "屏東=七堵",
-      "crew_mech": "屏東=(左945)=新左營=(左934)=彰化=(七131)=七堵",
+      "crew_mech": "屏東=(左945)=新左營=(左934)=彰化=(七121)=七堵",
       "crew_ops": "全區間(嘉)"
     },
     "139": {
-      "type_name": "E500+PP+E500",
-      "formation": "七機P3",
-      "route": "七堵=潮州基地",
-      "crew_mech": "七堵=(彰501)=彰化=(高807)=潮州基地",
-      "crew_ops": "七堵=(基)=彰化=(高)=潮州"
-    },
-    "141": {
       "type_name": "E1000+PP+E1000",
       "formation": "高機P25",
       "route": "七堵=潮州基地",
-      "crew_mech": "七堵=(七111)=彰化=(高811)=潮州基地",
+      "crew_mech": "七堵=(彰501)=彰化=(高807)=潮州基地",
       "crew_ops": "七堵=(彰)=彰化=(高)=潮州"
+    },
+    "141": {
+      "type_name": "E1000+PP+E1000",
+      "formation": "七機P3",
+      "route": "七堵=潮州基地",
+      "crew_mech": "七堵=(七111)=彰化=(高811)=潮州基地",
+      "crew_ops": "七堵=(基)=彰化=(高)=潮州"
     },
     "142": {
       "type_name": "E1000+PP+E1000",
       "formation": "高機P23",
       "route": "潮州基地=七堵",
-      "crew_mech": "潮州基地=(高814)=彰化=(七121)=七堵",
+      "crew_mech": "潮州基地=(高814)=彰化=(七123)=七堵",
       "crew_ops": "潮州=(嘉)=彰化=(彰)=七堵"
     },
     "143": {
       "type_name": "EMU3000騰雲",
-      "formation": "高機E83",
+      "formation": "七機E61",
       "route": "七堵=潮州基地",
       "crew_mech": "七堵=(彰519)=彰化=(高808)=潮州基地",
       "crew_ops": "七堵=(基)=嘉義=(嘉)=潮州"
     },
     "144": {
       "type_name": "E500+PP+E500",
-      "formation": "七機P1",
+      "formation": "七機P7",
       "route": "屏東=基隆",
       "crew_mech": "屏東=(彰530)=彰化=(七118)=基隆",
       "crew_ops": "屏東=(高)=彰化=(彰)=基隆"
@@ -300,56 +300,56 @@
     "145": {
       "type_name": "EMU3000特仕",
       "formation": "七機E51",
-      "route": "七堵=潮州",
-      "crew_mech": "七堵=(七115)=彰化=(高812)=潮州",
+      "route": "七堵=潮州基地",
+      "crew_mech": "七堵=(七115)=彰化=(高812)=潮州基地",
       "crew_ops": "七堵=(彰)=彰化=(高)=潮州"
     },
     "146": {
-      "type_name": "EMU3000騰雲",
-      "formation": "七機E61",
+      "type_name": "EMU3000特仕",
+      "formation": "七機E52",
       "route": "潮州基地=七堵",
-      "crew_mech": "潮州基地=(左928)=新左營=(彰528)=嘉義=(彰541)=彰化=(七125)=七堵",
+      "crew_mech": "潮州基地=(左926)=新左營=(彰528)=嘉義=(彰541)=彰化=(七125)=七堵",
       "crew_ops": "潮州=(高)=彰化=(彰)=七堵"
     },
     "148": {
-      "type_name": "EMU3000特仕",
-      "formation": "七機E52",
+      "type_name": "EMU3000騰雲",
+      "formation": "七機日E65/五E66",
       "route": "彰化=七堵",
       "crew_mech": "全區間(七1R5)",
       "crew_ops": "全區間(基)"
     },
     "149": {
-      "type_name": "E500+PP+E500",
-      "formation": "高機P26",
+      "type_name": "E1000+PP+E1000",
+      "formation": "高機P22",
       "route": "基隆=潮州基地",
       "crew_mech": "基隆=(彰505)=七堵=(彰516)=彰化=(高813)=潮州基地",
       "crew_ops": "基隆=(基)=彰化=(高)=潮州"
     },
     "150": {
       "type_name": "E500+PP+E500",
-      "formation": "七機P2",
+      "formation": "七機P5",
       "route": "屏東=七堵",
-      "crew_mech": "屏東=(彰591)=彰化=(七112)=七堵",
-      "crew_ops": "屏東=(嘉)=彰化=(基)=七堵"
+      "crew_mech": "屏東=(彰524)=彰化=(七112)=七堵",
+      "crew_ops": "屏東=(嘉)=彰化=(彰)=七堵"
     },
     "152": {
-      "type_name": "E1000+PP+E1000",
-      "formation": "高機P23",
-      "route": "潮州基地=汐止",
-      "crew_mech": "潮州基地=(高815)=彰化=(七133)=汐止",
-      "crew_ops": "潮基=(嘉)=彰化=(基)=汐止"
+      "type_name": "E500+PP+E500",
+      "formation": "七機P5",
+      "route": "屏東=七堵",
+      "crew_mech": "屏東=(高815)=彰化=(七133)=七堵",
+      "crew_ops": "全區間(嘉)"
     },
     "154": {
       "type_name": "EMU3000騰雲",
       "formation": "高機E82",
       "route": "潮州基地=南港",
-      "crew_mech": "潮州基地=(彰524)=臺中=(北217)=南港",
+      "crew_mech": "潮州基地=(彰591)=臺中=(北217)=南港",
       "crew_ops": "全區間(嘉)"
     },
     "155": {
-      "type_name": "E500+PP+E500",
+      "type_name": "E1000+PP+E1000",
       "formation": "高機P24",
-      "route": "七堵=臺中",
+      "route": "七堵=彰化",
       "crew_mech": "全區間(彰504)",
       "crew_ops": "全區間(彰)"
     },
@@ -369,14 +369,14 @@
     },
     "158": {
       "type_name": "EMU3000騰雲",
-      "formation": "七機E63",
+      "formation": "七機E65",
       "route": "彰化=七堵",
       "crew_mech": "全區間(七1R4)",
       "crew_ops": "全區間(基)"
     },
     "160": {
       "type_name": "EMU3000騰雲",
-      "formation": "七機E63",
+      "formation": "七機E64",
       "route": "田中=七堵",
       "crew_mech": "田中=(彰575)=彰化=(七1R4)=七堵",
       "crew_ops": "田中=(彰)=彰化=(基)=七堵"
@@ -385,19 +385,19 @@
       "type_name": "EMU3000騰雲",
       "formation": "高機E82",
       "route": "南港=臺東",
-      "crew_mech": "南港=(彰509)=彰化=(彰530)=屏東=(高874)=臺東",
+      "crew_mech": "南港=(彰509)=彰化=(彰530)=新左營=(高852)=潮州=(高875)=臺東",
       "crew_ops": "南港=(竹)=新竹=(高)=台東"
     },
     "162": {
       "type_name": "普悠瑪",
-      "formation": "北機T7",
+      "formation": "北機T6",
       "route": "臺東=南港",
       "crew_mech": "臺東=(東T71)=潮州=(彰527)=臺中=(北216)=南港",
       "crew_ops": "台東=(高)=潮州=(北)=南港"
     },
     "165": {
       "type_name": "普悠瑪",
-      "formation": "北機T7",
+      "formation": "北機T6",
       "route": "南港=臺東",
       "crew_mech": "南港=(北217)=臺中=(彰522)=潮州=(高871)=臺東",
       "crew_ops": "南港=(北)=潮州=(高)=台東"
@@ -414,34 +414,34 @@
       "formation": "七機P4",
       "route": "嘉義=花蓮",
       "crew_mech": "嘉義=(彰528)=彰化=(彰511)=七堵=(七101)=花蓮",
-      "crew_ops": "嘉義=(嘉)=彰化=(基)=花蓮"
+      "crew_ops": "全區間(基)"
     },
     "172": {
-      "type_name": "E500+PP+E500",
+      "type_name": "E1000+PP+E1000",
       "formation": "高機P21",
       "route": "潮州基地=花蓮",
       "crew_mech": "潮州基地=(高806)=彰化=(彰517)=七堵=(花H01)=花蓮",
       "crew_ops": "潮州=(高)=彰化=(彰)=七堵=(宜)=花蓮"
     },
     "175": {
-      "type_name": "E500+PP+E500",
+      "type_name": "E1000+PP+E1000",
       "formation": "高機P21",
       "route": "花蓮=潮州基地",
       "crew_mech": "花蓮=(花H04)=七堵=(彰511)=彰化=(高806)=潮州基地",
-      "crew_ops": "花蓮=(基)=彰化=(嘉)=潮州"
+      "crew_ops": "花蓮=(基)=嘉義=(嘉)=潮州"
     },
     "176": {
-      "type_name": "E500+PP+E500",
+      "type_name": "E1000+PP+E1000",
       "formation": "高機P24",
       "route": "潮州基地=瑞芳",
-      "crew_mech": "潮州基地=(高811)=彰化=(七113)=七堵=(七153)=瑞芳",
+      "crew_mech": "潮州基地=(高811)=彰化=(七103)=七堵=(七153)=瑞芳",
       "crew_ops": "潮州=(高)=彰化=(彰)=瑞芳"
     },
     "177": {
       "type_name": "E1000+PP+E1000",
       "formation": "七機P4",
       "route": "花蓮=斗南",
-      "crew_mech": "花蓮=(花H12)=七堵=(彰503)=彰化=(彰580)=斗南",
+      "crew_mech": "花蓮=(花H12)=樹林=(彰503)=彰化=(彰580)=斗南",
       "crew_ops": "全區間(基)"
     },
     "181": {
@@ -467,16 +467,16 @@
     },
     "202": {
       "type_name": "普悠瑪",
-      "formation": "花機T23",
+      "formation": "花機T22",
       "route": "樹調=花蓮",
       "crew_mech": "全區間(花HR3)",
       "crew_ops": "全區間(宜，週六)，全區間(花，週一)"
     },
     "203": {
       "type_name": "普悠瑪",
-      "formation": "北機T7",
+      "formation": "花機T22",
       "route": "花蓮=樹調",
-      "crew_mech": "全區間(二至五北208/六日一北2R2)",
+      "crew_mech": "全區間(北213)",
       "crew_ops": "全區間(花)"
     },
     "207": {
@@ -494,17 +494,17 @@
       "crew_ops": "全區間(花)"
     },
     "212": {
-      "type_name": "E500+PP+E500",
+      "type_name": "E1000+PP+E1000",
       "formation": "高機P21",
       "route": "樹調=花蓮",
       "crew_mech": "全區間(北201)",
-      "crew_ops": "全區間(宜)"
+      "crew_ops": "全區間(花)"
     },
     "215": {
       "type_name": "DMU",
       "formation": "花機D04ABC",
       "route": "花蓮=樹調",
-      "crew_mech": "全區間(北214)",
+      "crew_mech": "全區間(花H07)",
       "crew_ops": "全區間(宜)"
     },
     "217": {
@@ -515,18 +515,18 @@
       "crew_ops": "全區間(北)"
     },
     "218": {
-      "type_name": "太魯閣",
-      "formation": "北機T1",
+      "type_name": "普悠瑪",
+      "formation": "花機T22",
       "route": "樹調=花蓮",
       "crew_mech": "全區間(花H18)",
-      "crew_ops": "全區間(宜)"
+      "crew_ops": "全區間(花)"
     },
     "219": {
       "type_name": "普悠瑪",
-      "formation": "花機T22",
+      "formation": "北機T7",
       "route": "花蓮=樹調",
-      "crew_mech": "全區間(花H26)",
-      "crew_ops": "花蓮=(宜)=宜蘭=(北)=樹調"
+      "crew_mech": "全區間(花H11)",
+      "crew_ops": "全區間(北)"
     },
     "223": {
       "type_name": "EMU3000騰雲",
@@ -565,14 +565,14 @@
     },
     "233": {
       "type_name": "太魯閣",
-      "formation": "北機T3",
+      "formation": "北機T2",
       "route": "樹調=花蓮",
       "crew_mech": "全區間(花HR8)",
       "crew_ops": "全區間(花)"
     },
     "234": {
       "type_name": "太魯閣",
-      "formation": "北機T3",
+      "formation": "北機T2",
       "route": "花蓮=樹調",
       "crew_mech": "全區間(北2R5)",
       "crew_ops": "全區間(北)"
@@ -586,24 +586,24 @@
     },
     "236": {
       "type_name": "太魯閣",
-      "formation": "北機T4",
+      "formation": "北機T1",
       "route": "樹調=花蓮",
-      "crew_mech": "全區間(北2R2)",
+      "crew_mech": "全區間(北213)",
       "crew_ops": "全區間(北)"
     },
     "237": {
       "type_name": "普悠瑪",
-      "formation": "花機T23",
+      "formation": "花機T22",
       "route": "花蓮=樹調",
       "crew_mech": "全區間(北2R9)",
       "crew_ops": "全區間(北)"
     },
     "241": {
-      "type_name": "E500+PP+E500",
+      "type_name": "E1000+PP+E1000",
       "formation": "高機P21",
       "route": "花蓮=樹調",
       "crew_mech": "全區間(北207)",
-      "crew_ops": "全區間(宜)"
+      "crew_ops": "全區間(花)"
     },
     "246": {
       "type_name": "DMU",
@@ -614,14 +614,14 @@
     },
     "247": {
       "type_name": "太魯閣",
-      "formation": "北機T4",
+      "formation": "北機T1",
       "route": "花蓮=樹調",
       "crew_mech": "全區間(北211)",
       "crew_ops": "全區間(北)"
     },
     "248": {
-      "type_name": "太魯閣",
-      "formation": "北機T2",
+      "type_name": "普悠瑪",
+      "formation": "花機T22",
       "route": "樹調=花蓮",
       "crew_mech": "全區間(花H08)",
       "crew_ops": "全區間(宜)"
@@ -637,19 +637,19 @@
       "type_name": "EMU3000騰雲",
       "formation": "花機E22",
       "route": "樹調=壽豐",
-      "crew_mech": "全區間(花H17)",
+      "crew_mech": "全區間(花H11)",
       "crew_ops": "全區間(宜)"
     },
     "256": {
-      "type_name": "普悠瑪",
-      "formation": "花機T22",
+      "type_name": "太魯閣",
+      "formation": "北機T2",
       "route": "樹調=花蓮",
-      "crew_mech": "全區間(花H11)",
+      "crew_mech": "全區間(花H17)",
       "crew_ops": "全區間(花)"
     },
     "271": {
       "type_name": "普悠瑪",
-      "formation": "花機T21",
+      "formation": "北機T2",
       "route": "花蓮=彰化",
       "crew_mech": "花蓮=(花H01)=七堵=(七118)=彰化",
       "crew_ops": "全區間(竹)"
@@ -658,7 +658,7 @@
       "type_name": "E1000+PP+E1000",
       "formation": "高機P25",
       "route": "苗栗=花蓮",
-      "crew_mech": "苗栗=(七127)=七堵=(花H12)=花蓮",
+      "crew_mech": "苗栗=(七127)=七堵=(花H05)=花蓮",
       "crew_ops": "苗栗=(北)=樹林=(宜)=花蓮"
     },
     "273": {
@@ -670,23 +670,23 @@
     },
     "278": {
       "type_name": "普悠瑪",
-      "formation": "花機T22",
+      "formation": "北機T7",
       "route": "彰化=花蓮",
-      "crew_mech": "彰化=(彰508)=七堵=(七102)=花蓮",
+      "crew_mech": "彰化=(彰508)=七堵=(七104)=花蓮",
       "crew_ops": "彰化=(彰)=新竹=(花)=花蓮"
     },
     "280": {
       "type_name": "EMU3000騰雲",
       "formation": "花機E21",
       "route": "斗六=花蓮",
-      "crew_mech": "斗六=(彰517)=彰化=(彰502)=七堵=(七104)=花蓮",
+      "crew_mech": "斗六=(彰517)=彰化=(彰502)=七堵=(北206)=花蓮",
       "crew_ops": "全區間(基)"
     },
     "282": {
       "type_name": "普悠瑪",
       "formation": "花機T21",
       "route": "彰化=花蓮",
-      "crew_mech": "彰化=(七103)=七堵=(花H04)=花蓮",
+      "crew_mech": "彰化=(彰510)=七堵=(花H04)=花蓮",
       "crew_ops": "全區間(竹)"
     },
     "283": {
@@ -698,7 +698,7 @@
     },
     "285": {
       "type_name": "普悠瑪",
-      "formation": "花機T22",
+      "formation": "北機T7",
       "route": "花蓮=彰化",
       "crew_mech": "花蓮=(七101)=七堵=(彰515)=彰化",
       "crew_ops": "花蓮=(花)=新竹=(竹)=彰化"
@@ -719,7 +719,7 @@
     },
     "302": {
       "type_name": "EMU3000騰雲",
-      "formation": "七機E64",
+      "formation": "七機E66",
       "route": "臺東=新左營",
       "crew_mech": "全區間(東TR6)",
       "crew_ops": "全區間(花)"
@@ -733,9 +733,9 @@
     },
     "305": {
       "type_name": "EMU3000騰雲",
-      "formation": "七機E64",
+      "formation": "七機E66",
       "route": "新左營=臺東",
-      "crew_mech": "全區間(東T73)",
+      "crew_mech": "全區間(左905)",
       "crew_ops": "全區間(花)"
     },
     "306": {
@@ -754,7 +754,7 @@
     },
     "310": {
       "type_name": "EMU3000騰雲",
-      "formation": "七機E64",
+      "formation": "七機E66",
       "route": "臺東=新左營",
       "crew_mech": "全區間(東TR7)",
       "crew_ops": "全區間(花)"
@@ -826,19 +826,19 @@
       "type_name": "EMU3000騰雲",
       "formation": "東機E3",
       "route": "臺東=臺中",
-      "crew_mech": "臺東=(高874)=潮州=(彰526)=臺中",
+      "crew_mech": "臺東=(高875)=潮州=(高874)=新左營=(彰526)=臺中",
       "crew_ops": "全區間(高)"
     },
     "401": {
-      "type_name": "普悠瑪",
-      "formation": "北機T7",
+      "type_name": "太魯閣",
+      "formation": "北機T1",
       "route": "臺東=樹調",
       "crew_mech": "臺東=(東T68)=花蓮=(花H14)=樹調",
       "crew_ops": "全區間(北)"
     },
     "402": {
-      "type_name": "普悠瑪",
-      "formation": "北機T7",
+      "type_name": "太魯閣",
+      "formation": "北機T1",
       "route": "樹調=知本",
       "crew_mech": "樹調=(花H19)=花蓮=(花H76)=臺東=(東T43)=知本",
       "crew_ops": "全區間(花)"
@@ -854,7 +854,7 @@
       "type_name": "EMU3000騰雲",
       "formation": "高機E81",
       "route": "樹調=臺東",
-      "crew_mech": "樹調=(北204)=花蓮=(花H74)=臺東",
+      "crew_mech": "樹調=(北203)=花蓮=(花H74)=臺東",
       "crew_ops": "山佳=(北)=花蓮=(花)=臺東"
     },
     "407": {
@@ -875,14 +875,14 @@
       "type_name": "EMU3000騰雲",
       "formation": "高機E81",
       "route": "樹調=臺東",
-      "crew_mech": "樹調=(北203)=花蓮=(花H75)=臺東",
+      "crew_mech": "樹調=(花H12)=花蓮=(花H75)=臺東",
       "crew_ops": "全區間(花)"
     },
     "411": {
       "type_name": "EMU3000騰雲",
       "formation": "東機E1",
       "route": "新左營=樹調",
-      "crew_mech": "新左營=(東T82)=臺東=(一至五東T59/六日花HR13)=花蓮=(花H07)=樹調",
+      "crew_mech": "新左營=(東T82)=臺東=(一至五東T59/六日花HR13)=花蓮=(北214)=樹調",
       "crew_ops": "新左營=(高)=台東=(北)=樹林"
     },
     "415": {
@@ -893,15 +893,15 @@
       "crew_ops": "新左營=(高)=台東=(北)=樹林"
     },
     "417": {
-      "type_name": "普悠瑪",
-      "formation": "北機T7",
+      "type_name": "太魯閣",
+      "formation": "北機T1",
       "route": "知本=樹調",
       "crew_mech": "知本=(東T43)=花蓮=(花H17)=樹調",
       "crew_ops": "全區間(花)"
     },
     "418": {
       "type_name": "EMU3000騰雲",
-      "formation": "一六東機E3/日七機E62",
+      "formation": "東機E3",
       "route": "樹調=臺東",
       "crew_mech": "樹調=(北2R3)=花蓮=(東TR1)=臺東",
       "crew_ops": "全區間(花)"
@@ -922,9 +922,9 @@
     },
     "421": {
       "type_name": "EMU3000騰雲",
-      "formation": "高機E81",
+      "formation": "花機E22",
       "route": "臺東=樹調",
-      "crew_mech": "臺東=(東T45)=花蓮=(北203)=樹調",
+      "crew_mech": "臺東=(東T48)=花蓮=(北202)=樹調",
       "crew_ops": "全區間(花)"
     },
     "422": {
@@ -957,7 +957,7 @@
     },
     "427": {
       "type_name": "EMU3000騰雲",
-      "formation": "五日東機E3/六七機E62",
+      "formation": "東機E3",
       "route": "臺東=樹調",
       "crew_mech": "臺東=(花HR12)=花蓮=(北2R3)=樹調",
       "crew_ops": "全區間(花)"
@@ -973,7 +973,7 @@
       "type_name": "EMU3000騰雲",
       "formation": "花機E23",
       "route": "新左營=樹調",
-      "crew_mech": "新左營=(左902)=臺東=(花H74)=花蓮=(花H16)=樹調",
+      "crew_mech": "新左營=(左902)=臺東=(花H74)=花蓮=(北201)=樹調",
       "crew_ops": "新左營=(高)=台東=(花)=樹林"
     },
     "432": {
@@ -999,17 +999,17 @@
     },
     "438": {
       "type_name": "EMU3000騰雲",
-      "formation": "東機E2",
+      "formation": "東機E1",
       "route": "樹調=臺東",
       "crew_mech": "樹調=(花H07)=花蓮=(東T67)=臺東",
       "crew_ops": "全區間(北)"
     },
     "439": {
       "type_name": "EMU3000騰雲",
-      "formation": "東機E2",
+      "formation": "高機E81",
       "route": "臺東=樹調",
       "crew_mech": "臺東=(東T49)=花蓮=(北209)=樹調",
-      "crew_ops": "臺東=(花)=花蓮=(宜)=樹林"
+      "crew_ops": "臺東=(花)=花蓮=(宜)=山佳"
     },
     "441": {
       "type_name": "EMU3000騰雲",
@@ -1020,16 +1020,16 @@
     },
     "442": {
       "type_name": "EMU3000騰雲",
-      "formation": "東機E1",
+      "formation": "東機E2",
       "route": "樹調=臺東",
       "crew_mech": "樹調=(花H15)=花蓮=(東T48)=臺東",
       "crew_ops": "樹林=(北)=花蓮=(花)=臺東"
     },
     "443": {
       "type_name": "EMU3000騰雲",
-      "formation": "七機E64",
+      "formation": "七機E66",
       "route": "新左營=樹林",
-      "crew_mech": "新左營=(東TR8)=臺東=(花HR14)=花蓮=(七1R9)=樹林",
+      "crew_mech": "新左營=(高8R1)=臺東=(花HR14)=花蓮=(七1R9)=樹林",
       "crew_ops": "新左營=(花)=花蓮=(宜)=樹林"
     },
     "445": {
@@ -1047,8 +1047,8 @@
       "crew_ops": "全區間(花)"
     },
     "448": {
-      "type_name": "普悠瑪",
-      "formation": "北機T7",
+      "type_name": "太魯閣",
+      "formation": "北機T1",
       "route": "樹調=臺東",
       "crew_mech": "樹調=(北214)=花蓮=(花H79)=臺東",
       "crew_ops": "全區間(花)"
@@ -1062,7 +1062,7 @@
     },
     "452": {
       "type_name": "EMU3000騰雲",
-      "formation": "七機E64",
+      "formation": "七機E66",
       "route": "樹林=臺東",
       "crew_mech": "樹林=(七1R13)=宜蘭=(花HR2)=花蓮=(花HR15)=臺東",
       "crew_ops": "全區間(花)"
@@ -1071,8 +1071,8 @@
       "type_name": "EMU3000騰雲",
       "formation": "高機E82",
       "route": "員林=臺東",
-      "crew_mech": "員林=(彰507)=彰化=(七115)=七堵=(花H05)=花蓮=(東T68)=臺東",
-      "crew_ops": "員林=(彰)=彰化=(北)=樹林=(花)=臺東"
+      "crew_mech": "員林=(彰507)=彰化=(七115)=七堵=(七102)=花蓮=(東T68)=臺東",
+      "crew_ops": "員林=(北)=樹林=(花)=臺東"
     },
     "477": {
       "type_name": "EMU3000騰雲",
@@ -1085,8 +1085,8 @@
       "type_name": "莒光",
       "formation": "高機C4",
       "route": "彰化=潮州基地",
-      "crew_mech": "彰化=(嘉702)=嘉義=(高839)=潮州基地",
-      "crew_ops": "全區間(高)，行包：全區間(彰)"
+      "crew_mech": "彰化=(嘉702)=嘉義=(高838)=潮州基地",
+      "crew_ops": "全區間(高)\n行包：全區間(彰)"
     },
     "503": {
       "type_name": "莒光",
@@ -1096,31 +1096,31 @@
       "crew_ops": "全區間(高)"
     },
     "510": {
-      "type_name": "E500莒光",
+      "type_name": "莒光",
       "formation": "高機C5",
       "route": "新左營=七堵",
-      "crew_mech": "新左營=(左962)=嘉義=(嘉704)=彰化=(竹361)=新竹=(七147)=七堵",
+      "crew_mech": "新左營=(左962)=嘉義=(嘉701)=彰化=(竹361)=新竹=(七147)=七堵",
       "crew_ops": "新左營=(彰)=彰化=(基)=七堵"
     },
     "511": {
-      "type_name": "E500莒光",
+      "type_name": "莒光",
       "formation": "高機C5",
       "route": "七堵=新左營",
-      "crew_mech": "七堵=(七138)=新竹=(彰533)=彰化=(嘉704)=嘉義=(左962)=新左營",
+      "crew_mech": "七堵=(七138)=新竹=(彰534)=彰化=(嘉704)=嘉義=(左942)=新左營",
       "crew_ops": "七堵=(彰)=彰化=(嘉)=嘉義=(高)=新左營"
     },
     "516": {
-      "type_name": "E500莒光",
+      "type_name": "莒光",
       "formation": "高機C5",
       "route": "高雄=七堵",
       "crew_mech": "高雄=(高826)=嘉義=(嘉703)=彰化=(彰545)=新竹=(七138)=七堵",
       "crew_ops": "全區間(彰)"
     },
     "521": {
-      "type_name": "E500莒光",
+      "type_name": "莒光",
       "formation": "高機C5",
       "route": "七堵=潮州基地",
-      "crew_mech": "七堵=(竹306)=新竹=(竹357)=彰化=(嘉717)=嘉義=(高832)=潮州基地",
+      "crew_mech": "七堵=(竹304)=新竹=(竹357)=彰化=(嘉705)=嘉義=(高832)=潮州基地",
       "crew_ops": "七堵=(基)=新竹=(彰)=新左營=(高)=潮州"
     },
     "554": {
@@ -1128,21 +1128,21 @@
       "formation": "高機C4",
       "route": "潮州基地=花蓮",
       "crew_mech": "潮州基地=(高831)=嘉義=(一至四彰588/五六日例彰5R10)=彰化=(苗413)=新竹=(竹320)=七堵=(宜036)=宜蘭=(花H37)=花蓮",
-      "crew_ops": "潮州=(高)=彰化=(彰)=七堵=(基)=花蓮，行包：潮州=(彰)=彰化=(北)=花蓮"
+      "crew_ops": "潮州=(高)=彰化=(彰)=七堵=(基)=花蓮\n行包：潮州=(彰)=彰化=(北)=花蓮"
     },
     "602": {
       "type_name": "莒光",
       "formation": "高機C4",
       "route": "花蓮=臺東",
       "crew_mech": "全區間(花H72)",
-      "crew_ops": "全區間(花)，行包：全區間(花)"
+      "crew_ops": "全區間(花)\n行包：全區間(花)"
     },
     "653": {
       "type_name": "莒光",
       "formation": "高機C4",
       "route": "臺東=彰化",
       "crew_mech": "臺東=(東T69)=花蓮=(花H38)=宜蘭=(宜007)=七堵=(新C31)=新竹=(彰558)=彰化",
-      "crew_ops": "臺東=(花)=七堵=(彰)=彰化，行包：臺東=(花)=花蓮=(北)=彰化"
+      "crew_ops": "臺東=(花)=七堵=(彰)=彰化\n行包：臺東=(花)=花蓮=(北)=彰化"
     },
     "708": {
       "type_name": "莒光",
@@ -1167,23 +1167,23 @@
     },
     "1004": {
       "type_name": "EMU900",
-      "formation": "竹機U11A",
+      "formation": "竹機U13A",
       "route": "湖口=七堵",
-      "crew_mech": "全區間(七148)",
+      "crew_mech": "全區間(七135)",
       "crew_ops": "全區間(基)"
     },
     "1006": {
       "type_name": "EMU900",
-      "formation": "七機U1A",
+      "formation": "七機U2A",
       "route": "潮州基地=七堵",
       "crew_mech": "潮州基地=(高822)=嘉義=(嘉713)=彰化=(彰520)=七堵",
       "crew_ops": "潮州=(高)=嘉義=(彰)=七堵"
     },
     "1007": {
       "type_name": "EMU900",
-      "formation": "竹機U16A",
-      "route": "基隆=鶯歌",
-      "crew_mech": "全區間(北258)",
+      "formation": "竹機U15A",
+      "route": "七堵=鶯歌",
+      "crew_mech": "全區間(日一北258/二至六北273)",
       "crew_ops": "全區間(宜)"
     },
     "1034": {
@@ -1194,8 +1194,8 @@
       "crew_ops": "新左營=(彰)=新竹=(北)=七堵"
     },
     "1038": {
-      "type_name": "EMU700/800",
-      "formation": "竹機U6AB",
+      "type_name": "EMU900",
+      "formation": "七機U2A",
       "route": "潮州基地=七堵",
       "crew_mech": "潮州基地=(高865)=新左營=(左946)=嘉義=(嘉705)=彰化=(七117/週日七1R3)=七堵",
       "crew_ops": "潮州=(高)=彰化=(彰)=七堵"
@@ -1209,86 +1209,86 @@
     },
     "1104": {
       "type_name": "EMU900",
-      "formation": "竹機U16A",
+      "formation": "七機U2A",
       "route": "七堵=基隆",
-      "crew_mech": "全區間(北258)",
-      "crew_ops": "全區間(宜)"
+      "crew_mech": "全區間(七136)",
+      "crew_ops": "全區間(基)"
     },
     "1105": {
       "type_name": "EMU900",
-      "formation": "竹機U11A",
+      "formation": "竹機U10A",
       "route": "富岡基地=苗栗",
-      "crew_mech": "全區間(竹304)",
+      "crew_mech": "全區間(北288)",
       "crew_ops": "全區間(竹)"
     },
     "1106": {
       "type_name": "EMU900",
-      "formation": "竹機U9A",
+      "formation": "竹機U12A",
       "route": "樹調=基隆",
       "crew_mech": "全區間(北262)",
       "crew_ops": "全區間(北)"
     },
     "1107": {
       "type_name": "EMU900",
-      "formation": "七機U3A",
+      "formation": "七機U6A",
       "route": "七堵=苗栗",
       "crew_mech": "全區間(七134)",
-      "crew_ops": "七堵=(基)=新竹=(竹)=苗栗"
+      "crew_ops": "全區間(基)"
     },
     "1108": {
       "type_name": "EMU900",
-      "formation": "竹機U13A",
+      "formation": "竹機U14A",
       "route": "七堵=基隆",
-      "crew_mech": "全區間(竹320)",
+      "crew_mech": "全區間(竹310)",
       "crew_ops": "全區間(北)"
     },
     "1109": {
       "type_name": "EMU900",
-      "formation": "竹機U15A",
+      "formation": "北機U5A",
       "route": "樹調=新竹",
       "crew_mech": "全區間(北286)",
       "crew_ops": "全區間(北)"
     },
     "1110": {
       "type_name": "EMU900",
-      "formation": "竹機U11A",
+      "formation": "竹機U9A",
       "route": "南港=基隆",
       "crew_mech": "全區間(竹317)",
       "crew_ops": "全區間(北)"
     },
     "1112": {
       "type_name": "EMU900",
-      "formation": "竹機U13A",
+      "formation": "竹機U11A",
       "route": "新竹=基隆",
-      "crew_mech": "新竹=(北266)=新富=(竹301)=七堵=(竹319)=基隆",
+      "crew_mech": "新竹=(七146)=七堵=(二至六北258/日一北273)=基隆",
       "crew_ops": "全區間(竹)"
     },
     "1117": {
       "type_name": "EMU900",
-      "formation": "竹機U10A",
+      "formation": "竹機U12A",
       "route": "基隆=苗栗",
       "crew_mech": "基隆=(竹313)=新富=(北253)=苗栗",
       "crew_ops": "全區間(竹)"
     },
     "1120": {
-      "type_name": "EMU900",
-      "formation": "竹機U9A",
+      "type_name": "EMU700/800",
+      "formation": "竹機U5AB",
       "route": "富岡基地=基隆",
-      "crew_mech": "富岡基地=(竹302)=七堵=(竹321)=基隆",
+      "crew_mech": "全區間(竹302)",
       "crew_ops": "全區間(北)"
     },
     "1121": {
       "type_name": "EMU900",
       "formation": "竹機U12A",
       "route": "基隆=新竹",
-      "crew_mech": "全區間(七147)",
+      "crew_mech": "全區間(竹315)",
       "crew_ops": "全區間(基)"
     },
     "1122": {
       "type_name": "EMU900",
-      "formation": "七機U3A",
+      "formation": "竹機U15A",
       "route": "新竹=基隆",
-      "crew_mech": "新竹=(七146)=七堵=(竹301)=基隆",
+      "crew_mech": "新竹=(竹301)=七堵=(竹318)=基隆",
       "crew_ops": "全區間(北)"
     },
     "1123": {
@@ -1307,72 +1307,72 @@
     },
     "1127": {
       "type_name": "EMU900",
-      "formation": "竹機U12A",
-      "route": "七堵=苗栗",
-      "crew_mech": "七堵=(北273)=樹林=(北283)=苗栗",
-      "crew_ops": "全區間(北)"
+      "formation": "七機U4A",
+      "route": "基隆=苗栗",
+      "crew_mech": "全區間(苗406)",
+      "crew_ops": "基隆=(北)=新竹=(竹)=苗栗"
     },
     "1128": {
       "type_name": "EMU900",
       "formation": "七機U5A",
       "route": "苗栗=基隆",
       "crew_mech": "苗栗=(苗401)=七堵=(竹323)=基隆",
-      "crew_ops": "全區間(北)"
+      "crew_ops": "全區間(基)"
     },
     "1129": {
       "type_name": "EMU900",
-      "formation": "七機U4A",
+      "formation": "竹機U12A",
       "route": "基隆=富岡基地",
-      "crew_mech": "全區間(竹318)",
+      "crew_mech": "基隆=(北262)=樹林=(北287)=富岡基地",
       "crew_ops": "基隆=(北)=樹林=(竹)=北湖"
     },
     "1130": {
       "type_name": "EMU900",
-      "formation": "竹機U17A",
+      "formation": "竹機U13A",
       "route": "湖口=七堵",
       "crew_mech": "全區間(七148)",
       "crew_ops": "全區間(基)"
     },
     "1131": {
       "type_name": "EMU900",
-      "formation": "竹機U13A",
+      "formation": "竹機U14A",
       "route": "基隆=新竹",
-      "crew_mech": "全區間(竹320)",
+      "crew_mech": "全區間(竹319)",
       "crew_ops": "全區間(北)"
     },
     "1132": {
       "type_name": "EMU900",
-      "formation": "竹機U9A",
+      "formation": "七機U5A",
       "route": "新竹=基隆",
-      "crew_mech": "新竹=(北289)=樹林=(北252)=基隆",
+      "crew_mech": "新竹=(北281)=樹林=(北270)=基隆",
       "crew_ops": "全區間(基)"
     },
     "1134": {
       "type_name": "EMU900",
-      "formation": "七機U3A",
+      "formation": "北機U5A",
       "route": "新竹=基隆",
-      "crew_mech": "新竹=(北281)=樹林=(北251)=基隆",
+      "crew_mech": "新竹=(北289)=樹林=(北252)=基隆",
       "crew_ops": "新竹=(北)=樹林=(基)=基隆"
     },
     "1135": {
       "type_name": "EMU900",
-      "formation": "竹機U11A",
+      "formation": "竹機U14A",
       "route": "基隆=富岡基地",
-      "crew_mech": "全區間(竹317)",
+      "crew_mech": "全區間(竹320)",
       "crew_ops": "全區間(北)"
     },
     "1136": {
       "type_name": "EMU900",
-      "formation": "北機U5A",
+      "formation": "竹機U9A",
       "route": "富岡基地=瑞芳",
       "crew_mech": "富岡基地=(北276)=樹林=(北265)=瑞芳",
       "crew_ops": "全區間(北)"
     },
     "1137": {
       "type_name": "EMU900",
-      "formation": "七機U5A",
+      "formation": "竹機U11A",
       "route": "基隆=苗栗",
-      "crew_mech": "全區間(苗406)",
+      "crew_mech": "基隆=(二至六北258/日一北273)=樹林=(北283)=苗栗",
       "crew_ops": "全區間(竹)"
     },
     "1138": {
@@ -1391,16 +1391,16 @@
     },
     "1140": {
       "type_name": "EMU900",
-      "formation": "竹機U9A",
-      "route": "樹調=七堵",
-      "crew_mech": "全區間(七130)",
+      "formation": "竹機U11A",
+      "route": "樹調=基隆",
+      "crew_mech": "樹調=(七140)=七堵=(竹324)=基隆",
       "crew_ops": "全區間(基)"
     },
     "1141": {
       "type_name": "EMU900",
       "formation": "竹機U9A",
       "route": "基隆=新竹",
-      "crew_mech": "基隆=(竹321)=新富=(北278)=新竹",
+      "crew_mech": "基隆=(竹317)=新富=(竹308)=新竹",
       "crew_ops": "基隆=(北)=七堵=(竹)=新竹"
     },
     "1142": {
@@ -1419,31 +1419,31 @@
     },
     "1147": {
       "type_name": "EMU900",
-      "formation": "七機U3A",
+      "formation": "竹機U14A",
       "route": "基隆=苗栗",
-      "crew_mech": "基隆=(竹322)=七堵=(北261)=樹林=(北285)=苗栗",
+      "crew_mech": "基隆=(竹318)=樹林=(北285)=苗栗",
       "crew_ops": "全區間(北)"
     },
     "1148": {
       "type_name": "EMU900",
-      "formation": "竹機U11A",
-      "route": "苗栗=基隆",
-      "crew_mech": "苗栗=(竹304)=新富=(七135)=七堵=(竹306)=基隆",
-      "crew_ops": "全區間(竹)"
+      "formation": "竹機U10A",
+      "route": "苗栗=瑞芳",
+      "crew_mech": "苗栗=(北288)=樹林=(北277)=瑞芳",
+      "crew_ops": "苗栗=(竹)=七堵=(基)=瑞芳"
     },
     "1151": {
       "type_name": "EMU900",
-      "formation": "竹機U9A",
+      "formation": "七機U5A",
       "route": "基隆=新竹",
-      "crew_mech": "基隆=(北252)=七堵=(竹325)=新竹",
+      "crew_mech": "基隆=(竹323)=新富=(北278)=新竹",
       "crew_ops": "全區間(竹)"
     },
     "1152": {
       "type_name": "EMU900",
-      "formation": "竹機U14A",
-      "route": "竹南=基隆",
-      "crew_mech": "竹南=(北275)=七堵=(竹302)=基隆",
-      "crew_ops": "全區間(北)"
+      "formation": "竹機U12A",
+      "route": "新竹=瑞芳",
+      "crew_mech": "新竹=(竹315)=新富=(北256)=瑞芳",
+      "crew_ops": "新竹=(北)=七堵=(基)=瑞芳"
     },
     "1154": {
       "type_name": "EMU900",
@@ -1454,37 +1454,37 @@
     },
     "1157": {
       "type_name": "EMU900",
-      "formation": "七機U3A",
+      "formation": "北機U5A",
       "route": "基隆=苗栗",
-      "crew_mech": "基隆=(北251)=七堵=(苗407)=苗栗",
+      "crew_mech": "基隆=(北252)=七堵=(苗407)=苗栗",
       "crew_ops": "基隆=(基)=七堵=(竹)=新竹=(北)=苗栗"
     },
     "1158": {
       "type_name": "EMU900",
-      "formation": "七機U3A",
-      "route": "苗栗=瑞芳",
-      "crew_mech": "苗栗=(苗402)=七堵=(七143)=瑞芳",
-      "crew_ops": "苗栗=(竹)=新竹=(基)=瑞芳"
+      "formation": "七機U6A",
+      "route": "苗栗=基隆",
+      "crew_mech": "苗栗=(苗402)=七堵=(竹301)=基隆",
+      "crew_ops": "苗栗=(基)=新竹=(竹)=基隆"
     },
     "1160": {
-      "type_name": "EMU700/800",
-      "formation": "竹機U4AB",
-      "route": "富岡基地=松山",
-      "crew_mech": "全區間(竹326)",
+      "type_name": "EMU900",
+      "formation": "竹機U9A",
+      "route": "新竹=松山",
+      "crew_mech": "新竹=(竹316)=新富=(竹326)=松山",
       "crew_ops": "全區間(竹)"
     },
     "1161": {
       "type_name": "EMU900",
       "formation": "七機U4A",
       "route": "基隆=新竹",
-      "crew_mech": "基隆=(北274)=七堵=(七141)=新富=(竹312)=新竹",
+      "crew_mech": "基隆=(竹304)=七堵=(七141)=新富=(竹310)=新竹",
       "crew_ops": "全區間(北)"
     },
     "1162": {
       "type_name": "EMU900",
-      "formation": "竹機U12A",
+      "formation": "竹機U14A",
       "route": "新竹=基隆",
-      "crew_mech": "新竹=(竹363)=新富=(竹305)=基隆",
+      "crew_mech": "全區間(一至五七148)/新竹=(六日例竹319)=新富=(六日例七135)=基隆",
       "crew_ops": "全區間(北)"
     },
     "1163": {
@@ -1502,22 +1502,22 @@
       "crew_ops": "全區間(北)"
     },
     "1167": {
-      "type_name": "EMU900",
-      "formation": "竹機U15A",
-      "route": "基隆=苗栗",
-      "crew_mech": "基隆=(竹323)=新富=(北280)=苗栗",
+      "type_name": "EMU700/800",
+      "formation": "竹機U2AB",
+      "route": "基隆=富岡基地",
+      "crew_mech": "基隆=(竹303)=七堵=(七132)=富岡基地",
       "crew_ops": "全區間(竹)"
     },
     "1168": {
       "type_name": "EMU900",
-      "formation": "竹機U10A",
+      "formation": "竹機U12A",
       "route": "苗栗=基隆",
       "crew_mech": "苗栗=(北253)=樹林=(北263)=基隆",
       "crew_ops": "苗栗=(竹)=新竹=(基)=基隆"
     },
     "1170": {
       "type_name": "EMU900",
-      "formation": "七機U2A",
+      "formation": "北機U5A",
       "route": "樹林=七堵",
       "crew_mech": "全區間(北267)",
       "crew_ops": "全區間(北)"
@@ -1525,13 +1525,13 @@
     "1171": {
       "type_name": "EMU900",
       "formation": "竹機U10A",
-      "route": "瑞芳=新竹",
-      "crew_mech": "瑞芳=(北256)=樹林=(北255)=新竹",
-      "crew_ops": "全區間(竹)"
+      "route": "瑞芳=富岡基地",
+      "crew_mech": "全區間(北277)",
+      "crew_ops": "瑞芳=(基)=七堵=(竹)=北湖"
     },
     "1172": {
       "type_name": "EMU900",
-      "formation": "竹機U13A",
+      "formation": "竹機U9A",
       "route": "新竹=基隆",
       "crew_mech": "全區間(竹308)",
       "crew_ops": "全區間(基)"
@@ -1545,16 +1545,16 @@
     },
     "1177": {
       "type_name": "EMU900",
-      "formation": "竹機U14A",
+      "formation": "七機U6A",
       "route": "基隆=苗栗",
-      "crew_mech": "基隆=(竹302)=新富=(北287)=苗栗",
+      "crew_mech": "基隆=(竹301)=新富=(北287)=苗栗",
       "crew_ops": "全區間(北)"
     },
     "1178": {
       "type_name": "EMU900",
-      "formation": "竹機U12A",
+      "formation": "七機U4A",
       "route": "苗栗=基隆",
-      "crew_mech": "苗栗=(苗403)=七堵=(竹303)=基隆",
+      "crew_mech": "苗栗=(苗403)=七堵=(七145)=基隆",
       "crew_ops": "全區間(竹)"
     },
     "1180": {
@@ -1566,16 +1566,16 @@
     },
     "1181": {
       "type_name": "EMU900",
-      "formation": "竹機U9A",
-      "route": "基隆=新竹",
-      "crew_mech": "基隆=(七132)=新富=(北271)=新竹",
-      "crew_ops": "全區間(基)"
+      "formation": "竹機U12A",
+      "route": "瑞芳=新竹",
+      "crew_mech": "瑞芳=(北256)=樹林=(北255)=新竹",
+      "crew_ops": "瑞芳=(基)=七堵=(竹)=新竹"
     },
     "1182": {
       "type_name": "EMU900",
-      "formation": "竹機U9A",
+      "formation": "七機U5A",
       "route": "新竹=基隆",
-      "crew_mech": "新竹=(北278)=樹林=(北262)=基隆",
+      "crew_mech": "新竹=(北278)=樹林=(北262)=七堵=(北270)=基隆",
       "crew_ops": "全區間(北)"
     },
     "1183": {
@@ -1587,65 +1587,65 @@
     },
     "1187": {
       "type_name": "EMU900",
-      "formation": "竹機U12A",
+      "formation": "竹機U14A",
       "route": "基隆=苗栗",
       "crew_mech": "全區間(苗405)",
       "crew_ops": "全區間(北)"
     },
     "1188": {
       "type_name": "EMU900",
-      "formation": "七機U5A",
+      "formation": "竹機U11A",
       "route": "苗栗=基隆",
       "crew_mech": "苗栗=(北259)=樹林=(北269)=基隆",
       "crew_ops": "全區間(竹)"
     },
     "1191": {
       "type_name": "EMU900",
-      "formation": "七機U4A",
+      "formation": "竹機U12A",
       "route": "基隆=新竹",
-      "crew_mech": "基隆=(竹301)=新富=(竹315)=新竹",
+      "crew_mech": "基隆=(北263)=新富=(北271)=新竹",
       "crew_ops": "全區間(竹)"
     },
     "1192": {
       "type_name": "EMU900",
-      "formation": "竹機U9A",
+      "formation": "七機U4A",
       "route": "新竹=基隆",
-      "crew_mech": "新竹=(新C31)=七堵=(竹310)=基隆",
-      "crew_ops": "全區間(北)"
+      "crew_mech": "全區間(竹310)",
+      "crew_ops": "新竹=(北)=樹林=(基)=基隆"
     },
     "1194": {
       "type_name": "EMU900",
-      "formation": "竹機U9A",
-      "route": "富岡基地=瑞芳",
-      "crew_mech": "富岡基地=(竹310)=七堵=(北252)=瑞芳",
+      "formation": "竹機U12A",
+      "route": "竹南=瑞芳",
+      "crew_mech": "竹南=(北286)=樹林=(北264)=瑞芳",
       "crew_ops": "全區間(北)"
     },
     "1197": {
       "type_name": "EMU900",
-      "formation": "竹機U13A",
+      "formation": "七機U5A",
       "route": "基隆=苗栗",
-      "crew_mech": "基隆=(竹308)=七堵=(苗401)=苗栗",
+      "crew_mech": "全區間(苗401)",
       "crew_ops": "全區間(竹)"
     },
     "1198": {
       "type_name": "EMU900",
-      "formation": "七機U3A",
+      "formation": "竹機U14A",
       "route": "苗栗=基隆",
-      "crew_mech": "苗栗=(苗404)=七堵=(竹305)=基隆",
+      "crew_mech": "苗栗=(苗404)=七堵=(七127)=基隆",
       "crew_ops": "全區間(北)"
     },
     "1201": {
       "type_name": "EMU900",
-      "formation": "七機U5A",
+      "formation": "七機U4A",
       "route": "基隆=新竹",
-      "crew_mech": "基隆=(北272)=七堵=(七145)=新竹",
+      "crew_mech": "全區間(七145)",
       "crew_ops": "全區間(竹)"
     },
     "1202": {
       "type_name": "EMU900",
-      "formation": "七機U4A",
-      "route": "新竹=基隆",
-      "crew_mech": "新竹=(竹312)=七堵=(竹307)=基隆",
+      "formation": "竹機U14A",
+      "route": "富岡基地=基隆",
+      "crew_mech": "富岡基地=(竹312)=七堵=(苗402)=基隆",
       "crew_ops": "全區間(竹)"
     },
     "1203": {
@@ -1657,100 +1657,100 @@
     },
     "1207": {
       "type_name": "EMU900",
-      "formation": "竹機U9A",
+      "formation": "七機U5A",
       "route": "基隆=苗栗",
-      "crew_mech": "基隆=(北262)=樹林=(北266)=苗栗",
+      "crew_mech": "基隆=(北270)=樹林=(北266)=苗栗",
       "crew_ops": "全區間(北)"
     },
     "1208": {
       "type_name": "EMU900",
-      "formation": "七機U3A",
+      "formation": "北機U5A",
       "route": "苗栗=基隆",
-      "crew_mech": "苗栗=(七134)=七堵=(竹326)=基隆",
+      "crew_mech": "苗栗=(七134)=七堵=(竹306)=基隆",
       "crew_ops": "全區間(北)"
     },
     "1211": {
       "type_name": "EMU900",
-      "formation": "竹機U9A",
-      "route": "瑞芳=新竹",
-      "crew_mech": "瑞芳=(北252)=樹林=(北290)=新竹",
+      "formation": "竹機U11A",
+      "route": "基隆=新竹",
+      "crew_mech": "基隆=(北269)=七堵=(七139)=新竹",
       "crew_ops": "全區間(基)"
     },
     "1212": {
       "type_name": "EMU900",
-      "formation": "竹機U10A",
+      "formation": "竹機U12A",
       "route": "新竹=基隆",
-      "crew_mech": "新竹=(七136)=七堵=(苗403)=基隆",
+      "crew_mech": "新竹=(七136)=七堵=(北257)=基隆",
       "crew_ops": "全區間(北)"
     },
     "1214": {
       "type_name": "EMU900",
-      "formation": "竹機U13A",
+      "formation": "一至五竹機U16A/六日例竹機U10A",
       "route": "富岡基地=基隆",
-      "crew_mech": "全區間(竹311)",
+      "crew_mech": "富岡基地=(竹314)=七堵=(一至五竹308/六日例竹314)=基隆",
       "crew_ops": "全區間(竹)"
     },
     "1217": {
       "type_name": "EMU900",
-      "formation": "竹機U9A",
+      "formation": "竹機U14A",
       "route": "基隆=苗栗",
-      "crew_mech": "基隆=(竹310)=七堵=(七127)=苗栗",
+      "crew_mech": "全區間(七127)",
       "crew_ops": "全區間(北)"
     },
     "1218": {
       "type_name": "EMU900",
-      "formation": "竹機U15A",
+      "formation": "竹機U12A",
       "route": "苗栗=基隆",
-      "crew_mech": "苗栗=(北280)=樹林=(北284)=七堵=(竹308)=基隆",
+      "crew_mech": "苗栗=(北280)=樹林=(北284)=七堵=(苗403)=基隆",
       "crew_ops": "苗栗=(竹)=新竹=(基)=基隆"
     },
     "1221": {
       "type_name": "EMU900",
-      "formation": "七機U3A",
-      "route": "基隆=富岡基地",
-      "crew_mech": "全區間(竹305)",
+      "formation": "竹機U9A",
+      "route": "基隆=新竹",
+      "crew_mech": "全區間(竹307)",
       "crew_ops": "全區間(基)"
     },
     "1222": {
       "type_name": "EMU900",
-      "formation": "竹機U9A",
+      "formation": "竹機U12A",
       "route": "新竹=基隆",
-      "crew_mech": "新竹=(北271)=樹林=(北281)=基隆",
+      "crew_mech": "新竹=(北271)=樹林=(北265)=基隆",
       "crew_ops": "全區間(竹)"
     },
     "1223": {
       "type_name": "EMU900",
-      "formation": "竹機U15A",
+      "formation": "竹機U12A",
       "route": "瑞芳=新竹",
-      "crew_mech": "瑞芳=(北264)=新富=(北255)=新竹",
+      "crew_mech": "瑞芳=(北264)=新富=(竹323)=新竹",
       "crew_ops": "全區間(北)"
     },
     "1226": {
-      "type_name": "EMU700/800",
-      "formation": "竹機U4AB",
+      "type_name": "EMU900",
+      "formation": "竹機U9A",
       "route": "樹調=基隆",
-      "crew_mech": "全區間(北258)",
+      "crew_mech": "全區間(北289)",
       "crew_ops": "全區間(北)"
     },
     "1227": {
       "type_name": "EMU900",
-      "formation": "七機U3A",
+      "formation": "竹機U14A",
       "route": "基隆=苗栗",
       "crew_mech": "全區間(苗402)",
       "crew_ops": "全區間(北)"
     },
     "1228": {
       "type_name": "EMU900",
-      "formation": "竹機U14A",
+      "formation": "七機U6A",
       "route": "苗栗=基隆",
-      "crew_mech": "苗栗=(北287)=樹林=(北276)=基隆",
+      "crew_mech": "苗栗=(北287)=樹林=(北281)=基隆",
       "crew_ops": "苗栗=(北)=樹林=(基)=基隆"
     },
     "1231": {
       "type_name": "EMU900",
-      "formation": "七機U4A",
-      "route": "基隆=新豐",
-      "crew_mech": "全區間(竹307)",
+      "formation": "北機U5A",
+      "route": "基隆=新竹",
+      "crew_mech": "基隆=(竹306)=新富=(北263)=新竹",
       "crew_ops": "全區間(基)"
     },
     "1232": {
@@ -1758,90 +1758,90 @@
       "formation": "七機U4A",
       "route": "新竹=基隆",
       "crew_mech": "全區間(竹315)",
-      "crew_ops": "全區間(基)"
+      "crew_ops": "全區間(北)"
     },
     "1234": {
       "type_name": "EMU900",
-      "formation": "竹機U14A",
-      "route": "新竹=基隆",
-      "crew_mech": "新竹=(竹314)=樹林=(北265)=基隆",
+      "formation": "竹機U10A",
+      "route": "竹南=基隆",
+      "crew_mech": "竹南=(竹313)=七堵=(竹310)=基隆",
       "crew_ops": "全區間(竹)"
     },
     "1235": {
       "type_name": "EMU900",
-      "formation": "竹機U13A",
+      "formation": "竹機U12A",
       "route": "基隆=新竹",
-      "crew_mech": "基隆=(竹311)=七堵=(北257)=樹林=(北261)=新竹",
+      "crew_mech": "基隆=(北257)=樹林=(北261)=新竹",
       "crew_ops": "全區間(竹)"
     },
     "1237": {
       "type_name": "EMU900",
-      "formation": "竹機U10A",
+      "formation": "竹機U12A",
       "route": "基隆=苗栗",
       "crew_mech": "全區間(苗403)",
       "crew_ops": "全區間(竹)"
     },
     "1238": {
       "type_name": "EMU900",
-      "formation": "竹機U12A",
+      "formation": "竹機U14A",
       "route": "苗栗=基隆",
       "crew_mech": "苗栗=(北285)=樹林=(北273)=基隆",
       "crew_ops": "全區間(北)"
     },
     "1239": {
       "type_name": "EMU900",
-      "formation": "竹機U11A六日例/U17A非六日例",
+      "formation": "竹機U13A",
       "route": "七堵=富岡基地",
       "crew_mech": "全區間(七148)",
       "crew_ops": "全區間(基)"
     },
     "1241": {
       "type_name": "EMU900",
-      "formation": "竹機U11A",
-      "route": "基隆=新竹",
-      "crew_mech": "基隆=(北289)=新富=(竹324)=新竹",
+      "formation": "竹機U12A",
+      "route": "基隆=竹南",
+      "crew_mech": "基隆=(北265)=樹林=(北275)=竹南",
       "crew_ops": "全區間(北)"
     },
     "1242": {
       "type_name": "EMU900",
-      "formation": "七機U5A",
+      "formation": "竹機U11A",
       "route": "新竹=基隆",
-      "crew_mech": "新竹=(竹317)=七堵=(北269)=基隆",
-      "crew_ops": "全區間(竹)"
+      "crew_mech": "全區間(竹317)",
+      "crew_ops": "新竹=(竹)=七堵=(基)=基隆"
     },
     "1243": {
       "type_name": "EMU900",
-      "formation": "竹機U15A",
+      "formation": "竹機U16A",
       "route": "基隆=湖口",
       "crew_mech": "全區間(竹308)",
       "crew_ops": "全區間(竹)"
     },
     "1247": {
       "type_name": "EMU900",
-      "formation": "竹機U9A",
+      "formation": "七機U6A",
       "route": "基隆=苗栗",
-      "crew_mech": "基隆=(北281)=新竹=(七145)=苗栗",
+      "crew_mech": "基隆=(北281)=新竹=(苗413)=苗栗",
       "crew_ops": "全區間(基)"
     },
     "1248": {
       "type_name": "EMU900",
-      "formation": "竹機U13A",
+      "formation": "七機U5A",
       "route": "苗栗=基隆",
-      "crew_mech": "苗栗=(苗406)=七堵=(竹312)=基隆",
+      "crew_mech": "苗栗=(苗406)=七堵=(北269)=基隆",
       "crew_ops": "全區間(竹)"
     },
     "1251": {
       "type_name": "EMU900",
-      "formation": "竹機U14A",
-      "route": "基隆=竹南",
-      "crew_mech": "基隆=(北265)=樹林=(北275)=竹南",
+      "formation": "竹機U9A",
+      "route": "基隆=新竹",
+      "crew_mech": "基隆=(北289)=新富=(竹324)=新竹",
       "crew_ops": "全區間(北)"
     },
     "1252": {
       "type_name": "EMU900",
       "formation": "竹機U9A",
       "route": "新竹=基隆",
-      "crew_mech": "全區間(竹319)",
+      "crew_mech": "新竹=(竹319)=七堵=(竹316)=基隆",
       "crew_ops": "全區間(竹)"
     },
     "1254": {
@@ -1860,37 +1860,37 @@
     },
     "1258": {
       "type_name": "EMU900",
-      "formation": "竹機U9A",
+      "formation": "七機U5A",
       "route": "苗栗=基隆",
-      "crew_mech": "苗栗=(北266)=新竹=(竹321)=七堵=(北260)=基隆",
-      "crew_ops": "苗栗=(北)=樹林=(基)=基隆"
+      "crew_mech": "苗栗=(北266)=新富=(竹321)=七堵=(北260)=基隆",
+      "crew_ops": "苗栗=(北)=樹林=(宜)=七堵=(基)=基隆"
     },
     "1261": {
       "type_name": "EMU900",
-      "formation": "竹機U12A",
+      "formation": "竹機U14A",
       "route": "基隆=中壢",
       "crew_mech": "基隆=(北273)=七堵=(七137)=中壢",
       "crew_ops": "全區間(基)"
     },
     "1262": {
       "type_name": "EMU900",
-      "formation": "竹機U15A",
+      "formation": "北機U5A",
       "route": "新竹=基隆",
-      "crew_mech": "新竹=(北255)=樹林=(北272)=基隆",
-      "crew_ops": "全區間(基)"
+      "crew_mech": "新竹=(北263)=樹林=(北278)=基隆",
+      "crew_ops": "全區間(竹)"
     },
     "1263": {
       "type_name": "EMU900",
-      "formation": "竹機U9A",
+      "formation": "竹機U10A",
       "route": "基隆=新竹",
       "crew_mech": "全區間(竹310)",
       "crew_ops": "全區間(竹)"
     },
     "1265": {
       "type_name": "EMU900",
-      "formation": "七機U3A",
+      "formation": "竹機U11A",
       "route": "富岡基地=苗栗",
-      "crew_mech": "全區間(竹350)",
+      "crew_mech": "全區間(竹333)",
       "crew_ops": "全區間(竹)"
     },
     "1267": {
@@ -1902,30 +1902,30 @@
     },
     "1268": {
       "type_name": "EMU900",
-      "formation": "竹機U9A",
+      "formation": "竹機U14A",
       "route": "苗栗=基隆",
       "crew_mech": "全區間(七144)",
       "crew_ops": "全區間(北)"
     },
     "1271": {
       "type_name": "EMU900",
-      "formation": "七機U3A",
-      "route": "基隆=新竹",
-      "crew_mech": "基隆=(七132)=七堵=(竹316)=新竹",
+      "formation": "竹機U10A",
+      "route": "基隆=富岡基地",
+      "crew_mech": "全區間(竹312)",
       "crew_ops": "全區間(北)"
     },
     "1272": {
       "type_name": "EMU900",
-      "formation": "竹機U13A",
+      "formation": "竹機U12A",
       "route": "新竹=基隆",
-      "crew_mech": "新竹=(北261)=新富=(竹323)=基隆",
-      "crew_ops": "全區間(竹)"
+      "crew_mech": "新竹=(北261)=新富=(北272)=基隆",
+      "crew_ops": "全區間(北)"
     },
     "1273": {
       "type_name": "EMU900",
-      "formation": "竹機U13A",
+      "formation": "竹機U9A",
       "route": "基隆=新竹",
-      "crew_mech": "全區間(竹312)",
+      "crew_mech": "全區間(竹316)",
       "crew_ops": "全區間(基)"
     },
     "1274": {
@@ -1944,72 +1944,72 @@
     },
     "1278": {
       "type_name": "EMU900",
-      "formation": "七機U3A",
+      "formation": "竹機U14A",
       "route": "苗栗=基隆",
       "crew_mech": "全區間(苗407)",
       "crew_ops": "苗栗=(竹)=樹林=(基)=基隆"
     },
     "1280": {
       "type_name": "EMU900",
-      "formation": "竹機U12A",
+      "formation": "竹機U14A",
       "route": "中壢=瑞芳",
       "crew_mech": "全區間(七137)",
       "crew_ops": "全區間(基)"
     },
     "1281": {
       "type_name": "EMU900",
-      "formation": "竹機U9A",
+      "formation": "七機U5A",
       "route": "基隆=新竹",
       "crew_mech": "全區間(北260)",
       "crew_ops": "基隆=(基)=樹林=(北)=新竹"
     },
     "1282": {
       "type_name": "EMU900",
-      "formation": "竹機U11A",
+      "formation": "竹機U9A",
       "route": "新竹=南港",
       "crew_mech": "全區間(竹324)",
       "crew_ops": "全區間(北)"
     },
     "1283": {
       "type_name": "EMU900",
-      "formation": "七機U2A",
+      "formation": "北機U5A",
       "route": "基隆=楊梅",
       "crew_mech": "全區間(北278)",
       "crew_ops": "基隆=(竹)=七堵=(基)=楊梅"
     },
     "1287": {
       "type_name": "EMU700/800",
-      "formation": "竹機U4AB",
+      "formation": "竹機U5AB",
       "route": "基隆=中壢",
       "crew_mech": "全區間(竹311)",
       "crew_ops": "全區間(竹)"
     },
     "1288": {
       "type_name": "EMU900",
-      "formation": "竹機U10A",
+      "formation": "竹機U12A",
       "route": "苗栗=基隆",
       "crew_mech": "全區間(苗405)",
       "crew_ops": "全區間(竹)"
     },
     "1289": {
       "type_name": "EMU900",
-      "formation": "竹機U15A",
+      "formation": "竹機U12A",
       "route": "基隆=樹調",
       "crew_mech": "全區間(北272)",
       "crew_ops": "全區間(北)"
     },
     "1295": {
-      "type_name": "EMU500 8輛",
-      "formation": "北機U2AB",
+      "type_name": "EMU900",
+      "formation": "竹機U14A",
       "route": "基隆=七堵",
-      "crew_mech": "全區間(北268)",
+      "crew_mech": "全區間(苗407)",
       "crew_ops": "全區間(基)"
     },
     "1298": {
       "type_name": "EMU900",
-      "formation": "竹機U9A",
-      "route": "苗栗=桃園",
-      "crew_mech": "全區間(七145)",
+      "formation": "七機U6A",
+      "route": "苗栗=七堵",
+      "crew_mech": "全區間(七143)",
       "crew_ops": "全區間(基)"
     },
     "1701": {
@@ -2114,14 +2114,14 @@
       "type_name": "EMU500",
       "formation": "彰機U6A",
       "route": "六家=新竹",
-      "crew_mech": "全區間(竹350)",
+      "crew_mech": "全區間(竹362)",
       "crew_ops": "全區間(竹)"
     },
     "1718": {
       "type_name": "EMU500",
       "formation": "彰機U6A",
       "route": "新竹=六家",
-      "crew_mech": "全區間(竹350)",
+      "crew_mech": "全區間(竹362)",
       "crew_ops": "全區間(竹)"
     },
     "1721": {
@@ -2142,14 +2142,14 @@
       "type_name": "EMU500",
       "formation": "彰機U6A",
       "route": "六家=新竹",
-      "crew_mech": "全區間(竹350)",
+      "crew_mech": "全區間(竹362)",
       "crew_ops": "全區間(竹)"
     },
     "1724": {
       "type_name": "EMU500",
       "formation": "彰機U6A",
       "route": "新竹=六家",
-      "crew_mech": "全區間(竹350)",
+      "crew_mech": "全區間(竹362)",
       "crew_ops": "全區間(竹)"
     },
     "1725": {
@@ -2170,14 +2170,14 @@
       "type_name": "EMU500",
       "formation": "彰機U6A",
       "route": "六家=新竹",
-      "crew_mech": "全區間(竹350)",
+      "crew_mech": "全區間(竹362)",
       "crew_ops": "全區間(竹)"
     },
     "1728": {
       "type_name": "EMU500",
       "formation": "彰機U6A",
       "route": "新竹=六家",
-      "crew_mech": "全區間(竹350)",
+      "crew_mech": "全區間(竹362)",
       "crew_ops": "全區間(竹)"
     },
     "1731": {
@@ -2240,14 +2240,14 @@
       "type_name": "EMU500",
       "formation": "彰機U6A",
       "route": "六家=新竹",
-      "crew_mech": "全區間(竹304)",
+      "crew_mech": "全區間(竹363)",
       "crew_ops": "全區間(竹)"
     },
     "1742": {
       "type_name": "EMU500",
       "formation": "彰機U6A",
       "route": "新竹=六家",
-      "crew_mech": "全區間(竹304)",
+      "crew_mech": "全區間(竹363)",
       "crew_ops": "全區間(竹)"
     },
     "1743": {
@@ -2268,14 +2268,14 @@
       "type_name": "EMU500",
       "formation": "彰機U6A",
       "route": "六家=新竹",
-      "crew_mech": "全區間(竹304)",
+      "crew_mech": "全區間(竹363)",
       "crew_ops": "全區間(竹)"
     },
     "1746": {
       "type_name": "EMU500",
       "formation": "彰機U6A",
       "route": "新竹=六家",
-      "crew_mech": "全區間(竹304)",
+      "crew_mech": "全區間(竹363)",
       "crew_ops": "全區間(竹)"
     },
     "1747": {
@@ -2296,14 +2296,14 @@
       "type_name": "EMU500",
       "formation": "彰機U6A",
       "route": "六家=新竹",
-      "crew_mech": "全區間(竹313)",
+      "crew_mech": "全區間(竹363)",
       "crew_ops": "全區間(竹)"
     },
     "1752": {
       "type_name": "EMU500",
       "formation": "彰機U6A",
       "route": "新竹=六家",
-      "crew_mech": "全區間(竹313)",
+      "crew_mech": "全區間(竹363)",
       "crew_ops": "全區間(竹)"
     },
     "1753": {
@@ -2324,14 +2324,14 @@
       "type_name": "EMU500",
       "formation": "彰機U6A",
       "route": "六家=新竹",
-      "crew_mech": "全區間(竹321)",
+      "crew_mech": "全區間(竹362)",
       "crew_ops": "全區間(竹)"
     },
     "1756": {
       "type_name": "EMU500",
       "formation": "彰機U6A",
       "route": "新竹=六家",
-      "crew_mech": "全區間(竹321)",
+      "crew_mech": "全區間(竹362)",
       "crew_ops": "全區間(竹)"
     },
     "1757": {
@@ -2503,301 +2503,301 @@
       "crew_ops": "全區間(竹)"
     },
     "1801": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K12AB",
       "route": "內灣=新竹",
       "crew_mech": "全區間(新C58)",
       "crew_ops": "全區間(竹)"
     },
     "1802": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K11AB",
       "route": "新竹=內灣",
       "crew_mech": "全區間(新C51)",
       "crew_ops": "全區間(竹)"
     },
     "1803": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K11AB",
       "route": "內灣=新竹",
       "crew_mech": "全區間(新C51)",
       "crew_ops": "全區間(竹)"
     },
     "1804": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K12AB",
       "route": "新竹=內灣",
       "crew_mech": "全區間(新C58)",
       "crew_ops": "全區間(竹)"
     },
     "1805": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K12AB",
       "route": "內灣=竹中",
       "crew_mech": "全區間(新C58)",
       "crew_ops": "全區間(竹)"
     },
     "1806": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K11AB",
       "route": "新竹=內灣",
       "crew_mech": "全區間(新C51)",
       "crew_ops": "全區間(竹)"
     },
     "1807": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K11AB",
       "route": "內灣=北新竹",
       "crew_mech": "全區間(新C51)",
       "crew_ops": "全區間(竹)"
     },
     "1808": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K12AB",
       "route": "竹中=內灣",
       "crew_mech": "全區間(新C54)",
       "crew_ops": "全區間(竹)"
     },
     "1811": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K12AB",
       "route": "內灣=北新竹",
       "crew_mech": "全區間(新C54)",
       "crew_ops": "全區間(竹)"
     },
     "1812": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K11AB",
       "route": "北新竹=內灣",
       "crew_mech": "全區間(新C60)",
       "crew_ops": "全區間(竹)"
     },
     "1813": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K11AB",
       "route": "內灣=北新竹",
       "crew_mech": "全區間(新C60)",
       "crew_ops": "全區間(竹)"
     },
     "1814": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K12AB",
       "route": "北新竹=內灣",
       "crew_mech": "全區間(新C54)",
       "crew_ops": "全區間(竹)"
     },
     "1815": {
-      "type_name": "DRC1000 4輛",
-      "formation": "彰機K14ABCD",
+      "type_name": "DRC(4車)",
+      "formation": "彰機K15ABCD",
       "route": "內灣=北新竹",
       "crew_mech": "全區間(新C54)",
       "crew_ops": "全區間(竹)"
     },
     "1816": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K11AB",
       "route": "北新竹=內灣",
       "crew_mech": "全區間(新C60)",
       "crew_ops": "全區間(竹)"
     },
     "1817": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K12AB",
       "route": "內灣=新竹",
       "crew_mech": "全區間(新C54)",
       "crew_ops": "全區間(竹)"
     },
     "1818": {
-      "type_name": "DRC1000 4輛",
-      "formation": "彰機K14ABCD",
+      "type_name": "DRC(4車)",
+      "formation": "彰機K15ABCD",
       "route": "北新竹=內灣",
       "crew_mech": "全區間(新C55)",
       "crew_ops": "全區間(竹)"
     },
     "1819": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K11AB",
       "route": "內灣=北新竹",
       "crew_mech": "全區間(新C60)",
       "crew_ops": "全區間(竹)"
     },
     "1820": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K13AB",
       "route": "新竹=內灣",
       "crew_mech": "全區間(新C55)",
       "crew_ops": "全區間(竹)"
     },
     "1821": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K13AB",
       "route": "內灣=北新竹",
       "crew_mech": "全區間(新C55)",
       "crew_ops": "全區間(竹)"
     },
     "1822": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K11AB",
       "route": "北新竹=內灣",
       "crew_mech": "全區間(新C53)",
       "crew_ops": "全區間(竹)"
     },
     "1823": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K11AB",
       "route": "內灣=北新竹",
       "crew_mech": "全區間(新C53)",
       "crew_ops": "全區間(竹)"
     },
     "1824": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K13AB",
       "route": "北新竹=內灣",
       "crew_mech": "全區間(新C58)",
       "crew_ops": "全區間(竹)"
     },
     "1825": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K13AB",
       "route": "內灣=北新竹",
       "crew_mech": "全區間(新C58)",
       "crew_ops": "全區間(竹)"
     },
     "1826": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K11AB",
       "route": "北新竹=內灣",
       "crew_mech": "全區間(新C53)",
       "crew_ops": "全區間(竹)"
     },
     "1827": {
-      "type_name": "DRC1000 4輛",
-      "formation": "彰機K14ABCD",
+      "type_name": "DRC(4車)",
+      "formation": "彰機K15ABCD",
       "route": "內灣=北新竹",
       "crew_mech": "全區間(新C53)",
       "crew_ops": "全區間(竹)"
     },
     "1828": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K13AB",
       "route": "北新竹=內灣",
       "crew_mech": "全區間(新C59)",
       "crew_ops": "全區間(竹)"
     },
     "1831": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K11AB",
       "route": "內灣=新竹",
       "crew_mech": "全區間(新C53)",
       "crew_ops": "全區間(竹)"
     },
     "1832": {
-      "type_name": "DRC1000 4輛",
-      "formation": "彰機K14ABCD",
+      "type_name": "DRC(4車)",
+      "formation": "彰機K15ABCD",
       "route": "北新竹=內灣",
       "crew_mech": "全區間(新C54)",
       "crew_ops": "全區間(竹)"
     },
     "1833": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K13AB",
       "route": "內灣=北新竹",
       "crew_mech": "全區間(新C59)",
       "crew_ops": "全區間(竹)"
     },
     "1834": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K12AB",
       "route": "新竹=內灣",
       "crew_mech": "全區間(新C54)",
       "crew_ops": "全區間(竹)"
     },
     "1835": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K12AB",
       "route": "內灣=北新竹",
       "crew_mech": "全區間(新C54)",
       "crew_ops": "全區間(竹)"
     },
     "1836": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K13AB",
       "route": "北新竹=內灣",
       "crew_mech": "全區間(新C59)",
       "crew_ops": "全區間(竹)"
     },
     "1837": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K13AB",
       "route": "內灣=北新竹",
       "crew_mech": "全區間(新C59)",
       "crew_ops": "全區間(竹)"
     },
     "1838": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K12AB",
       "route": "北新竹=內灣",
       "crew_mech": "全區間(新C57)",
       "crew_ops": "全區間(竹)"
     },
     "1839": {
-      "type_name": "DRC1000 4輛",
-      "formation": "彰機K14ABCD",
+      "type_name": "DRC(4車)",
+      "formation": "彰機K15ABCD",
       "route": "內灣=新竹",
       "crew_mech": "全區間(新C59)",
       "crew_ops": "全區間(竹)"
     },
     "1841": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K12AB",
       "route": "內灣=新竹",
       "crew_mech": "全區間(新C57)",
       "crew_ops": "全區間(竹)"
     },
     "1842": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K11AB",
       "route": "新竹=內灣",
       "crew_mech": "全區間(新C55)",
       "crew_ops": "全區間(竹)"
     },
     "1843": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K11AB",
       "route": "內灣=新竹",
       "crew_mech": "全區間(新C55)",
       "crew_ops": "全區間(竹)"
     },
     "1844": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K12AB",
       "route": "新竹=竹東",
       "crew_mech": "全區間(新C57)",
       "crew_ops": "全區間(竹)"
     },
     "1845": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K13AB",
       "route": "內灣=新竹",
       "crew_mech": "全區間(新C52)",
       "crew_ops": "全區間(竹)"
     },
     "1846": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K13AB",
       "route": "新竹=內灣",
       "crew_mech": "全區間(新C52)",
       "crew_ops": "全區間(竹)"
     },
     "1847": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K13AB",
       "route": "內灣=新竹",
       "crew_mech": "全區間(新C56)",
       "crew_ops": "全區間(竹)"
     },
     "1848": {
-      "type_name": "DRC1000 2輛",
+      "type_name": "一至五DRC2車/六日例DRC4車",
       "formation": "彰機K13AB",
       "route": "北新竹=內灣",
       "crew_mech": "全區間(新C56)",
@@ -2805,13 +2805,13 @@
     },
     "2003": {
       "type_name": "EMU800",
-      "formation": "嘉機U4AB",
+      "formation": "嘉機U2AB",
       "route": "彰化=嘉義",
       "crew_mech": "全區間(嘉709)",
       "crew_ops": "全區間(嘉)"
     },
     "2004": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U5AB",
       "route": "嘉義=臺中",
       "crew_mech": "全區間(彰579)",
@@ -2819,23 +2819,23 @@
     },
     "2005": {
       "type_name": "EMU900",
-      "formation": "七機U4A",
+      "formation": "七機U6A",
       "route": "七堵=彰化",
       "crew_mech": "七堵=(竹314)=新竹=(彰559)=彰化",
-      "crew_ops": "全區間(彰)"
+      "crew_ops": "七堵=(北)=樹林=(彰)=彰化"
     },
     "2007": {
       "type_name": "EMU900",
-      "formation": "七機U1A",
+      "formation": "七機U2A",
       "route": "基隆=二水",
-      "crew_mech": "基隆=(七136)=新竹=(彰552)=二水",
+      "crew_mech": "基隆=(七136)=新竹=(彰540)=二水",
       "crew_ops": "基隆=(基)=七堵=(彰)=二水"
     },
     "2008": {
       "type_name": "EMU900",
-      "formation": "七機U1A",
-      "route": "彰化=七堵",
-      "crew_mech": "彰化=(彰534)=新竹=(北288)=七堵",
+      "formation": "七機U4A",
+      "route": "彰化=基隆",
+      "crew_mech": "彰化=(彰534)=新竹=(竹304)=基隆",
       "crew_ops": "全區間(基)"
     },
     "2009": {
@@ -2846,8 +2846,8 @@
       "crew_ops": "全區間(彰)"
     },
     "2013": {
-      "type_name": "EMU700/800",
-      "formation": "竹機U6AB",
+      "type_name": "EMU900",
+      "formation": "七機U3A",
       "route": "七堵=嘉義",
       "crew_mech": "七堵=(七116)=彰化=(彰541)=嘉義",
       "crew_ops": "七堵=(基)=彰化=(高)=嘉義"
@@ -2861,34 +2861,34 @@
     },
     "2016": {
       "type_name": "EMU900",
-      "formation": "七機U1A",
+      "formation": "七機U2A",
       "route": "二水=臺中",
-      "crew_mech": "二水=(彰552)=彰化=(彰569)=臺中",
+      "crew_mech": "全區間(彰540)",
       "crew_ops": "全區間(彰)"
     },
     "2019": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U5AB",
       "route": "新竹=斗六",
       "crew_mech": "新竹=(彰5R2)=彰化=(嘉726)=斗六",
       "crew_ops": "全區間(彰)"
     },
     "2021": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U5AB",
       "route": "豐原=彰化",
       "crew_mech": "全區間(彰571)",
       "crew_ops": "全區間(彰)"
     },
     "2023": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U5AB",
       "route": "臺中=斗六",
       "crew_mech": "全區間(嘉726)",
       "crew_ops": "全區間(彰)"
     },
     "2027": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U5AB",
       "route": "臺中=嘉義",
       "crew_mech": "全區間(彰579)",
@@ -2909,7 +2909,7 @@
       "crew_ops": "全區間(彰)"
     },
     "2032": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U5AB",
       "route": "彰化=新竹",
       "crew_mech": "全區間(彰5R2)",
@@ -2917,7 +2917,7 @@
     },
     "2033": {
       "type_name": "EMU900",
-      "formation": "七機U1A",
+      "formation": "七機U4A",
       "route": "七堵=彰化",
       "crew_mech": "七堵=(七146)=新竹=(彰560)=彰化",
       "crew_ops": "全區間(基)"
@@ -2938,21 +2938,21 @@
     },
     "2037": {
       "type_name": "EMU900",
-      "formation": "竹機U16A",
+      "formation": "七機U2A",
       "route": "七堵=臺中",
       "crew_mech": "全區間(彰520)",
       "crew_ops": "全區間(基)"
     },
     "2042": {
       "type_name": "EMU900",
-      "formation": "七機U4A",
+      "formation": "七機U6A",
       "route": "二水=七堵",
       "crew_mech": "二水=(彰548)=新竹=(北290)=桃園=(竹318)=七堵",
-      "crew_ops": "二水=(彰)=新竹=(北)=七堵"
+      "crew_ops": "二水=(彰)=樹林=(北)=七堵"
     },
     "2046": {
       "type_name": "EMU900",
-      "formation": "竹機U16A",
+      "formation": "七機U3A",
       "route": "彰化=七堵",
       "crew_mech": "彰化=(彰556)=新竹=(七139)=七堵",
       "crew_ops": "全區間(竹)"
@@ -2966,27 +2966,27 @@
     },
     "2103": {
       "type_name": "EMU800",
-      "formation": "嘉機U4AB",
+      "formation": "嘉機U6AB",
       "route": "新竹=嘉義",
       "crew_mech": "新竹=(彰555)=彰化=(嘉703)=嘉義",
       "crew_ops": "新竹=(竹)=彰化=(嘉)=嘉義"
     },
     "2113": {
-      "type_name": "EMU900",
-      "formation": "竹機U15A",
+      "type_name": "EMU700/800",
+      "formation": "竹機U7AB",
       "route": "富岡基地=嘉義",
       "crew_mech": "富岡基地=(竹361)=彰化=(一至四彰587/五六日例彰5R11)=嘉義",
       "crew_ops": "北湖=(彰)=彰化=(嘉)=嘉義"
     },
     "2114": {
-      "type_name": "EMU900",
-      "formation": "竹機U14A",
+      "type_name": "EMU700/800",
+      "formation": "竹機U4AB",
       "route": "彰化=基隆",
-      "crew_mech": "彰化=(彰533)=新竹=(竹303)=七堵=(竹324)=基隆",
+      "crew_mech": "彰化=(彰533)=新竹=(竹303)=七堵=(竹325)=基隆",
       "crew_ops": "彰化=(彰)=新竹=(基)=基隆"
     },
     "2115": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U5AB",
       "route": "豐原=彰化",
       "crew_mech": "全區間(彰566)",
@@ -3002,58 +3002,58 @@
     "2120": {
       "type_name": "EMU700/800",
       "formation": "竹機U2AB",
-      "route": "二水=富岡基地",
-      "crew_mech": "二水=(水605)=新竹=(竹357)=富岡基地",
-      "crew_ops": "全區間(彰)"
+      "route": "二水=基隆",
+      "crew_mech": "二水=(水605)=新竹=(北275)=七堵=(竹303)=基隆",
+      "crew_ops": "二水=(彰)=新竹=(竹)=基隆"
     },
     "2122": {
       "type_name": "EMU800",
-      "formation": "嘉機U2AB",
+      "formation": "嘉機U4AB",
       "route": "彰化=后里",
       "crew_mech": "全區間(嘉730)",
       "crew_ops": "全區間(彰)"
     },
     "2123": {
       "type_name": "EMU700/800",
-      "formation": "竹機U5AB",
+      "formation": "竹機U7AB",
       "route": "富岡基地=嘉義",
       "crew_mech": "富岡基地=(竹360)=彰化=(嘉722)=嘉義",
-      "crew_ops": "富岡基地=(彰)=彰化=(嘉)=嘉義"
+      "crew_ops": "全區間(彰)"
     },
     "2124": {
       "type_name": "EMU700/800",
-      "formation": "竹機U5AB",
-      "route": "嘉義=富岡基地",
-      "crew_mech": "嘉義=(彰562)=彰化=(竹356)=富岡基地",
-      "crew_ops": "嘉義=(嘉)=彰化=(彰)=富岡基地"
+      "formation": "竹機U6AB",
+      "route": "嘉義=基隆",
+      "crew_mech": "嘉義=(彰562)=彰化=(竹356)=新富=(竹307)=基隆",
+      "crew_ops": "嘉義=(嘉)=彰化=(彰)=新竹=(竹)=基隆"
     },
     "2128": {
-      "type_name": "EMU700/800",
-      "formation": "竹機U5AB",
+      "type_name": "EMU800",
+      "formation": "嘉機U5AB",
       "route": "嘉義=銅鑼",
-      "crew_mech": "嘉義=(嘉728)=彰化=(嘉711)=銅鑼",
-      "crew_ops": "全區間(彰)"
+      "crew_mech": "嘉義=(嘉723)=彰化=(嘉711)=銅鑼",
+      "crew_ops": "嘉義=(嘉)=彰化=(彰)=銅鑼"
     },
     "2131": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U7AB",
       "route": "豐原=彰化",
       "crew_mech": "全區間(彰574)",
       "crew_ops": "全區間(彰)"
     },
     "2133": {
-      "type_name": "EMU900",
-      "formation": "竹機U11A",
+      "type_name": "EMU700/800",
+      "formation": "竹機U6AB",
       "route": "基隆=嘉義",
       "crew_mech": "基隆=(北284)=新富=(竹351)=彰化=(嘉705)=嘉義",
       "crew_ops": "基隆=(北)=新竹=(彰)=彰化=(嘉)=嘉義"
     },
     "2134": {
-      "type_name": "EMU900",
-      "formation": "七機U3A",
+      "type_name": "EMU700/800",
+      "formation": "竹機U7AB",
       "route": "嘉義=基隆",
-      "crew_mech": "嘉義=(嘉723)=彰化=(彰536)=新竹=(七157)=基隆",
-      "crew_ops": "嘉義=(嘉)=彰化=(彰)=新竹=(基)=基隆"
+      "crew_mech": "嘉義=(嘉728)=彰化=(彰536)=新竹=(竹306)=基隆",
+      "crew_ops": "嘉義=(彰)=新竹=(基)=基隆"
     },
     "2138": {
       "type_name": "優化EMU500 8輛",
@@ -3064,181 +3064,181 @@
     },
     "2143": {
       "type_name": "EMU700/800",
-      "formation": "竹機U5AB",
-      "route": "富岡基地=嘉義",
-      "crew_mech": "富岡基地=(竹359)=彰化=(嘉723)=嘉義",
-      "crew_ops": "富岡基地=(彰)=彰化=(嘉)=嘉義"
+      "formation": "竹機U7AB",
+      "route": "基隆=嘉義",
+      "crew_mech": "基隆=(七147)=新竹=(彰532)=彰化=(嘉728)=嘉義",
+      "crew_ops": "基隆=(竹)=新竹=(彰)=彰化=(嘉)=嘉義"
     },
     "2144": {
       "type_name": "EMU700/800",
-      "formation": "竹機U5AB",
-      "route": "嘉義=富岡基地",
-      "crew_mech": "嘉義=(嘉712)=彰化=(彰573)=新竹=(竹320)=富岡基地",
-      "crew_ops": "嘉義=(嘉)=彰化=(竹)=富岡基地"
+      "formation": "竹機U7AB",
+      "route": "嘉義=基隆",
+      "crew_mech": "嘉義=(嘉712)=彰化=(彰573)=新竹=(七157)=七堵=(竹302)=基隆",
+      "crew_ops": "嘉義=(嘉)=彰化=(竹)=新竹=(北)=基隆"
     },
     "2146": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U5AB",
       "route": "彰化=臺中",
       "crew_mech": "全區間(彰578)",
       "crew_ops": "全區間(彰)"
     },
     "2153": {
-      "type_name": "EMU900",
-      "formation": "竹機U9A",
+      "type_name": "EMU700/800",
+      "formation": "竹機U4AB",
       "route": "基隆=嘉義",
-      "crew_mech": "基隆=(北262)=樹林=(北287)=新富=(竹308)=新竹=(苗411)=彰化=(嘉720)=嘉義",
-      "crew_ops": "基隆=(北)=新竹=(彰)=彰化=(嘉)=嘉義"
+      "crew_mech": "基隆=(竹321)=新竹=(彰552)=彰化=(嘉720)=嘉義",
+      "crew_ops": "基隆=(北)=新竹=(彰)=嘉義"
     },
     "2154": {
-      "type_name": "EMU900",
-      "formation": "七機U5A",
+      "type_name": "EMU700/800",
+      "formation": "竹機U7AB",
       "route": "嘉義=基隆",
       "crew_mech": "嘉義=(彰541)=彰化=(彰537)=新竹=(北260)=樹林=(北272)=基隆",
       "crew_ops": "嘉義=(嘉)=彰化=(彰)=新竹=(竹)=基隆"
     },
     "2159": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U5AB",
       "route": "豐原=彰化",
-      "crew_mech": "全區間(彰555)",
+      "crew_mech": "全區間(彰562)",
       "crew_ops": "全區間(彰)"
     },
     "2163": {
       "type_name": "EMU700/800",
       "formation": "竹機U5AB",
-      "route": "富岡基地=嘉義",
-      "crew_mech": "富岡基地=(彰540)=彰化=(嘉701)=嘉義",
-      "crew_ops": "全區間(彰)"
+      "route": "基隆=嘉義",
+      "crew_mech": "基隆=(竹322)=新竹=(苗411)=彰化=(嘉701)=嘉義",
+      "crew_ops": "基隆=(北)=新竹=(彰)=彰化=(嘉)=嘉義"
     },
     "2166": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U5AB",
       "route": "彰化=豐原",
-      "crew_mech": "全區間(彰555)",
+      "crew_mech": "全區間(彰562)",
       "crew_ops": "全區間(彰)"
     },
     "2173": {
-      "type_name": "EMU900",
-      "formation": "七機U2A",
-      "route": "基隆=嘉義",
-      "crew_mech": "基隆=(竹362)=七堵=(竹322)=新富=(一至五竹353/六日例竹3R2)=彰化=(嘉725)=嘉義",
-      "crew_ops": "基隆=(竹)=新竹=(彰)=彰化=(嘉)=嘉義"
+      "type_name": "EMU700/800",
+      "formation": "竹機U8AB",
+      "route": "富岡基地=嘉義",
+      "crew_mech": "富岡基地=(一至五竹353/六日例竹3R2)=彰化=(嘉725)=嘉義",
+      "crew_ops": "北湖=(彰)=彰化=(嘉)=嘉義"
     },
     "2174": {
-      "type_name": "EMU900",
-      "formation": "竹機U15A",
-      "route": "嘉義=瑞芳",
-      "crew_mech": "嘉義=(嘉701)=彰化=(彰539)=新竹=(北286)=樹林=(北264)=瑞芳",
-      "crew_ops": "嘉義=(嘉)=彰化=(竹)=新竹=(基)=瑞芳"
+      "type_name": "EMU700/800",
+      "formation": "竹機U7AB",
+      "route": "嘉義=富岡基地",
+      "crew_mech": "嘉義=(嘉704)=彰化=(彰539)=富岡基地",
+      "crew_ops": "嘉義=(嘉)=彰化=(彰)=北湖"
     },
     "2183": {
       "type_name": "EMU700/800",
-      "formation": "竹機U6AB",
-      "route": "富岡基地=斗六",
-      "crew_mech": "富岡基地=(竹304)=新竹=(彰531)=彰化=(嘉715)=斗六",
-      "crew_ops": "富岡基地=(彰)=彰化=(嘉)=斗六"
+      "formation": "竹機U4AB",
+      "route": "基隆=嘉義",
+      "crew_mech": "基隆=(竹325)=新富=(竹363)=新竹=(彰531)=彰化=(嘉715)=嘉義",
+      "crew_ops": "基隆=(基)=新竹=(彰)=彰化=(嘉)=嘉義"
     },
     "2184": {
       "type_name": "EMU700/800",
-      "formation": "竹機U5AB",
+      "formation": "竹機U7AB",
       "route": "嘉義=富岡基地",
-      "crew_mech": "嘉義=(嘉702)=彰化=(竹360)=富岡基地",
-      "crew_ops": "嘉義=(嘉)=彰化=(彰)=富岡基地"
+      "crew_mech": "嘉義=(嘉702)=彰化=(彰557)=富岡基地",
+      "crew_ops": "嘉義=(嘉)=彰化=(彰)=新竹=(竹)=北湖"
     },
     "2190": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U7AB",
       "route": "彰化=豐原",
       "crew_mech": "全區間(彰563)",
       "crew_ops": "全區間(彰)"
     },
     "2191": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U7AB",
-      "route": "豐原=彰化",
+      "route": "臺中=彰化",
       "crew_mech": "全區間(彰559)",
       "crew_ops": "全區間(彰)"
     },
     "2193": {
-      "type_name": "EMU900",
-      "formation": "竹機U11A",
+      "type_name": "EMU700/800",
+      "formation": "竹機U6AB",
       "route": "基隆=嘉義",
-      "crew_mech": "基隆=(竹306)=七堵=(七144)=新竹=(彰538)=彰化=(嘉719)=嘉義",
+      "crew_mech": "基隆=(竹307)=七堵=(七144)=新竹=(彰538)=彰化=(嘉719)=嘉義",
       "crew_ops": "基隆=(北)=新竹=(彰)=彰化=(嘉)=嘉義"
     },
     "2194": {
-      "type_name": "EMU900",
-      "formation": "竹機U11A",
-      "route": "嘉義=基隆",
-      "crew_mech": "嘉義=(一至四彰582/五六日例彰5R11)=彰化=(彰557)=新富=(竹316)=樹林=(北289)=基隆",
-      "crew_ops": "嘉義=(嘉)=彰化=(彰)=新竹=(北)=基隆"
+      "type_name": "EMU700/800",
+      "formation": "竹機U6AB",
+      "route": "嘉義=富岡基地",
+      "crew_mech": "嘉義=(一至四彰582/五六日例彰5R11)=彰化=(竹360)=富岡基地",
+      "crew_ops": "嘉義=(嘉)=彰化=(彰)=新竹=(北)=北湖"
     },
     "2203": {
       "type_name": "EMU700/800",
-      "formation": "竹機U5AB",
-      "route": "富岡基地=嘉義",
-      "crew_mech": "富岡基地=(竹355)=彰化=(嘉724)=嘉義",
-      "crew_ops": "全區間(彰)"
+      "formation": "竹機U7AB",
+      "route": "基隆=嘉義",
+      "crew_mech": "基隆=(竹306)=七堵=(七143)=新竹=(新C42)=彰化=(嘉724)=嘉義",
+      "crew_ops": "基隆=(基)=樹林=(北)=新竹=(彰)=嘉義"
     },
     "2204": {
       "type_name": "EMU700/800",
-      "formation": "竹機U5AB",
-      "route": "嘉義=富岡基地",
-      "crew_mech": "嘉義=(嘉726)=彰化=(竹351)=富岡基地",
-      "crew_ops": "嘉義=(嘉)=彰化=(彰)=新竹=(竹)=富岡基地"
+      "formation": "竹機U7AB",
+      "route": "嘉義=基隆",
+      "crew_mech": "嘉義=(嘉726)=彰化=(彰546)=新竹=(北283)=樹林=(北276)=基隆",
+      "crew_ops": "嘉義=(嘉)=彰化=(彰)=新竹=(竹)=基隆"
     },
     "2213": {
-      "type_name": "EMU900",
-      "formation": "竹機U10A",
+      "type_name": "EMU700/800",
+      "formation": "竹機U7AB",
       "route": "基隆=嘉義",
-      "crew_mech": "基隆=(北263)=新富=(竹313)=新竹=(新C42)=彰化=(嘉710)=嘉義",
-      "crew_ops": "基隆=(竹)=新竹=(彰)=彰化=(嘉)=嘉義"
+      "crew_mech": "基隆=(竹302)=新富=(竹355)=彰化=(嘉710)=嘉義",
+      "crew_ops": "基隆=(竹)=新竹=(彰)=嘉義"
     },
     "2214": {
-      "type_name": "EMU900",
-      "formation": "竹機U9A",
-      "route": "嘉義=基隆",
-      "crew_mech": "嘉義=(嘉727)=彰化=(彰553)=新竹=(竹313)=七堵=(竹310)=基隆",
-      "crew_ops": "嘉義=(嘉)=彰化=(彰)=新竹=(竹)=基隆"
+      "type_name": "EMU700/800",
+      "formation": "竹機U4AB",
+      "route": "嘉義=富岡基地",
+      "crew_mech": "嘉義=(嘉727)=彰化=(竹359)=富岡基地",
+      "crew_ops": "嘉義=(嘉)=彰化=(彰)=新竹=(竹)=北湖"
     },
     "2223": {
       "type_name": "EMU700/800",
-      "formation": "竹機U5AB",
-      "route": "富岡基地=嘉義",
-      "crew_mech": "富岡基地=(竹317)=新竹=(彰580)=彰化=(嘉729)=嘉義",
-      "crew_ops": "全區間(彰)"
+      "formation": "竹機U7AB",
+      "route": "基隆=嘉義",
+      "crew_mech": "基隆=(北272)=七堵=(竹303)=新富=(竹317)=新竹=(彰580)=彰化=(嘉729)=嘉義",
+      "crew_ops": "基隆=(北)=新竹=(彰)=嘉義"
     },
     "2224": {
       "type_name": "EMU700/800",
       "formation": "竹機U5AB",
-      "route": "嘉義=富岡基地",
-      "crew_mech": "嘉義=(嘉723)=彰化=(彰558)=新竹=(竹306)=富岡基地",
-      "crew_ops": "嘉義=(嘉)=彰化=(彰)=富岡基地"
+      "route": "嘉義=基隆",
+      "crew_mech": "嘉義=(嘉723)=彰化=(彰558)=新竹=(七132)=基隆",
+      "crew_ops": "嘉義=(彰)=新竹=(北)=基隆"
     },
     "2226": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U7AB",
       "route": "彰化=臺中",
       "crew_mech": "全區間(彰561)",
       "crew_ops": "全區間(彰)"
     },
     "2233": {
-      "type_name": "EMU900",
-      "formation": "七機U5A",
-      "route": "基隆=嘉義",
-      "crew_mech": "基隆=(北269)=七堵=(七139)=新竹=(彰550)=彰化=(嘉705)=嘉義",
-      "crew_ops": "基隆=(竹)=新竹=(彰)=彰化=(嘉)=嘉義"
+      "type_name": "EMU700/800",
+      "formation": "竹機U4AB",
+      "route": "瑞芳=嘉義",
+      "crew_mech": "瑞芳=(北252)=樹林=(北290)=新竹=(彰550)=彰化=(嘉717)=嘉義",
+      "crew_ops": "瑞芳=(北)=七堵=(竹)=新竹=(彰)=彰化=(嘉)=嘉義"
     },
     "2234": {
-      "type_name": "EMU900",
-      "formation": "七機U2A",
-      "route": "嘉義=基隆",
-      "crew_mech": "嘉義=(嘉722)=彰化=(苗411)=苗栗=(苗412)=新竹=(北270)=樹林=(北278)=基隆",
-      "crew_ops": "嘉義=(嘉)=彰化=(彰)=新竹=(竹)=基隆"
+      "type_name": "EMU700/800",
+      "formation": "竹機U8AB",
+      "route": "嘉義=富岡基地",
+      "crew_mech": "嘉義=(嘉722)=彰化=(苗411)=苗栗=(苗412)=新竹=(一至五竹307/六日例竹308)=富岡基地",
+      "crew_ops": "全區間(彰)"
     },
     "2236": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U5AB",
       "route": "彰化=臺中",
       "crew_mech": "全區間(嘉726)",
@@ -3252,66 +3252,66 @@
       "crew_ops": "全區間(竹)"
     },
     "2243": {
-      "type_name": "EMU800",
-      "formation": "嘉機U6AB",
+      "type_name": "EMU700/800",
+      "formation": "竹機U7AB",
       "route": "富岡基地=嘉義",
-      "crew_mech": "富岡基地=(竹320)=新竹=(彰560)=彰化=(嘉720)=嘉義",
+      "crew_mech": "富岡基地=(竹320)=新竹=(彰570)=彰化=(嘉720)=嘉義",
       "crew_ops": "北湖=(彰)=彰化=(嘉)=嘉義"
     },
     "2244": {
       "type_name": "EMU700/800",
-      "formation": "竹機U6AB",
-      "route": "嘉義=富岡基地",
-      "crew_mech": "嘉義=(嘉729)=彰化=(彰554)=新竹=(竹362)=富岡基地",
-      "crew_ops": "嘉義=(嘉)=彰化=(彰)=富岡基地"
+      "formation": "竹機U4AB",
+      "route": "嘉義=七堵",
+      "crew_mech": "嘉義=(嘉729)=彰化=(彰554)=新竹=(七145)=七堵",
+      "crew_ops": "嘉義=(嘉)=彰化=(彰)=新竹=(竹)=七堵"
     },
     "2246": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U5AB",
       "route": "彰化=臺中",
       "crew_mech": "全區間(彰579)",
       "crew_ops": "全區間(彰)"
     },
     "2253": {
-      "type_name": "EMU900",
-      "formation": "七機U3A",
-      "route": "基隆=嘉義",
-      "crew_mech": "基隆=(竹326)=新富=(彰557)=彰化=(嘉725)=嘉義",
-      "crew_ops": "基隆=(北)=新竹=(彰)=彰化=(嘉)=嘉義"
+      "type_name": "EMU700/800",
+      "formation": "竹機U7AB",
+      "route": "富岡基地=嘉義",
+      "crew_mech": "富岡基地=(彰557)=彰化=(嘉721)=嘉義",
+      "crew_ops": "北湖=(竹)=新竹=(彰)=彰化=(嘉)=嘉義"
     },
     "2254": {
-      "type_name": "EMU900",
-      "formation": "竹機U11A",
+      "type_name": "EMU700/800",
+      "formation": "竹機U6AB",
       "route": "嘉義=基隆",
       "crew_mech": "嘉義=(嘉701)=彰化=(彰559)=新竹=(竹322)=基隆",
       "crew_ops": "嘉義=(嘉)=彰化=(彰)=新竹=(竹)=基隆"
     },
     "2257": {
-      "type_name": "EMU700/800",
-      "formation": "竹機U5AB",
+      "type_name": "EMU800",
+      "formation": "嘉機U5AB",
       "route": "后里=嘉義",
-      "crew_mech": "后里=(一至六彰577/日彰5R9)=彰化=(嘉721)=嘉義",
+      "crew_mech": "后里=(一至六彰577/日彰5R9)=彰化=(嘉725)=嘉義",
       "crew_ops": "后里=(彰)=彰化=(嘉)=嘉義"
     },
     "2263": {
       "type_name": "EMU700/800",
-      "formation": "竹機U5AB",
+      "formation": "竹機U6AB",
       "route": "富岡基地=嘉義",
       "crew_mech": "富岡基地=(竹322)=新竹=(彰567)=彰化=(嘉732)=嘉義",
-      "crew_ops": "富岡基地=(彰)=彰化=(嘉)=嘉義"
+      "crew_ops": "北湖=(北)=新竹=(彰)=彰化=(嘉)=嘉義"
     },
     "2264": {
       "type_name": "EMU700/800",
-      "formation": "竹機U5AB",
-      "route": "嘉義=富岡基地",
-      "crew_mech": "嘉義=(嘉720)=彰化=(彰540)=新竹=(竹333)=富岡基地",
-      "crew_ops": "嘉義=(嘉)=彰化=(彰)=富岡基地"
+      "formation": "竹機U7AB",
+      "route": "嘉義=七堵",
+      "crew_mech": "嘉義=(嘉702)=彰化=(彰540)=新竹=(竹325)=七堵",
+      "crew_ops": "嘉義=(嘉)=彰化=(彰)=新竹=(北)=七堵"
     },
     "2267": {
       "type_name": "EMU800",
-      "formation": "嘉機U2AB",
+      "formation": "嘉機U4AB",
       "route": "后里=員林",
-      "crew_mech": "全區間(彰563)",
+      "crew_mech": "全區間(彰551)",
       "crew_ops": "全區間(彰)"
     },
     "2269": {
@@ -3329,24 +3329,24 @@
       "crew_ops": "全區間(彰)"
     },
     "2272": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U5AB",
       "route": "斗六=豐原",
-      "crew_mech": "斗六=(嘉727)=彰化=(彰551)=豐原",
+      "crew_mech": "斗六=(嘉727)=彰化=(彰563)=豐原",
       "crew_ops": "全區間(彰)"
     },
     "2273": {
-      "type_name": "EMU900",
-      "formation": "竹機U14A",
-      "route": "基隆=彰化",
-      "crew_mech": "基隆=(北276)=新富=(竹333)=新竹=(彰544)=彰化",
-      "crew_ops": "基隆=(竹)=新竹=(彰)=彰化"
+      "type_name": "EMU700/800",
+      "formation": "竹機U4AB",
+      "route": "富岡基地=彰化",
+      "crew_mech": "富岡基地=(竹325)=新竹=(彰544)=彰化",
+      "crew_ops": "全區間(彰)"
     },
     "2274": {
-      "type_name": "EMU900",
-      "formation": "竹機U10A",
+      "type_name": "EMU700/800",
+      "formation": "竹機U7AB",
       "route": "嘉義=富岡基地",
-      "crew_mech": "嘉義=(嘉721)=彰化=(竹354)=富岡基地",
+      "crew_mech": "嘉義=(嘉725)=彰化=(竹354)=富岡基地",
       "crew_ops": "嘉義=(嘉)=彰化=(彰)=北湖"
     },
     "2275": {
@@ -3357,11 +3357,11 @@
       "crew_ops": "基隆=(竹)=新竹=(彰)=彰化"
     },
     "2294": {
-      "type_name": "EMU900",
-      "formation": "七機U5A",
+      "type_name": "EMU700/800",
+      "formation": "竹機U4AB",
       "route": "嘉義=彰化",
       "crew_mech": "全區間(彰538)",
-      "crew_ops": "全區間(嘉)"
+      "crew_ops": "全區間(彰)"
     },
     "2501": {
       "type_name": "EMU500",
@@ -3386,9 +3386,9 @@
     },
     "2504": {
       "type_name": "EMU500",
-      "formation": "彰機U1A",
+      "formation": "彰機U3A",
       "route": "彰化=富岡基地",
-      "crew_mech": "彰化=(竹357)=新竹=(彰556)=富岡基地",
+      "crew_mech": "全區間(竹357)",
       "crew_ops": "全區間(彰)"
     },
     "2507": {
@@ -3416,7 +3416,7 @@
       "type_name": "EMU500",
       "formation": "彰機U2A",
       "route": "新竹=彰化",
-      "crew_mech": "全區間(彰532)",
+      "crew_mech": "全區間(彰556)",
       "crew_ops": "全區間(彰)"
     },
     "2514": {
@@ -3428,9 +3428,9 @@
     },
     "2517": {
       "type_name": "EMU500",
-      "formation": "彰機U1A",
+      "formation": "彰機U3A",
       "route": "湖口=彰化",
-      "crew_mech": "全區間(彰556)",
+      "crew_mech": "全區間(竹359)",
       "crew_ops": "全區間(彰)"
     },
     "2518": {
@@ -3472,14 +3472,14 @@
       "type_name": "EMU500",
       "formation": "彰機U1A",
       "route": "竹南=彰化",
-      "crew_mech": "全區間(彰534)",
+      "crew_mech": "全區間(彰533)",
       "crew_ops": "全區間(彰)"
     },
     "2528": {
       "type_name": "EMU500",
       "formation": "彰機U2A",
       "route": "彰化=竹南",
-      "crew_mech": "全區間(彰580)",
+      "crew_mech": "全區間(彰570)",
       "crew_ops": "全區間(彰)"
     },
     "2531": {
@@ -3491,14 +3491,14 @@
     },
     "2532": {
       "type_name": "EMU500",
-      "formation": "彰機U1A",
+      "formation": "彰機U3A",
       "route": "彰化=竹南",
-      "crew_mech": "全區間(彰549)",
+      "crew_mech": "全區間(彰560)",
       "crew_ops": "全區間(彰)"
     },
     "2533": {
       "type_name": "EMU500",
-      "formation": "彰機U1A",
+      "formation": "彰機U3A",
       "route": "竹南=彰化",
       "crew_mech": "全區間(彰573)",
       "crew_ops": "全區間(竹)"
@@ -3507,7 +3507,7 @@
       "type_name": "EMU500",
       "formation": "彰機U4A",
       "route": "彰化=新竹",
-      "crew_mech": "全區間(彰570)",
+      "crew_mech": "全區間(彰549)",
       "crew_ops": "全區間(彰)"
     },
     "2535": {
@@ -3528,7 +3528,7 @@
       "type_name": "EMU500",
       "formation": "彰機U3A",
       "route": "彰化=富岡基地",
-      "crew_mech": "全區間(彰546)",
+      "crew_mech": "全區間(竹351)",
       "crew_ops": "彰化=(彰)=新竹=(竹)=北湖"
     },
     "2541": {
@@ -3541,8 +3541,8 @@
     "2542": {
       "type_name": "EMU500",
       "formation": "彰機U1A",
-      "route": "彰化=竹北",
-      "crew_mech": "全區間(竹359)",
+      "route": "彰化=新竹",
+      "crew_mech": "全區間(彰553)",
       "crew_ops": "全區間(彰)"
     },
     "2543": {
@@ -3562,13 +3562,13 @@
     "2547": {
       "type_name": "EMU500",
       "formation": "彰機U1A",
-      "route": "竹北=彰化",
-      "crew_mech": "竹北=(竹359)=新竹=(竹356)=彰化",
+      "route": "新竹=彰化",
+      "crew_mech": "全區間(竹356)",
       "crew_ops": "全區間(彰)"
     },
     "2548": {
       "type_name": "EMU500",
-      "formation": "彰機U1A",
+      "formation": "彰機U3A",
       "route": "彰化=新竹",
       "crew_mech": "全區間(彰555)",
       "crew_ops": "全區間(彰)"
@@ -3591,7 +3591,7 @@
       "type_name": "EMU700/800",
       "formation": "竹機U2AB",
       "route": "彰化=新竹",
-      "crew_mech": "全區間(竹352)",
+      "crew_mech": "全區間(一至五竹352/六日例竹3R2)",
       "crew_ops": "全區間(竹)"
     },
     "2553": {
@@ -3610,7 +3610,7 @@
     },
     "2557": {
       "type_name": "EMU500",
-      "formation": "彰機U1A",
+      "formation": "彰機U3A",
       "route": "新竹=彰化",
       "crew_mech": "全區間(彰553)",
       "crew_ops": "全區間(彰)"
@@ -3625,7 +3625,7 @@
     "2561": {
       "type_name": "EMU500",
       "formation": "彰機U1A",
-      "route": "竹北=沙鹿",
+      "route": "竹北=彰化",
       "crew_mech": "全區間(彰546)",
       "crew_ops": "全區間(彰)"
     },
@@ -3651,14 +3651,14 @@
       "crew_ops": "全區間(彰)"
     },
     "2601": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U5AB",
       "route": "大甲=豐原",
       "crew_mech": "全區間(彰566)",
       "crew_ops": "全區間(彰)"
     },
     "2602": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U7AB",
       "route": "豐原=竹南",
       "crew_mech": "豐原=(彰561)=大甲=(彰564)=竹南",
@@ -3679,21 +3679,21 @@
       "crew_ops": "全區間(彰)"
     },
     "2606": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U5AB",
       "route": "臺中=通霄",
       "crew_mech": "全區間(彰578)",
       "crew_ops": "全區間(彰)"
     },
     "2607": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U7AB",
       "route": "通霄=豐原",
       "crew_mech": "全區間(彰574)",
       "crew_ops": "全區間(彰)"
     },
     "2608": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U7AB",
       "route": "豐原=通霄",
       "crew_mech": "豐原=(彰575)=臺中=(彰567)=通霄",
@@ -3710,53 +3710,53 @@
       "type_name": "EMU500",
       "formation": "彰機U2A",
       "route": "豐原=大甲",
-      "crew_mech": "豐原=(彰576)=臺中=(彰569)=大甲",
+      "crew_mech": "全區間(彰569)",
       "crew_ops": "全區間(彰)"
     },
     "2611": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U7AB",
       "route": "竹南=豐原",
       "crew_mech": "竹南=(彰564)=大甲=(彰575)=豐原",
       "crew_ops": "全區間(彰)"
     },
     "2612": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U5AB",
       "route": "豐原=大甲",
-      "crew_mech": "豐原=(彰568)=沙鹿=(彰571)=大甲",
+      "crew_mech": "全區間(彰568)",
       "crew_ops": "全區間(彰)"
     },
     "2613": {
       "type_name": "EMU500",
       "formation": "彰機U2A",
       "route": "通霄=豐原",
-      "crew_mech": "通霄=(彰565)=臺中=(彰576)=豐原",
+      "crew_mech": "通霄=(彰565)=臺中=(彰569)=豐原",
       "crew_ops": "全區間(彰)"
     },
     "2614": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U7AB",
       "route": "豐原=通霄",
       "crew_mech": "全區間(彰563)",
       "crew_ops": "全區間(彰)"
     },
     "2615": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U5AB",
       "route": "通霄=豐原",
       "crew_mech": "通霄=(彰578)=沙鹿=(彰568)=豐原",
       "crew_ops": "全區間(彰)"
     },
     "2617": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U7AB",
       "route": "通霄=豐原",
       "crew_mech": "通霄=(彰567)=臺中=(彰559)=豐原",
       "crew_ops": "全區間(彰)"
     },
     "2618": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U7AB",
       "route": "臺中=大甲",
       "crew_mech": "全區間(彰561)",
@@ -3765,12 +3765,12 @@
     "2619": {
       "type_name": "EMU500",
       "formation": "彰機U2A",
-      "route": "大甲=臺中",
-      "crew_mech": "全區間(彰569)",
+      "route": "大甲=苗栗",
+      "crew_mech": "大甲=(彰569)=臺中=(彰574)=苗栗",
       "crew_ops": "全區間(彰)"
     },
     "2621": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U5AB",
       "route": "大甲=豐原",
       "crew_mech": "全區間(彰571)",
@@ -3784,28 +3784,28 @@
       "crew_ops": "全區間(彰)"
     },
     "2623": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U7AB",
       "route": "通霄=豐原",
       "crew_mech": "通霄=(彰563)=大甲=(彰566)=豐原",
       "crew_ops": "全區間(彰)"
     },
     "2624": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U7AB",
       "route": "豐原=通霄",
       "crew_mech": "豐原=(彰566)=沙鹿=(彰578)=通霄",
       "crew_ops": "全區間(彰)"
     },
     "2627": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U7AB",
       "route": "大甲=豐原",
       "crew_mech": "大甲=(彰561)=臺中=(彰568)=豐原",
       "crew_ops": "全區間(彰)"
     },
     "2628": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U7AB",
       "route": "豐原=通霄",
       "crew_mech": "全區間(彰568)",
@@ -3826,220 +3826,220 @@
       "crew_ops": "全區間(彰)"
     },
     "2633": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U7AB",
       "route": "通霄=豐原",
       "crew_mech": "全區間(彰578)",
       "crew_ops": "全區間(彰)"
     },
     "2634": {
-      "type_name": "EMU500 8輛",
+      "type_name": "EMU800",
       "formation": "彰機U5AB",
       "route": "豐原=沙鹿",
-      "crew_mech": "全區間(彰551)",
+      "crew_mech": "全區間(彰563)",
       "crew_ops": "全區間(彰)"
     },
     "2901": {
-      "type_name": "DRC1000 3輛",
+      "type_name": "DRC(3車)",
       "formation": "彰機變K21ABC",
       "route": "彰化=濁水",
       "crew_mech": "全區間(水603)",
       "crew_ops": "全區間(彰)"
     },
     "2902": {
-      "type_name": "DRC1000 3輛",
+      "type_name": "DRC(3車)",
       "formation": "彰機變K21ABC",
       "route": "濁水=彰化",
       "crew_mech": "全區間(水603)",
       "crew_ops": "全區間(彰)"
     },
     "2903": {
-      "type_name": "DRC1000 3輛",
+      "type_name": "DRC(3車)",
       "formation": "彰機變K21ABC",
       "route": "彰化=濁水",
       "crew_mech": "全區間(水603)",
       "crew_ops": "全區間(彰)"
     },
     "2904": {
-      "type_name": "DRC1000 3輛",
+      "type_name": "DRC(3車)",
       "formation": "彰機變K21ABC",
       "route": "濁水=彰化",
       "crew_mech": "全區間(水601)",
       "crew_ops": "全區間(彰)"
     },
     "2905": {
-      "type_name": "DRC1000 3輛",
+      "type_name": "DRC(3車)",
       "formation": "彰機變K21ABC",
       "route": "二水=濁水",
       "crew_mech": "全區間(水602)",
       "crew_ops": "全區間(彰)"
     },
     "2906": {
-      "type_name": "DRC1000 3輛",
+      "type_name": "DRC(3車)",
       "formation": "彰機變K21ABC",
       "route": "濁水=二水",
       "crew_mech": "全區間(水602)",
       "crew_ops": "全區間(彰)"
     },
     "2907": {
-      "type_name": "DRC1000 3輛",
+      "type_name": "DRC(3車)",
       "formation": "彰機變K21ABC",
       "route": "二水=濁水",
       "crew_mech": "全區間(水602)",
       "crew_ops": "全區間(彰)"
     },
     "2908": {
-      "type_name": "DRC1000 3輛",
+      "type_name": "DRC(3車)",
       "formation": "彰機變K21ABC",
       "route": "濁水=二水",
       "crew_mech": "全區間(水602)",
       "crew_ops": "全區間(彰)"
     },
     "2911": {
-      "type_name": "DRC1000 3輛",
+      "type_name": "DRC(3車)",
       "formation": "彰機變K21ABC",
       "route": "二水=濁水",
       "crew_mech": "全區間(水601)",
       "crew_ops": "全區間(彰)"
     },
     "2912": {
-      "type_name": "DRC1000 3輛",
+      "type_name": "DRC(3車)",
       "formation": "彰機變K21ABC",
       "route": "濁水=二水",
       "crew_mech": "全區間(水601)",
       "crew_ops": "全區間(彰)"
     },
     "2913": {
-      "type_name": "DRC1000 3輛",
+      "type_name": "DRC(3車)",
       "formation": "彰機變K21ABC",
       "route": "二水=濁水",
       "crew_mech": "全區間(水602)",
       "crew_ops": "全區間(彰)"
     },
     "2914": {
-      "type_name": "DRC1000 3輛",
+      "type_name": "DRC(3車)",
       "formation": "彰機變K21ABC",
       "route": "濁水=二水",
       "crew_mech": "全區間(水602)",
       "crew_ops": "全區間(彰)"
     },
     "2915": {
-      "type_name": "DRC1000 3輛",
+      "type_name": "DRC(3車)",
       "formation": "彰機變K21ABC",
       "route": "二水=濁水",
       "crew_mech": "全區間(水603)",
       "crew_ops": "全區間(彰)"
     },
     "2916": {
-      "type_name": "DRC1000 3輛",
+      "type_name": "DRC(3車)",
       "formation": "彰機變K21ABC",
       "route": "濁水=二水",
       "crew_mech": "全區間(水603)",
       "crew_ops": "全區間(彰)"
     },
     "2917": {
-      "type_name": "DRC1000 3輛",
+      "type_name": "DRC(3車)",
       "formation": "彰機變K21ABC",
       "route": "二水=濁水",
       "crew_mech": "全區間(水604)",
       "crew_ops": "全區間(彰)"
     },
     "2918": {
-      "type_name": "DRC1000 3輛",
+      "type_name": "DRC(3車)",
       "formation": "彰機變K21ABC",
       "route": "濁水=二水",
       "crew_mech": "全區間(水604)",
       "crew_ops": "全區間(彰)"
     },
     "2921": {
-      "type_name": "DRC1000 3輛",
+      "type_name": "DRC(3車)",
       "formation": "彰機變K21ABC",
       "route": "二水=濁水",
       "crew_mech": "全區間(水604)",
       "crew_ops": "全區間(彰)"
     },
     "2922": {
-      "type_name": "DRC1000 3輛",
+      "type_name": "DRC(3車)",
       "formation": "彰機變K21ABC",
       "route": "濁水=二水",
       "crew_mech": "全區間(水604)",
       "crew_ops": "全區間(彰)"
     },
     "3001": {
-      "type_name": "EMU700/800",
-      "formation": "竹機U6AB",
+      "type_name": "EMU900",
+      "formation": "七機U3A",
       "route": "潮州基地=臺東",
       "crew_mech": "全區間(東T75)",
       "crew_ops": "全區間(花)"
     },
     "3003": {
-      "type_name": "優化EMU500 8輛",
-      "formation": "高機U2AB",
+      "type_name": "EMU900",
+      "formation": "七機U2A",
       "route": "新左營=臺東",
       "crew_mech": "全區間(東T74)",
       "crew_ops": "全區間(高)"
     },
     "3005": {
       "type_name": "EMU900",
-      "formation": "竹機U16A",
+      "formation": "七機U2A",
       "route": "臺中=臺東",
       "crew_mech": "臺中=(左930)=新左營=(左905)=臺東",
       "crew_ops": "全區間(高)"
     },
     "3006": {
-      "type_name": "EMU700/800",
-      "formation": "竹機U6AB",
+      "type_name": "EMU900",
+      "formation": "七機U2A",
       "route": "臺東=潮州基地",
       "crew_mech": "全區間(高871)",
       "crew_ops": "全區間(高)"
     },
     "3010": {
-      "type_name": "EMU700/800",
-      "formation": "竹機U6AB",
+      "type_name": "EMU900",
+      "formation": "七機U3A",
       "route": "潮州基地=豐原",
       "crew_mech": "潮州基地=(高827)=嘉義=(嘉724)=彰化=(彰562)=豐原",
       "crew_ops": "潮州=(高)=嘉義=(嘉)=彰化=(彰)=豐原"
     },
     "3018": {
-      "type_name": "EMU700/800",
-      "formation": "竹機U6AB",
+      "type_name": "EMU900",
+      "formation": "七機U2A",
       "route": "臺東=新左營",
       "crew_mech": "全區間(東T76)",
       "crew_ops": "全區間(高)"
     },
     "3021": {
-      "type_name": "EMU700/800",
-      "formation": "竹機U6AB",
+      "type_name": "EMU900",
+      "formation": "七機U2A",
       "route": "新左營=臺東",
       "crew_mech": "全區間(東T89)",
       "crew_ops": "全區間(高)"
     },
     "3023": {
-      "type_name": "EMU800",
-      "formation": "嘉機U5AB",
-      "route": "斗六=枋寮",
-      "crew_mech": "斗六=(嘉732)=嘉義=(嘉748)=潮州=(高865)=枋寮",
-      "crew_ops": "斗六=(嘉)=嘉義=(高)=枋寮"
+      "type_name": "EMU900",
+      "formation": "七機U3A",
+      "route": "嘉義=潮州基地",
+      "crew_mech": "全區間(嘉748)",
+      "crew_ops": "全區間(高)"
     },
     "3028": {
       "type_name": "EMU900",
-      "formation": "竹機U16A",
+      "formation": "七機U3A",
       "route": "臺東=彰化",
       "crew_mech": "臺東=(左904)=新左營=(彰525)=彰化",
       "crew_ops": "全區間(高)"
     },
     "3029": {
       "type_name": "EMU900",
-      "formation": "七機U1A",
+      "formation": "七機U2A",
       "route": "豐原=潮州基地",
-      "crew_mech": "豐原=(彰565)=彰化=(嘉727)=斗六=(嘉742)=新左營=(左939)=潮州基地",
+      "crew_mech": "豐原=(彰565)=彰化=(嘉727)=斗六=(嘉742)=新左營=(高861)=潮州基地",
       "crew_ops": "豐原=(彰)=彰化=(嘉)=嘉義=(高)=潮州"
     },
     "3031": {
       "type_name": "優化EMU500 8輛",
       "formation": "高機U4AB",
       "route": "臺南=潮州基地",
-      "crew_mech": "臺南=(左959)=新左營=(高861)=潮州基地",
+      "crew_mech": "臺南=(左959)=新左營=(左936)=潮州基地",
       "crew_ops": "全區間(高)"
     },
     "3032": {
@@ -4050,18 +4050,18 @@
       "crew_ops": "全區間(高)"
     },
     "3035": {
-      "type_name": "EMU700/800",
-      "formation": "竹機U6AB",
+      "type_name": "EMU900",
+      "formation": "七機U3A",
       "route": "豐原=潮州基地",
       "crew_mech": "豐原=(彰562)=嘉義=(高825)=潮州基地",
       "crew_ops": "豐原=(彰)=彰化=(高)=潮州"
     },
     "3038": {
-      "type_name": "優化EMU500 8輛",
-      "formation": "高機U2AB",
+      "type_name": "EMU900",
+      "formation": "七機U2A",
       "route": "臺東=新左營",
       "crew_mech": "臺東=(東T75)=潮州=(高866)=新左營",
-      "crew_ops": "臺東=(花)=潮州=(高)=新左營"
+      "crew_ops": "台東=(花)=潮州=(高)=新左營"
     },
     "3051": {
       "type_name": "優化EMU500 8輛",
@@ -4144,7 +4144,7 @@
       "type_name": "優化EMU500 8輛",
       "formation": "高機U4AB",
       "route": "新左營=枋寮",
-      "crew_mech": "新左營=(高859)=潮州=(高864)=枋寮",
+      "crew_mech": "新左營=(高866)=潮州=(高864)=枋寮",
       "crew_ops": "全區間(高)"
     },
     "3072": {
@@ -4158,14 +4158,14 @@
       "type_name": "優化EMU500 8輛",
       "formation": "高機U2AB",
       "route": "新左營=枋寮",
-      "crew_mech": "新左營=(高866)=潮州=(高863)=枋寮",
+      "crew_mech": "新左營=(高874)=潮州=(高863)=枋寮",
       "crew_ops": "全區間(高)"
     },
     "3074": {
       "type_name": "優化EMU500 8輛",
       "formation": "高機U2AB",
       "route": "枋寮=新左營",
-      "crew_mech": "枋寮=(高857)=潮州=(高866)=新左營",
+      "crew_mech": "枋寮=(高857)=潮州=(高874)=新左營",
       "crew_ops": "全區間(高)"
     },
     "3078": {
@@ -4179,7 +4179,7 @@
       "type_name": "優化EMU500 8輛",
       "formation": "高機U2AB",
       "route": "新左營=枋寮",
-      "crew_mech": "全區間(左928)",
+      "crew_mech": "全區間(左926)",
       "crew_ops": "全區間(高)"
     },
     "3082": {
@@ -4197,31 +4197,31 @@
       "crew_ops": "全區間(高)"
     },
     "3111": {
-      "type_name": "EMU800",
-      "formation": "嘉機U6AB",
+      "type_name": "優化EMU500 8輛",
+      "formation": "高機U2AB",
       "route": "臺南=潮州基地",
       "crew_mech": "全區間(左950)",
       "crew_ops": "全區間(高)"
     },
     "3116": {
       "type_name": "EMU800",
-      "formation": "嘉機U2AB",
+      "formation": "嘉機U4AB",
       "route": "臺南=嘉義",
       "crew_mech": "全區間(左971)",
       "crew_ops": "全區間(高)"
     },
     "3117": {
       "type_name": "EMU800",
-      "formation": "嘉機U4AB",
+      "formation": "嘉機U6AB",
       "route": "新營=潮州基地",
       "crew_mech": "全區間(高835)",
       "crew_ops": "全區間(高)"
     },
     "3118": {
-      "type_name": "EMU800",
+      "type_name": "EMU700/800",
       "formation": "嘉機U3AB",
       "route": "高雄=后里",
-      "crew_mech": "高雄=(嘉748)=嘉義=(嘉715)=后里",
+      "crew_mech": "高雄=(嘉747)=嘉義=(嘉715)=后里",
       "crew_ops": "高雄=(嘉)=嘉義=(彰)=后里"
     },
     "3121": {
@@ -4233,7 +4233,7 @@
     },
     "3122": {
       "type_name": "EMU800",
-      "formation": "嘉機U4AB",
+      "formation": "嘉機U2AB",
       "route": "屏東=嘉義",
       "crew_mech": "全區間(嘉742)",
       "crew_ops": "全區間(高)"
@@ -4262,9 +4262,9 @@
     "3132": {
       "type_name": "EMU800",
       "formation": "嘉機U6AB",
-      "route": "潮州基地=富岡基地",
-      "crew_mech": "潮州基地=(嘉747)=嘉義=(嘉720)=彰化=(彰560)=富岡基地",
-      "crew_ops": "潮州=(高)=嘉義=(嘉)=彰化=(彰)=富岡基地"
+      "route": "潮州基地=嘉義",
+      "crew_mech": "全區間(嘉748)",
+      "crew_ops": "全區間(高)"
     },
     "3137": {
       "type_name": "EMU800",
@@ -4278,7 +4278,7 @@
       "formation": "嘉機U5AB",
       "route": "潮州基地=后里",
       "crew_mech": "潮州基地=(高821)=嘉義=(嘉716)=后里",
-      "crew_ops": "潮州=(嘉)=彰化=(彰)=后里"
+      "crew_ops": "全區間(嘉)"
     },
     "3140": {
       "type_name": "優化EMU500 8輛",
@@ -4302,9 +4302,9 @@
       "crew_ops": "全區間(高)"
     },
     "3143": {
-      "type_name": "EMU900",
-      "formation": "七機U5A",
-      "route": "彰化=嘉義",
+      "type_name": "EMU700/800",
+      "formation": "竹機U4AB",
+      "route": "彰化=新營",
       "crew_mech": "全區間(嘉727)",
       "crew_ops": "全區間(嘉)"
     },
@@ -4318,15 +4318,15 @@
     "3146": {
       "type_name": "EMU800",
       "formation": "嘉機U4AB",
-      "route": "潮州基地=后里",
-      "crew_mech": "潮州基地=(嘉743)=嘉義=(嘉710)=后里",
+      "route": "嘉義=后里",
+      "crew_mech": "全區間(嘉710)",
       "crew_ops": "潮州=(高)=嘉義=(嘉)=后里"
     },
     "3147": {
       "type_name": "EMU800",
       "formation": "嘉機U5AB",
       "route": "后里=潮州基地",
-      "crew_mech": "后里=(嘉707)=嘉義=(高840)=潮州基地",
+      "crew_mech": "后里=(嘉707)=嘉義=(高839)=潮州基地",
       "crew_ops": "后里=(彰)=嘉義=(高)=潮州"
     },
     "3148": {
@@ -4334,11 +4334,11 @@
       "formation": "嘉機U4AB",
       "route": "潮州基地=后里",
       "crew_mech": "潮州基地=(嘉743)=嘉義=(嘉710)=后里",
-      "crew_ops": "潮州=(高)=嘉義=(嘉)=彰化=(彰)=后里"
+      "crew_ops": "潮州=(高)=嘉義=(嘉)=后里"
     },
     "3151": {
       "type_name": "EMU800",
-      "formation": "嘉機U4AB",
+      "formation": "嘉機U2AB",
       "route": "嘉義=潮州基地",
       "crew_mech": "全區間(高816)",
       "crew_ops": "全區間(高)"
@@ -4354,26 +4354,26 @@
       "type_name": "EMU800",
       "formation": "嘉機U3AB",
       "route": "新竹=潮州",
-      "crew_mech": "新竹=(彰554)=彰化=(嘉728)=嘉義=(左971)=善化=(左936)=新左營=(左955)=潮州",
+      "crew_mech": "新竹=(彰554)=彰化=(嘉723)=嘉義=(左971)=善化=(左936)=新左營=(左955)=潮州",
       "crew_ops": "新竹=(彰)=彰化=(嘉)=嘉義=(高)=潮州"
     },
     "3158": {
-      "type_name": "EMU800",
-      "formation": "嘉機U6AB",
+      "type_name": "優化EMU500 8輛",
+      "formation": "高機U2AB",
       "route": "潮州基地=后里",
       "crew_mech": "潮州基地=(高823)=嘉義=(嘉706)=后里",
-      "crew_ops": "潮州=(嘉)=彰化=(彰)=后里"
+      "crew_ops": "全區間(嘉)"
     },
     "3161": {
       "type_name": "EMU800",
-      "formation": "嘉機U4AB",
+      "formation": "嘉機U6AB",
       "route": "嘉義=潮州基地",
-      "crew_mech": "全區間(嘉746)",
+      "crew_mech": "全區間(高840)",
       "crew_ops": "全區間(嘉)"
     },
     "3162": {
       "type_name": "EMU800",
-      "formation": "嘉機U4AB",
+      "formation": "嘉機U6AB",
       "route": "潮州基地=嘉義",
       "crew_mech": "全區間(高824)",
       "crew_ops": "全區間(高)"
@@ -4387,9 +4387,9 @@
     },
     "3167": {
       "type_name": "EMU800",
-      "formation": "嘉機U2AB",
+      "formation": "嘉機U4AB",
       "route": "后里=潮州基地",
-      "crew_mech": "后里=(嘉730)=嘉義=(左976)=臺南=(左974)=新左營=(左953)=潮州基地",
+      "crew_mech": "后里=(嘉730)=嘉義=(左976)=臺南=(左971)=新左營=(左953)=潮州基地",
       "crew_ops": "后里=(彰)=彰化=(嘉)=嘉義=(高)=潮州"
     },
     "3168": {
@@ -4414,10 +4414,10 @@
       "crew_ops": "全區間(嘉)"
     },
     "3177": {
-      "type_name": "EMU700/800",
-      "formation": "竹機U5AB",
-      "route": "銅鑼=潮州",
-      "crew_mech": "銅鑼=(嘉711)=彰化=(嘉712)=嘉義=(嘉753)=新左營=(左952)=潮州",
+      "type_name": "EMU800",
+      "formation": "嘉機U5AB",
+      "route": "銅鑼=潮州基地",
+      "crew_mech": "銅鑼=(嘉711)=彰化=(嘉712)=嘉義=(嘉753)=新左營=(左952)=潮州基地",
       "crew_ops": "銅鑼=(彰)=彰化=(嘉)=潮州"
     },
     "3178": {
@@ -4457,7 +4457,7 @@
     },
     "3191": {
       "type_name": "EMU800",
-      "formation": "嘉機U2AB",
+      "formation": "嘉機U4AB",
       "route": "嘉義=潮州",
       "crew_mech": "全區間(嘉741)",
       "crew_ops": "全區間(高)"
@@ -4474,14 +4474,14 @@
       "formation": "嘉機U3AB",
       "route": "后里=潮州基地",
       "crew_mech": "后里=(嘉715)=彰化=(一至四彰589/五六日例彰5R10)=嘉義=(高821)=潮州基地",
-      "crew_ops": "后里=(彰)=彰化=(嘉)=潮州"
+      "crew_ops": "后里=(彰)=嘉義=(嘉)=潮州"
     },
     "3198": {
       "type_name": "EMU800",
       "formation": "嘉機U5AB",
       "route": "潮州基地=后里",
       "crew_mech": "潮州基地=(高812)=嘉義=(嘉730)=后里",
-      "crew_ops": "潮州=(嘉)=彰化=(彰)=后里"
+      "crew_ops": "全區間(嘉)"
     },
     "3201": {
       "type_name": "EMU800",
@@ -4501,47 +4501,47 @@
       "type_name": "EMU800",
       "formation": "嘉機U3AB",
       "route": "后里=屏東",
-      "crew_mech": "后里=(嘉719)=彰化=(嘉713)=嘉義=(左942)=新左營=(左939)=屏東",
+      "crew_mech": "后里=(嘉719)=彰化=(嘉713)=嘉義=(左962)=新左營=(左939)=屏東",
       "crew_ops": "全區間(嘉)"
     },
     "3208": {
       "type_name": "EMU800",
-      "formation": "嘉機U4AB",
+      "formation": "嘉機U2AB",
       "route": "潮州基地=后里",
       "crew_mech": "潮州基地=(高832)=嘉義=(嘉711)=后里",
-      "crew_ops": "潮州=(高)=嘉義=(嘉)=彰化=(彰)=后里"
+      "crew_ops": "潮州=(高)=嘉義=(嘉)=后里"
     },
     "3211": {
       "type_name": "EMU800",
-      "formation": "嘉機U4AB",
+      "formation": "嘉機U6AB",
       "route": "嘉義=潮州",
       "crew_mech": "全區間(高822)",
       "crew_ops": "全區間(高)"
     },
     "3212": {
       "type_name": "EMU800",
-      "formation": "嘉機U4AB",
+      "formation": "嘉機U6AB",
       "route": "潮州基地=嘉義",
       "crew_mech": "全區間(高833)",
-      "crew_ops": "全區間(高)"
+      "crew_ops": "全區間(嘉)"
     },
     "3217": {
       "type_name": "EMU800",
       "formation": "嘉機U5AB",
       "route": "后里=潮州基地",
       "crew_mech": "后里=(嘉716)=彰化=(嘉702)=嘉義=(左940)=新左營=(左955)=潮州基地",
-      "crew_ops": "后里=(彰)=彰化=(嘉)=潮州"
+      "crew_ops": "全區間(嘉)"
     },
     "3218": {
       "type_name": "EMU800",
-      "formation": "嘉機U2AB",
+      "formation": "嘉機U4AB",
       "route": "潮州基地=后里",
       "crew_mech": "潮州基地=(左953)=新左營=(嘉753)=嘉義=(嘉709)=后里",
       "crew_ops": "潮州=(高)=嘉義=(嘉)=后里"
     },
     "3221": {
       "type_name": "EMU800",
-      "formation": "嘉機U4AB",
+      "formation": "嘉機U2AB",
       "route": "嘉義=潮州基地",
       "crew_mech": "全區間(嘉747)",
       "crew_ops": "全區間(嘉)"
@@ -4551,20 +4551,20 @@
       "formation": "嘉機U3AB",
       "route": "潮州基地=嘉義",
       "crew_mech": "全區間(高834)",
-      "crew_ops": "全區間(嘉)"
+      "crew_ops": "全區間(高)"
     },
     "3227": {
       "type_name": "EMU800",
       "formation": "嘉機U4AB",
-      "route": "后里=潮州",
-      "crew_mech": "后里=(嘉710)=彰化=(嘉708)=嘉義=(高823)=潮州",
-      "crew_ops": "后里=(彰)=彰化=(嘉)=潮州"
+      "route": "后里=潮州基地",
+      "crew_mech": "后里=(嘉710)=彰化=(嘉708)=嘉義=(高823)=潮州基地",
+      "crew_ops": "全區間(嘉)"
     },
     "3228": {
-      "type_name": "EMU700/800",
-      "formation": "竹機U5AB",
-      "route": "潮州=后里",
-      "crew_mech": "潮州=(左952)=新左營=(左948)=嘉義=(嘉702)=彰化=(一至六彰577/日彰5R9)=后里",
+      "type_name": "EMU800",
+      "formation": "嘉機U5AB",
+      "route": "潮州基地=后里",
+      "crew_mech": "潮州基地=(高835)=嘉義=(嘉702)=彰化=(一至六彰577/日彰5R9)=后里",
       "crew_ops": "潮州=(高)=嘉義=(嘉)=彰化=(彰)=后里"
     },
     "3229": {
@@ -4575,36 +4575,36 @@
       "crew_ops": "全區間(高)"
     },
     "3231": {
-      "type_name": "EMU700/800",
-      "formation": "竹機U6AB",
+      "type_name": "EMU800",
+      "formation": "嘉機U5AB",
       "route": "斗六=潮州基地",
-      "crew_mech": "斗六=(嘉715)=嘉義=(高824)=潮州基地",
-      "crew_ops": "斗六=(嘉)=潮州=(高)=潮基"
+      "crew_mech": "斗六=(嘉732)=嘉義=(高824)=潮州基地",
+      "crew_ops": "全區間(嘉)"
     },
     "3232": {
       "type_name": "EMU800",
       "formation": "嘉機U5AB",
       "route": "潮州基地=嘉義",
-      "crew_mech": "全區間(高835)",
+      "crew_mech": "潮州基地=(左952)=新左營=(左948)=嘉義",
       "crew_ops": "全區間(高)"
     },
     "3237": {
-      "type_name": "EMU800",
-      "formation": "嘉機U6AB",
+      "type_name": "優化EMU500 8輛",
+      "formation": "高機U2AB",
       "route": "后里=潮州基地",
       "crew_mech": "后里=(嘉706)=彰化=(嘉703)=嘉義=(嘉743)=潮州基地",
-      "crew_ops": "后里=(彰)=彰化=(嘉)=潮州基地"
+      "crew_ops": "全區間(嘉)"
     },
     "3238": {
       "type_name": "EMU800",
-      "formation": "嘉機U2AB",
+      "formation": "嘉機U4AB",
       "route": "潮州=后里",
-      "crew_mech": "潮州=(高836)=嘉義=(嘉725)=彰化=(彰563)=后里",
+      "crew_mech": "潮州=(高836)=嘉義=(嘉721)=彰化=(彰551)=后里",
       "crew_ops": "潮州=(高)=嘉義=(嘉)=彰化=(彰)=后里"
     },
     "3241": {
       "type_name": "EMU800",
-      "formation": "嘉機U4AB",
+      "formation": "嘉機U6AB",
       "route": "嘉義=潮州",
       "crew_mech": "嘉義=(左963)=新左營=(左953)=潮州",
       "crew_ops": "全區間(嘉)"
@@ -4620,8 +4620,8 @@
       "type_name": "EMU800",
       "formation": "嘉機U6AB",
       "route": "后里=潮州基地",
-      "crew_mech": "后里=(嘉717)=彰化=(嘉716)=嘉義=(左947)=新左營=(左936)=潮州基地",
-      "crew_ops": "后里=(彰)=彰化=(嘉)=嘉義=(高)=潮州基地"
+      "crew_mech": "后里=(嘉717)=彰化=(嘉716)=嘉義=(左947)=新左營=(左939)=潮州基地",
+      "crew_ops": "后里=(彰)=嘉義=(高)=潮州"
     },
     "3248": {
       "type_name": "EMU800",
@@ -4646,7 +4646,7 @@
     },
     "3252": {
       "type_name": "EMU800",
-      "formation": "嘉機U4AB",
+      "formation": "嘉機U6AB",
       "route": "潮州=新竹",
       "crew_mech": "潮州=(左958)=新左營=(左949)=嘉義=(嘉703)=彰化=(新C42)=新竹",
       "crew_ops": "潮州=(高)=嘉義=(嘉)=彰化=(竹)=新竹"
@@ -4656,13 +4656,13 @@
       "formation": "嘉機U4AB",
       "route": "后里=潮州基地",
       "crew_mech": "后里=(嘉714)=彰化=(嘉723)=嘉義=(高827)=潮州基地",
-      "crew_ops": "后里=(嘉)=彰化=(彰)=嘉義=(嘉)=潮州基地"
+      "crew_ops": "全區間(嘉)"
     },
     "3258": {
       "type_name": "EMU800",
       "formation": "嘉機U3AB",
       "route": "潮州基地=二水",
-      "crew_mech": "潮州基地=(嘉746)=嘉義=(嘉724)=二水",
+      "crew_mech": "潮州基地=(高838)=嘉義=(嘉724)=二水",
       "crew_ops": "潮州=(高)=嘉義=(嘉)=二水"
     },
     "3261": {
@@ -4695,9 +4695,9 @@
     },
     "3268": {
       "type_name": "EMU800",
-      "formation": "嘉機U4AB",
-      "route": "潮州=彰化",
-      "crew_mech": "潮州=(嘉751)=嘉義=(嘉722)=彰化",
+      "formation": "嘉機U2AB",
+      "route": "潮州基地=彰化",
+      "crew_mech": "潮州基地=(嘉751)=嘉義=(嘉722)=彰化",
       "crew_ops": "潮州=(嘉)=嘉義=(彰)=彰化"
     },
     "3271": {
@@ -4710,8 +4710,8 @@
     "3272": {
       "type_name": "EMU800",
       "formation": "嘉機U4AB",
-      "route": "潮州基地=斗六",
-      "crew_mech": "潮州基地=(高840)=嘉義=(嘉705)=斗六",
+      "route": "潮州基地=彰化",
+      "crew_mech": "潮州基地=(高840)=嘉義=(嘉705)=彰化",
       "crew_ops": "全區間(嘉)"
     },
     "3277": {
@@ -4719,12 +4719,12 @@
       "formation": "嘉機U5AB",
       "route": "后里=潮州基地",
       "crew_mech": "后里=(嘉730)=彰化=(嘉706)=嘉義=(高831)=潮州基地",
-      "crew_ops": "后里=(彰)=彰化=(嘉)=嘉義=(高)=潮州"
+      "crew_ops": "后里=(嘉)=嘉義=(高)=潮州"
     },
     "3278": {
       "type_name": "EMU800",
       "formation": "嘉機U5AB",
-      "route": "潮州=嘉義",
+      "route": "潮州基地=嘉義",
       "crew_mech": "全區間(嘉741)",
       "crew_ops": "全區間(嘉)"
     },
@@ -4737,17 +4737,17 @@
     },
     "3282": {
       "type_name": "EMU800",
-      "formation": "嘉機U4AB",
+      "formation": "嘉機U6AB",
       "route": "潮州=新營",
       "crew_mech": "全區間(嘉754)",
       "crew_ops": "全區間(嘉)"
     },
     "3287": {
       "type_name": "EMU800",
-      "formation": "嘉機U4AB",
+      "formation": "嘉機U2AB",
       "route": "后里=屏東",
       "crew_mech": "后里=(嘉711)=彰化=(嘉714)=嘉義=(高834)=屏東",
-      "crew_ops": "后里=(彰)=彰化=(嘉)=嘉義=(高)=屏東"
+      "crew_ops": "后里=(彰)=嘉義=(高)=屏東"
     },
     "3288": {
       "type_name": "優化EMU500 8輛",
@@ -4771,15 +4771,15 @@
       "crew_ops": "全區間(高)"
     },
     "3294": {
-      "type_name": "EMU800",
-      "formation": "嘉機U6AB",
+      "type_name": "優化EMU500 8輛",
+      "formation": "高機U2AB",
       "route": "潮州基地=臺南",
       "crew_mech": "全區間(左936)",
       "crew_ops": "全區間(高)"
     },
     "3297": {
       "type_name": "EMU800",
-      "formation": "嘉機U2AB",
+      "formation": "嘉機U4AB",
       "route": "后里=臺南",
       "crew_mech": "后里=(嘉709)=彰化=(彰541)=嘉義=(左977)=臺南",
       "crew_ops": "后里=(嘉)=嘉義=(高)=台南"
@@ -4809,14 +4809,14 @@
       "type_name": "優化EMU500 8輛",
       "formation": "高機U4AB",
       "route": "加祿=新左營",
-      "crew_mech": "加祿=(高852)=潮州=(高850)=新左營",
+      "crew_mech": "全區間(高852)",
       "crew_ops": "全區間(高)"
     },
     "3311": {
       "type_name": "優化EMU500 8輛",
       "formation": "高機U4AB",
       "route": "新左營=枋寮",
-      "crew_mech": "全區間(高850)",
+      "crew_mech": "全區間(高874)",
       "crew_ops": "全區間(高)"
     },
     "3316": {
@@ -4830,7 +4830,7 @@
       "type_name": "優化EMU500 8輛",
       "formation": "高機U4AB",
       "route": "枋寮=新左營",
-      "crew_mech": "枋寮=(高850)=潮州=(高859)=新左營",
+      "crew_mech": "枋寮=(高874)=潮州=(高866)=新左營",
       "crew_ops": "全區間(高)"
     },
     "3323": {
@@ -4900,7 +4900,7 @@
       "type_name": "優化EMU500 8輛",
       "formation": "高機U2AB",
       "route": "枋寮=新左營",
-      "crew_mech": "全區間(左928)",
+      "crew_mech": "全區間(左926)",
       "crew_ops": "全區間(高)"
     },
     "3701": {
@@ -4912,28 +4912,28 @@
     },
     "3702": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "沙崙=臺南",
       "crew_mech": "全區間(左972)",
       "crew_ops": "全區間(高)"
     },
     "3703": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "臺南=沙崙",
       "crew_mech": "全區間(左972)",
       "crew_ops": "全區間(高)"
     },
     "3704": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "沙崙=善化",
-      "crew_mech": "沙崙=(左932)=臺南=(左975)=善化",
+      "crew_mech": "沙崙=(左932)=臺南=(左980)=善化",
       "crew_ops": "全區間(高)"
     },
     "3705": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "嘉義=沙崙",
       "crew_mech": "全區間(左932)",
       "crew_ops": "全區間(高)"
@@ -4947,7 +4947,7 @@
     },
     "3707": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "臺南=沙崙",
       "crew_mech": "全區間(左972)",
       "crew_ops": "全區間(高)"
@@ -4975,16 +4975,16 @@
     },
     "3712": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "沙崙=善化",
       "crew_mech": "全區間(左972)",
       "crew_ops": "全區間(高)"
     },
     "3713": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "善化=沙崙",
-      "crew_mech": "全區間(左975)",
+      "crew_mech": "全區間(左980)",
       "crew_ops": "全區間(高)"
     },
     "3714": {
@@ -5003,9 +5003,9 @@
     },
     "3716": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "沙崙=善化",
-      "crew_mech": "全區間(左975)",
+      "crew_mech": "全區間(左980)",
       "crew_ops": "全區間(高)"
     },
     "3717": {
@@ -5026,7 +5026,7 @@
       "type_name": "EMU500",
       "formation": "嘉機U7A",
       "route": "善化=沙崙",
-      "crew_mech": "善化=(左949)=臺南=(左980)=沙崙",
+      "crew_mech": "善化=(左949)=臺南=(左975)=沙崙",
       "crew_ops": "全區間(高)"
     },
     "3722": {
@@ -5047,14 +5047,14 @@
       "type_name": "EMU500",
       "formation": "嘉機U7A",
       "route": "沙崙=永康",
-      "crew_mech": "全區間(左980)",
+      "crew_mech": "全區間(左975)",
       "crew_ops": "全區間(高)"
     },
     "3725": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "善化=沙崙",
-      "crew_mech": "善化=(左975)=臺南=(左971)=沙崙",
+      "crew_mech": "善化=(左980)=臺南=(左979)=沙崙",
       "crew_ops": "全區間(高)"
     },
     "3726": {
@@ -5067,43 +5067,43 @@
     "3727": {
       "type_name": "EMU500",
       "formation": "嘉機U7A",
-      "route": "臺南=沙崙",
-      "crew_mech": "全區間(左979)",
+      "route": "永康=沙崙",
+      "crew_mech": "永康(左973)=臺南=(左976)=沙崙",
       "crew_ops": "全區間(高)"
     },
     "3728": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "沙崙=臺南",
-      "crew_mech": "全區間(左971)",
+      "crew_mech": "全區間(左979)",
       "crew_ops": "全區間(高)"
     },
     "3731": {
       "type_name": "EMU500",
       "formation": "嘉機U7A",
       "route": "永康=沙崙",
-      "crew_mech": "永康=(左980)=臺南=(左976)=沙崙",
+      "crew_mech": "永康=(左975)=臺南=(左980)=沙崙",
       "crew_ops": "全區間(高)"
     },
     "3732": {
       "type_name": "EMU500",
       "formation": "嘉機U7A",
       "route": "沙崙=臺南",
-      "crew_mech": "全區間(左979)",
+      "crew_mech": "全區間(左976)",
       "crew_ops": "全區間(高)"
     },
     "3733": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "臺南=沙崙",
-      "crew_mech": "全區間(左977)",
+      "crew_mech": "全區間(左979)",
       "crew_ops": "全區間(高)"
     },
     "3734": {
       "type_name": "EMU500",
       "formation": "嘉機U7A",
       "route": "沙崙=善化",
-      "crew_mech": "沙崙=(左976)=臺南=(左980)=善化",
+      "crew_mech": "沙崙=(左980)=臺南=(左974)=善化",
       "crew_ops": "全區間(高)"
     },
     "3735": {
@@ -5115,9 +5115,9 @@
     },
     "3736": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "沙崙=臺南",
-      "crew_mech": "全區間(左977)",
+      "crew_mech": "全區間(左979)",
       "crew_ops": "全區間(高)"
     },
     "3737": {
@@ -5136,7 +5136,7 @@
     },
     "3741": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "臺南=沙崙",
       "crew_mech": "全區間(左951)",
       "crew_ops": "全區間(高)"
@@ -5152,12 +5152,12 @@
       "type_name": "EMU500",
       "formation": "嘉機U7A",
       "route": "善化=沙崙",
-      "crew_mech": "全區間(左980)",
+      "crew_mech": "全區間(左974)",
       "crew_ops": "全區間(高)"
     },
     "3744": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "沙崙=臺南",
       "crew_mech": "全區間(左951)",
       "crew_ops": "全區間(高)"
@@ -5173,12 +5173,12 @@
       "type_name": "EMU500",
       "formation": "嘉機U7A",
       "route": "沙崙=永康",
-      "crew_mech": "沙崙=(左980)=臺南=(左974)=永康",
+      "crew_mech": "全區間(左974)",
       "crew_ops": "全區間(高)"
     },
     "3747": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "臺南=沙崙",
       "crew_mech": "全區間(左951)",
       "crew_ops": "全區間(高)"
@@ -5199,7 +5199,7 @@
     },
     "3752": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "沙崙=永康",
       "crew_mech": "全區間(左951)",
       "crew_ops": "全區間(高)"
@@ -5220,7 +5220,7 @@
     },
     "3755": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "永康=沙崙",
       "crew_mech": "永康=(左951)=臺南=(左979)=沙崙",
       "crew_ops": "全區間(高)"
@@ -5241,14 +5241,14 @@
     },
     "3758": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "沙崙=永康",
       "crew_mech": "全區間(左979)",
       "crew_ops": "全區間(高)"
     },
     "3760": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "沙崙=善化",
       "crew_mech": "沙崙=(左960)=臺南=(左976)=善化",
       "crew_ops": "全區間(高)"
@@ -5276,7 +5276,7 @@
     },
     "3765": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "永康=沙崙",
       "crew_mech": "全區間(左979)",
       "crew_ops": "全區間(高)"
@@ -5297,14 +5297,14 @@
     },
     "3768": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "沙崙=善化",
       "crew_mech": "全區間(左979)",
       "crew_ops": "全區間(高)"
     },
     "3771": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "善化=沙崙",
       "crew_mech": "全區間(左976)",
       "crew_ops": "全區間(高)"
@@ -5325,7 +5325,7 @@
     },
     "3774": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "沙崙=臺南",
       "crew_mech": "全區間(左976)",
       "crew_ops": "全區間(高)"
@@ -5346,7 +5346,7 @@
     },
     "3777": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "善化=沙崙",
       "crew_mech": "全區間(左979)",
       "crew_ops": "全區間(高)"
@@ -5360,14 +5360,14 @@
     },
     "3781": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "臺南=沙崙",
       "crew_mech": "全區間(左976)",
       "crew_ops": "全區間(高)"
     },
     "3782": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "沙崙=嘉義",
       "crew_mech": "全區間(左976)",
       "crew_ops": "全區間(高)"
@@ -5381,7 +5381,7 @@
     },
     "3784": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "沙崙=臺南",
       "crew_mech": "全區間(左979)",
       "crew_ops": "全區間(高)"
@@ -5402,7 +5402,7 @@
     },
     "3861": {
       "type_name": "EMU500",
-      "formation": "嘉機U8A",
+      "formation": "嘉機U7A",
       "route": "善化=沙崙",
       "crew_mech": "全區間(左960)",
       "crew_ops": "全區間(高)"
@@ -5416,23 +5416,23 @@
     },
     "4003": {
       "type_name": "EMU900",
-      "formation": "北機U6A",
+      "formation": "竹機U17A",
       "route": "蘇澳=樹調",
-      "crew_mech": "全區間(北229)",
+      "crew_mech": "全區間(北242)",
       "crew_ops": "全區間(宜)"
     },
     "4006": {
       "type_name": "EMU900",
-      "formation": "北機U6A",
-      "route": "桃園=和平",
-      "crew_mech": "桃園=(北290)=樹林=(北202)=宜蘭=(宜015)=和平",
+      "formation": "北機U5A",
+      "route": "桃園=花蓮",
+      "crew_mech": "桃園=(北290)=樹林=(北202)=花蓮",
       "crew_ops": "全區間(北)"
     },
     "4007": {
-      "type_name": "EMU700/800",
-      "formation": "竹機U7AB",
+      "type_name": "EMU900",
+      "formation": "北機U6A",
       "route": "蘇澳=樹調",
-      "crew_mech": "全區間(北232)",
+      "crew_mech": "全區間(北237)",
       "crew_ops": "全區間(宜)"
     },
     "4008": {
@@ -5443,10 +5443,10 @@
       "crew_ops": "全區間(北)"
     },
     "4013": {
-      "type_name": "EMU700/800",
-      "formation": "竹機U7AB",
-      "route": "花蓮=富岡基地",
-      "crew_mech": "花蓮=(花H27)=宜蘭=(宜035)=樹林=(北271)=富岡基地",
+      "type_name": "EMU900",
+      "formation": "竹機U17A",
+      "route": "花蓮=湖口",
+      "crew_mech": "花蓮=(花H27)=宜蘭=(宜035)=樹林=(北271)=湖口",
       "crew_ops": "全區間(北)"
     },
     "4015": {
@@ -5458,7 +5458,7 @@
     },
     "4017": {
       "type_name": "EMU900",
-      "formation": "北機U5A",
+      "formation": "竹機U9A",
       "route": "瑞芳=樹調",
       "crew_mech": "全區間(北265)",
       "crew_ops": "全區間(北)"
@@ -5466,15 +5466,15 @@
     "4019": {
       "type_name": "EMU900",
       "formation": "北機U6A",
-      "route": "和平=樹調",
-      "crew_mech": "和平=(宜015)=宜蘭=(北238)=樹調",
-      "crew_ops": "和平=(北)=宜蘭=(宜)=樹調"
+      "route": "蘇澳=樹調",
+      "crew_mech": "全區間(北241)",
+      "crew_ops": "全區間(宜)"
     },
     "4022": {
       "type_name": "EMU900",
-      "formation": "竹機U16A",
-      "route": "鶯歌=蘇澳新",
-      "crew_mech": "鶯歌=(北258)=樹林=(北224)=蘇澳新",
+      "formation": "竹機U15A",
+      "route": "鶯歌=蘇澳",
+      "crew_mech": "鶯歌=(日一北258/二至六北273)=樹林=(北224)=蘇澳",
       "crew_ops": "全區間(宜)"
     },
     "4023": {
@@ -5489,18 +5489,18 @@
       "formation": "北機U6A",
       "route": "樹調=花蓮",
       "crew_mech": "樹調=(北234)=宜蘭=(花H27)=花蓮",
-      "crew_ops": "全區間(花)"
+      "crew_ops": "全區間(宜)"
     },
     "4027": {
       "type_name": "EMU900",
-      "formation": "竹機U16A",
-      "route": "蘇澳新=湖口",
-      "crew_mech": "蘇澳新=(北225)=樹林=(北288)=湖口",
+      "formation": "竹機U15A",
+      "route": "蘇澳=湖口",
+      "crew_mech": "蘇澳=(北225)=樹林=(北288)=湖口",
       "crew_ops": "蘇新=(宜)=樹林=(北)=湖口"
     },
     "4030": {
-      "type_name": "EMU700/800",
-      "formation": "竹機U7AB",
+      "type_name": "EMU900",
+      "formation": "竹機U17A",
       "route": "樹調=花蓮",
       "crew_mech": "樹調=(宜001)=宜蘭=(宜024)=花蓮",
       "crew_ops": "全區間(花)"
@@ -5514,14 +5514,14 @@
     },
     "4032": {
       "type_name": "EMU900",
-      "formation": "北機U5A",
+      "formation": "竹機U17A",
       "route": "樹調=花蓮",
       "crew_mech": "樹調=(北242)=宜蘭=(宜051)=花蓮",
       "crew_ops": "全區間(宜)"
     },
     "4033": {
-      "type_name": "EMU700/800",
-      "formation": "竹機U7AB",
+      "type_name": "EMU900",
+      "formation": "竹機U17A",
       "route": "花蓮=宜蘭",
       "crew_mech": "全區間(花H24)",
       "crew_ops": "全區間(宜)"
@@ -5536,15 +5536,15 @@
     "4037": {
       "type_name": "EMU900",
       "formation": "北機U6A",
-      "route": "花蓮=桃園",
-      "crew_mech": "花蓮=(花H28)=宜蘭=(北242)=桃園",
-      "crew_ops": "花蓮=(花)=樹林=(北)=桃園"
+      "route": "花蓮=宜蘭",
+      "crew_mech": "全區間(花H28)",
+      "crew_ops": "全區間(宜)"
     },
     "4039": {
       "type_name": "EMU900",
-      "formation": "北機U5A",
+      "formation": "竹機U17A",
       "route": "花蓮=樹林",
-      "crew_mech": "全區間(一至四北211/五至日北208)",
+      "crew_mech": "全區間(北208)",
       "crew_ops": "全區間(花)"
     },
     "4040": {
@@ -5555,15 +5555,15 @@
       "crew_ops": "全區間(花)"
     },
     "4042": {
-      "type_name": "EMU700/800",
-      "formation": "竹機U7AB",
+      "type_name": "EMU900",
+      "formation": "竹機U17A",
       "route": "宜蘭=花蓮",
       "crew_mech": "全區間(花H23)",
       "crew_ops": "全區間(宜)"
     },
     "4043": {
-      "type_name": "EMU700/800",
-      "formation": "竹機U7AB",
+      "type_name": "EMU900",
+      "formation": "竹機U17A",
       "route": "花蓮=蘇澳新",
       "crew_mech": "全區間(宜025)",
       "crew_ops": "全區間(宜)"
@@ -5576,11 +5576,11 @@
       "crew_ops": "全區間(宜)"
     },
     "4046": {
-      "type_name": "EMU700/800",
-      "formation": "竹機U7AB",
-      "route": "新豐=花蓮",
-      "crew_mech": "新豐=(北283)=樹林=(北241)=宜蘭=(宜025)=花蓮",
-      "crew_ops": "新豐=(北)=樹林=(宜)=花蓮"
+      "type_name": "EMU900",
+      "formation": "竹機U17A",
+      "route": "湖口=花蓮",
+      "crew_mech": "湖口=(北277)=樹林=(北241)=宜蘭=(宜025)=花蓮",
+      "crew_ops": "湖口=(北)=樹林=(宜)=花蓮"
     },
     "4048": {
       "type_name": "EMU900",
@@ -5591,7 +5591,7 @@
     },
     "4102": {
       "type_name": "EMU500 8輛",
-      "formation": "北機U1AB",
+      "formation": "北機U3AB",
       "route": "宜蘭=花蓮",
       "crew_mech": "全區間(宜021)",
       "crew_ops": "全區間(宜)"
@@ -5605,7 +5605,7 @@
     },
     "4106": {
       "type_name": "EMU700/800",
-      "formation": "竹機U4AB",
+      "formation": "竹機U5AB",
       "route": "頭城=蘇澳",
       "crew_mech": "全區間(宜012)",
       "crew_ops": "全區間(宜)"
@@ -5635,7 +5635,7 @@
       "type_name": "EMU700/800",
       "formation": "竹機U3AB",
       "route": "蘇澳=樹調",
-      "crew_mech": "全區間(北237)",
+      "crew_mech": "全區間(北229)",
       "crew_ops": "全區間(宜)"
     },
     "4114": {
@@ -5661,23 +5661,23 @@
     },
     "4119": {
       "type_name": "EMU900",
-      "formation": "北機U5A",
+      "formation": "竹機U17A",
       "route": "瑞芳=樹調",
       "crew_mech": "全區間(北254)",
       "crew_ops": "全區間(北)"
     },
     "4122": {
       "type_name": "EMU500",
-      "formation": "花機U2A",
+      "formation": "東機U1A",
       "route": "和平=花蓮",
       "crew_mech": "全區間(花H81)",
       "crew_ops": "全區間(花)"
     },
     "4123": {
       "type_name": "EMU700/800",
-      "formation": "竹機U4AB",
+      "formation": "竹機U5AB",
       "route": "蘇澳=樹調",
-      "crew_mech": "蘇澳=(宜012)=宜蘭=(北231)=樹調",
+      "crew_mech": "全區間(北232)",
       "crew_ops": "全區間(宜)"
     },
     "4124": {
@@ -5696,9 +5696,9 @@
     },
     "4128": {
       "type_name": "EMU500 8輛",
-      "formation": "北機U2AB",
+      "formation": "北機U1AB",
       "route": "樹調=蘇澳",
-      "crew_mech": "樹調=(北221)=宜蘭=(北241)=蘇澳",
+      "crew_mech": "樹調=(北221)=宜蘭=(北231)=蘇澳",
       "crew_ops": "全區間(宜)"
     },
     "4129": {
@@ -5710,7 +5710,7 @@
     },
     "4131": {
       "type_name": "EMU900",
-      "formation": "竹機U16A",
+      "formation": "竹機U10A",
       "route": "瑞芳=樹調",
       "crew_mech": "全區間(北268)",
       "crew_ops": "全區間(北)"
@@ -5724,21 +5724,21 @@
     },
     "4135": {
       "type_name": "EMU900",
-      "formation": "七機U2A",
+      "formation": "北機U5A",
       "route": "福隆=樹林",
       "crew_mech": "全區間(北279)",
       "crew_ops": "全區間(北)"
     },
     "4137": {
       "type_name": "EMU500 8輛",
-      "formation": "北機U2AB",
-      "route": "蘇澳=樹調",
-      "crew_mech": "全區間(北241)",
+      "formation": "北機U1AB",
+      "route": "蘇澳=樹林",
+      "crew_mech": "全區間(北231)",
       "crew_ops": "全區間(北)"
     },
     "4138": {
       "type_name": "EMU700/800",
-      "formation": "竹機U4AB",
+      "formation": "竹機U5AB",
       "route": "中壢=蘇澳",
       "crew_mech": "中壢=(北257)=七堵=(七166)=蘇澳",
       "crew_ops": "中壢=(北)=樹林=(宜)=蘇澳"
@@ -5752,7 +5752,7 @@
     },
     "4144": {
       "type_name": "EMU900",
-      "formation": "北機U5A",
+      "formation": "竹機U17A",
       "route": "樹林=瑞芳",
       "crew_mech": "全區間(北254)",
       "crew_ops": "全區間(北)"
@@ -5767,27 +5767,27 @@
     "4148": {
       "type_name": "EMU700/800",
       "formation": "竹機U1AB",
-      "route": "中壢=蘇澳",
-      "crew_mech": "中壢=(北264)=樹林=(北223)=蘇澳",
-      "crew_ops": "中壢=(竹)=七堵=(宜)=蘇澳"
+      "route": "富岡基地=蘇澳",
+      "crew_mech": "富岡基地=(北264)=樹林=(北223)=蘇澳",
+      "crew_ops": "北湖=(竹)=七堵=(宜)=蘇澳"
     },
     "4151": {
       "type_name": "EMU700/800",
-      "formation": "竹機U4AB",
+      "formation": "竹機U5AB",
       "route": "蘇澳=樹調",
       "crew_mech": "全區間(北235)",
       "crew_ops": "全區間(宜)"
     },
     "4152": {
       "type_name": "EMU900",
-      "formation": "七機U2A",
+      "formation": "北機U5A",
       "route": "楊梅=福隆",
       "crew_mech": "楊梅=(北261)=七堵=(北279)=福隆",
       "crew_ops": "楊梅=(基)=七堵=(北)=福隆"
     },
     "4154": {
       "type_name": "EMU900",
-      "formation": "竹機U16A",
+      "formation": "竹機U10A",
       "route": "富岡基地=瑞芳",
       "crew_mech": "富岡基地=(北266)=樹林=(北225)=七堵=(北268)=瑞芳",
       "crew_ops": "全區間(北)"
@@ -5836,9 +5836,9 @@
     },
     "4177": {
       "type_name": "EMU500 8輛",
-      "formation": "北機U1AB",
+      "formation": "北機U3AB",
       "route": "花蓮=樹調",
-      "crew_mech": "花蓮=(宜021)=宜蘭=(北202)=樹調",
+      "crew_mech": "花蓮=(宜021)=宜蘭=(北221)=樹調",
       "crew_ops": "全區間(宜)"
     },
     "4178": {
@@ -5850,9 +5850,9 @@
     },
     "4182": {
       "type_name": "EMU500 8輛",
-      "formation": "北機U2AB",
-      "route": "樹調=蘇澳",
-      "crew_mech": "樹調=(北230)=宜蘭=(宜015)=蘇澳",
+      "formation": "北機U1AB",
+      "route": "樹林=蘇澳",
+      "crew_mech": "樹林=(北230)=宜蘭=(宜015)=蘇澳",
       "crew_ops": "全區間(宜)"
     },
     "4183": {
@@ -5906,14 +5906,14 @@
     },
     "4197": {
       "type_name": "EMU500 8輛",
-      "formation": "北機U2AB",
+      "formation": "北機U1AB",
       "route": "蘇澳=樹調",
       "crew_mech": "蘇澳=(宜015)=宜蘭=(北234)=樹調",
       "crew_ops": "全區間(宜)"
     },
     "4198": {
       "type_name": "EMU700/800",
-      "formation": "竹機U4AB",
+      "formation": "竹機U5AB",
       "route": "樹調=蘇澳",
       "crew_mech": "全區間(北228)",
       "crew_ops": "全區間(宜)"
@@ -5934,17 +5934,17 @@
     },
     "4208": {
       "type_name": "EMU700/800",
-      "formation": "竹機U4AB",
+      "formation": "竹機U5AB",
       "route": "樹調=蘇澳",
       "crew_mech": "全區間(北229)",
       "crew_ops": "全區間(宜)"
     },
     "4209": {
       "type_name": "EMU900",
-      "formation": "七機U2A",
-      "route": "福隆=富岡基地",
-      "crew_mech": "福隆=(北267)=樹林=(北253)=富岡基地",
-      "crew_ops": "福隆=(基)=樹林=(北)=富岡基地"
+      "formation": "北機U5A",
+      "route": "福隆=中壢",
+      "crew_mech": "福隆=(北267)=樹林=(北253)=中壢",
+      "crew_ops": "全區間(基)"
     },
     "4211": {
       "type_name": "EMU500 8輛",
@@ -5976,14 +5976,14 @@
     },
     "4218": {
       "type_name": "EMU900",
-      "formation": "七機U2A",
+      "formation": "北機U5A",
       "route": "七堵=福隆",
       "crew_mech": "全區間(北267)",
       "crew_ops": "全區間(基)"
     },
     "4221": {
       "type_name": "EMU700/800",
-      "formation": "竹機U4AB",
+      "formation": "竹機U5AB",
       "route": "蘇澳=富岡基地",
       "crew_mech": "蘇澳=(北226)=樹林=(北256)=富岡基地",
       "crew_ops": "蘇澳=(宜)=七堵=(竹)=北湖"
@@ -6004,7 +6004,7 @@
     },
     "4225": {
       "type_name": "EMU900",
-      "formation": "北機U5A",
+      "formation": "竹機U9A",
       "route": "福隆=富岡基地",
       "crew_mech": "全區間(七135)",
       "crew_ops": "全區間(北)"
@@ -6025,7 +6025,7 @@
     },
     "4229": {
       "type_name": "EMU700/800",
-      "formation": "竹機U4AB",
+      "formation": "竹機U5AB",
       "route": "蘇澳=頭城",
       "crew_mech": "全區間(宜014)",
       "crew_ops": "全區間(宜)"
@@ -6034,12 +6034,12 @@
       "type_name": "EMU700/800",
       "formation": "竹機U3AB",
       "route": "富岡基地=蘇澳",
-      "crew_mech": "富岡基地=(北282)=樹林=(北232)=蘇澳",
+      "crew_mech": "富岡基地=(北282)=七堵=(北232)=蘇澳",
       "crew_ops": "北湖=(竹)=七堵=(宜)=蘇澳"
     },
     "4234": {
       "type_name": "EMU900",
-      "formation": "北機U5A",
+      "formation": "竹機U9A",
       "route": "樹調=福隆",
       "crew_mech": "樹調=(七141)=七堵=(七135)=福隆",
       "crew_ops": "全區間(北)"
@@ -6047,8 +6047,8 @@
     "4235": {
       "type_name": "EMU700/800",
       "formation": "竹機U1AB",
-      "route": "羅東=富岡基地",
-      "crew_mech": "羅東=(北227)=樹林=(竹332)=富岡基地",
+      "route": "宜蘭=富岡基地",
+      "crew_mech": "宜蘭=(北227)=樹林=(竹332)=富岡基地",
       "crew_ops": "羅東=(宜)=七堵=(基)=北湖"
     },
     "4236": {
@@ -6060,7 +6060,7 @@
     },
     "4238": {
       "type_name": "EMU700/800",
-      "formation": "竹機U4AB",
+      "formation": "竹機U5AB",
       "route": "頭城=蘇澳",
       "crew_mech": "全區間(宜014)",
       "crew_ops": "全區間(宜)"
@@ -6109,7 +6109,7 @@
     },
     "4248": {
       "type_name": "EMU500 8輛",
-      "formation": "北機U1AB",
+      "formation": "北機U3AB",
       "route": "樹調=宜蘭",
       "crew_mech": "全區間(北238)",
       "crew_ops": "全區間(宜)"
@@ -6117,13 +6117,13 @@
     "4252": {
       "type_name": "EMU700/800",
       "formation": "竹機U3AB",
-      "route": "富岡基地=福隆",
-      "crew_mech": "富岡基地=(北263)=樹林=(北222)=福隆",
+      "route": "富岡基地=宜蘭",
+      "crew_mech": "富岡基地=(北255)=樹林=(北222)=宜蘭",
       "crew_ops": "全區間(宜)"
     },
     "4253": {
       "type_name": "EMU700/800",
-      "formation": "竹機U4AB",
+      "formation": "竹機U5AB",
       "route": "蘇澳=頭城",
       "crew_mech": "全區間(宜014)",
       "crew_ops": "全區間(宜)"
@@ -6137,7 +6137,7 @@
     },
     "4504": {
       "type_name": "EMU500",
-      "formation": "東機U1A",
+      "formation": "花機U2A",
       "route": "關山=臺東",
       "crew_mech": "全區間(東T50)",
       "crew_ops": "全區間(花)"
@@ -6172,7 +6172,7 @@
     },
     "4513": {
       "type_name": "EMU500",
-      "formation": "花機U2A",
+      "formation": "東機U1A",
       "route": "玉里=和平",
       "crew_mech": "全區間(花H81)",
       "crew_ops": "全區間(花)"
@@ -6193,7 +6193,7 @@
     },
     "4517": {
       "type_name": "EMU500",
-      "formation": "東機U1A",
+      "formation": "花機U2A",
       "route": "臺東=花蓮",
       "crew_mech": "全區間(花H78)",
       "crew_ops": "全區間(花)"
@@ -6291,294 +6291,294 @@
     },
     "4556": {
       "type_name": "EMU500",
-      "formation": "東機U1A",
+      "formation": "花機U2A",
       "route": "花蓮=臺東",
       "crew_mech": "全區間(東T45)",
       "crew_ops": "全區間(花)"
     },
     "4558": {
       "type_name": "EMU500",
-      "formation": "花機U2A",
+      "formation": "東機U1A",
       "route": "花蓮=玉里",
       "crew_mech": "全區間(東T69)",
       "crew_ops": "全區間(花)"
     },
     "4703": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K2ABC",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K2ABC",
       "route": "菁桐=七堵",
       "crew_mech": "全區間(七176)",
       "crew_ops": "全區間(基)"
     },
     "4704": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K2ABC",
-      "route": "瑞芳=菁桐",
-      "crew_mech": "全區間(七180)",
-      "crew_ops": "全區間(基)"
-    },
-    "4705": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K2ABC",
-      "route": "菁桐=七堵",
-      "crew_mech": "全區間(七180)",
-      "crew_ops": "全區間(基)"
-    },
-    "4706": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K1ABC",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K2ABC",
       "route": "七堵=菁桐",
       "crew_mech": "全區間(七178)",
       "crew_ops": "全區間(基)"
     },
-    "4707": {
-      "type_name": "DRC1000 3輛",
-      "formation": "七機K1ABC",
+    "4705": {
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K2ABC",
       "route": "菁桐=七堵",
       "crew_mech": "全區間(七178)",
       "crew_ops": "全區間(基)"
     },
+    "4706": {
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K1ABC",
+      "route": "七堵=菁桐",
+      "crew_mech": "全區間(七180)",
+      "crew_ops": "全區間(基)"
+    },
+    "4707": {
+      "type_name": "DRC3輛",
+      "formation": "七機變K1ABC",
+      "route": "菁桐=七堵",
+      "crew_mech": "全區間(七180)",
+      "crew_ops": "全區間(基)"
+    },
     "4708": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K2ABC",
-      "route": "瑞芳=菁桐",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K2ABC",
+      "route": "七堵=菁桐",
       "crew_mech": "全區間(七179)",
       "crew_ops": "全區間(基)"
     },
     "4712": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K2ABC",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K2ABC",
       "route": "七堵=菁桐",
       "crew_mech": "全區間(七177)",
       "crew_ops": "全區間(基)"
     },
     "4714": {
-      "type_name": "DRC1000 3輛",
-      "formation": "七機K1ABC",
-      "route": "瑞芳=菁桐",
+      "type_name": "DRC3輛",
+      "formation": "七機變K1ABC",
+      "route": "七堵=菁桐",
       "crew_mech": "全區間(七172)",
       "crew_ops": "全區間(基)"
     },
     "4715": {
-      "type_name": "DRC1000 3輛",
-      "formation": "七機K1ABC",
+      "type_name": "DRC3輛",
+      "formation": "七機變K1ABC",
       "route": "菁桐=七堵",
       "crew_mech": "全區間(七172)",
       "crew_ops": "全區間(基)"
     },
     "4722": {
-      "type_name": "DRC1000 3輛",
-      "formation": "七機K1ABC",
+      "type_name": "DRC3輛",
+      "formation": "七機變K1ABC",
       "route": "七堵=菁桐",
       "crew_mech": "全區間(七171)",
       "crew_ops": "全區間(基)"
     },
     "4733": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K2ABC",
-      "route": "菁桐=七堵",
-      "crew_mech": "全區間(七172)",
-      "crew_ops": "全區間(基)"
-    },
-    "4735": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K2ABC",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K2ABC",
       "route": "菁桐=七堵",
       "crew_mech": "全區間(七178)",
       "crew_ops": "全區間(基)"
     },
-    "4737": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K1ABC",
+    "4735": {
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K2ABC",
       "route": "菁桐=七堵",
-      "crew_mech": "全區間(七171)",
+      "crew_mech": "全區間(七172)",
+      "crew_ops": "全區間(基)"
+    },
+    "4737": {
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K1ABC",
+      "route": "菁桐=七堵",
+      "crew_mech": "全區間(七174)",
       "crew_ops": "全區間(基)"
     },
     "4738": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K2ABC",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K2ABC",
       "route": "七堵=菁桐",
       "crew_mech": "全區間(七173)",
       "crew_ops": "全區間(基)"
     },
     "4741": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K2ABC",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K2ABC",
       "route": "菁桐=七堵",
       "crew_mech": "全區間(七173)",
       "crew_ops": "全區間(基)"
     },
     "4742": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K2ABC",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K2ABC",
       "route": "七堵=菁桐",
-      "crew_mech": "全區間(七174)",
+      "crew_mech": "全區間(七171)",
       "crew_ops": "全區間(基)"
     },
     "4744": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K1ABC",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K1ABC",
       "route": "七堵=十分",
       "crew_mech": "全區間(七175)",
       "crew_ops": "全區間(基)"
     },
     "4807": {
-      "type_name": "DRC1000 4輛",
-      "formation": "七機K1ABC",
-      "route": "菁桐=八斗子",
-      "crew_mech": "全區間(七178)",
+      "type_name": "DRC4輛",
+      "formation": "七機變K1ABC",
+      "route": "菁桐=海科館",
+      "crew_mech": "全區間(七180)",
       "crew_ops": "全區間(基)"
     },
     "4811": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K2ABC",
-      "route": "菁桐=八斗子",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K2ABC",
+      "route": "菁桐=海科館",
       "crew_mech": "全區間(七179)",
       "crew_ops": "全區間(基)"
     },
     "4813": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K2ABC",
-      "route": "菁桐=八斗子",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K2ABC",
+      "route": "菁桐=海科館",
       "crew_mech": "全區間(七177)",
       "crew_ops": "全區間(基)"
     },
     "4814": {
-      "type_name": "DRC1000 4輛",
-      "formation": "七機K1ABC",
-      "route": "八斗子=菁桐",
-      "crew_mech": "八斗子=(七178)=瑞芳=(七172)=菁桐",
+      "type_name": "DRC4輛",
+      "formation": "七機變K1ABC",
+      "route": "海科館=菁桐",
+      "crew_mech": "海科館=(七180)=瑞芳=(七172)=菁桐",
       "crew_ops": "全區間(基)"
     },
     "4815": {
-      "type_name": "DRC1000 4輛",
-      "formation": "七機K1ABC",
-      "route": "菁桐=八斗子",
+      "type_name": "DRC4輛",
+      "formation": "七機變K1ABC",
+      "route": "菁桐=海科館",
       "crew_mech": "全區間(七172)",
       "crew_ops": "全區間(基)"
     },
     "4816": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K2ABC",
-      "route": "八斗子=菁桐",
-      "crew_mech": "八斗子=(七179)=瑞芳=(七173)=菁桐",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K2ABC",
+      "route": "海科館=菁桐",
+      "crew_mech": "海科館=(七179)=瑞芳=(七174)=菁桐",
       "crew_ops": "全區間(基)"
     },
     "4817": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K2ABC",
-      "route": "菁桐=八斗子",
-      "crew_mech": "全區間(七173)",
-      "crew_ops": "全區間(基)"
-    },
-    "4818": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K2ABC",
-      "route": "八斗子=菁桐",
-      "crew_mech": "八斗子=(七177)=瑞芳=(七174)=菁桐",
-      "crew_ops": "全區間(基)"
-    },
-    "4821": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K2ABC",
-      "route": "菁桐=八斗子",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K2ABC",
+      "route": "菁桐=海科館",
       "crew_mech": "全區間(七174)",
       "crew_ops": "全區間(基)"
     },
+    "4818": {
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K2ABC",
+      "route": "海科館=菁桐",
+      "crew_mech": "海科館=(七177)=瑞芳=(七173)=菁桐",
+      "crew_ops": "全區間(基)"
+    },
+    "4821": {
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K2ABC",
+      "route": "菁桐=海科館",
+      "crew_mech": "全區間(七173)",
+      "crew_ops": "全區間(基)"
+    },
     "4822": {
-      "type_name": "DRC1000 4輛",
-      "formation": "七機K1ABC",
-      "route": "八斗子=菁桐",
-      "crew_mech": "八斗子=(七172)=瑞芳=(七171)=菁桐",
+      "type_name": "DRC4輛",
+      "formation": "七機變K1ABC",
+      "route": "海科館=菁桐",
+      "crew_mech": "海科館=(七172)=瑞芳=(七171)=菁桐",
       "crew_ops": "全區間(基)"
     },
     "4823": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K1ABC",
-      "route": "菁桐=八斗子",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K1ABC",
+      "route": "菁桐=海科館",
       "crew_mech": "全區間(七171)",
       "crew_ops": "全區間(基)"
     },
     "4824": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K2ABC",
-      "route": "八斗子=菁桐",
-      "crew_mech": "八斗子=(七173)=瑞芳=(七175)=菁桐",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K2ABC",
+      "route": "海科館=菁桐",
+      "crew_mech": "海科館=(七174)=瑞芳=(七175)=菁桐",
       "crew_ops": "全區間(基)"
     },
     "4825": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K2ABC",
-      "route": "菁桐=八斗子",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K2ABC",
+      "route": "菁桐=海科館",
       "crew_mech": "全區間(七175)",
       "crew_ops": "全區間(基)"
     },
     "4826": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K2ABC",
-      "route": "八斗子=菁桐",
-      "crew_mech": "八斗子=(七174)=瑞芳=(七176)=菁桐",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K2ABC",
+      "route": "海科館=菁桐",
+      "crew_mech": "海科館=(七173)=瑞芳=(七176)=菁桐",
       "crew_ops": "全區間(基)"
     },
     "4827": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K2ABC",
-      "route": "菁桐=八斗子",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K2ABC",
+      "route": "菁桐=海科館",
       "crew_mech": "全區間(七176)",
       "crew_ops": "全區間(基)"
     },
     "4828": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K1ABC",
-      "route": "八斗子=菁桐",
-      "crew_mech": "八斗子=(七171)=瑞芳=(七180)=菁桐",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K1ABC",
+      "route": "海科館=菁桐",
+      "crew_mech": "海科館=(七171)=瑞芳=(七180)=菁桐",
       "crew_ops": "全區間(基)"
     },
     "4831": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K1ABC",
-      "route": "菁桐=八斗子",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K1ABC",
+      "route": "菁桐=海科館",
       "crew_mech": "全區間(七180)",
       "crew_ops": "全區間(基)"
     },
     "4832": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K2ABC",
-      "route": "八斗子=菁桐",
-      "crew_mech": "八斗子=(七175)=瑞芳=(七172)=菁桐",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K2ABC",
+      "route": "海科館=菁桐",
+      "crew_mech": "海科館=(七175)=瑞芳=(七178)=菁桐",
       "crew_ops": "全區間(基)"
     },
     "4834": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K2ABC",
-      "route": "八斗子=菁桐",
-      "crew_mech": "八斗子=(七176)=瑞芳=(七178)=菁桐",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K2ABC",
+      "route": "海科館=菁桐",
+      "crew_mech": "海科館=(七176)=瑞芳=(七172)=菁桐",
       "crew_ops": "全區間(基)"
     },
     "4836": {
-      "type_name": "DRC1000 平日3輛假日4輛",
-      "formation": "七機K1ABC",
-      "route": "八斗子=菁桐",
-      "crew_mech": "八斗子=(七180)=瑞芳=(七171)=菁桐",
+      "type_name": "DRC3輛/放假日4輛",
+      "formation": "七機變K1ABC",
+      "route": "海科館=菁桐",
+      "crew_mech": "海科館=(七180)=瑞芳=(七174)=菁桐",
       "crew_ops": "全區間(基)"
     },
     "5898": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R100",
+      "formation": "東機RRBI",
       "route": "臺東=枋寮",
       "crew_mech": "全區間(東T78)",
       "crew_ops": "全區間(高)"
     },
     "5899": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R100",
+      "formation": "東機RRBI",
       "route": "枋寮=臺東",
       "crew_mech": "全區間(東T78)",
       "crew_ops": "全區間(高)"
     },
     "7021": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "E200/400",
+      "formation": "七機R13",
       "route": "七堵=彰化",
       "crew_mech": "七堵=(七152)=新竹貨=(竹334)=彰化",
       "crew_ops": "七堵=(竹)=新竹貨=(彰)=彰化"
@@ -6591,15 +6591,15 @@
       "crew_ops": "全區間(竹)"
     },
     "7035": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "E200/400",
+      "formation": "七機12",
       "route": "七堵=樹調",
       "crew_mech": "全區間(七153)",
       "crew_ops": "全區間(基)"
     },
     "7036": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "E200/400",
+      "formation": "七機12",
       "route": "樹調=七堵",
       "crew_mech": "全區間(七153)",
       "crew_ops": "全區間(基)"
@@ -6657,82 +6657,82 @@
       "type_name": "",
       "formation": "",
       "route": "新左營=潮州基地",
-      "crew_mech": "全區間(高869/875)",
+      "crew_mech": "全區間(高869)",
       "crew_ops": "全區間(高)"
     },
     "7216": {
       "type_name": "",
       "formation": "",
       "route": "潮州基地=新左營",
-      "crew_mech": "全區間(高869/875)",
+      "crew_mech": "全區間(高869)",
       "crew_ops": "全區間(高)"
     },
     "7350": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "E200/300",
+      "formation": "七機18",
       "route": "新城=花蓮港",
       "crew_mech": "全區間(花H61)",
       "crew_ops": "特略車長列車"
     },
     "7351": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "E200/300",
+      "formation": "七機18",
       "route": "花蓮港=新城",
       "crew_mech": "全區間(花H61)",
       "crew_ops": "特略車長列車"
     },
     "7352": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "E200/300",
+      "formation": "七機18",
       "route": "新城=花蓮港",
       "crew_mech": "全區間(花H61)",
       "crew_ops": "特略車長列車"
     },
     "7353": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "E200/300",
+      "formation": "七機18",
       "route": "花蓮港=新城",
       "crew_mech": "全區間(花H61)",
       "crew_ops": "特略車長列車"
     },
     "7354": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "E200/300",
+      "formation": "七機18",
       "route": "新城=花蓮港",
       "crew_mech": "全區間(花H62)",
       "crew_ops": "特略車長列車"
     },
     "7355": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "E200/300",
+      "formation": "七機18",
       "route": "花蓮港=新城",
       "crew_mech": "全區間(花H62)",
       "crew_ops": "特略車長列車"
     },
     "7356": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "E200/300",
+      "formation": "七機18",
       "route": "新城=花蓮港",
       "crew_mech": "全區間(花H62)",
       "crew_ops": "特略車長列車"
     },
     "7357": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "E200/300",
+      "formation": "七機18",
       "route": "花蓮港=新城",
       "crew_mech": "全區間(花H62)",
       "crew_ops": "特略車長列車"
     },
     "7358": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "E200/300",
+      "formation": "七機18",
       "route": "新城=花蓮港",
       "crew_mech": "全區間(花H62)",
       "crew_ops": "特略車長列車"
     },
     "7359": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "E200/300",
+      "formation": "七機18",
       "route": "花蓮港=新城",
       "crew_mech": "全區間(花H62)",
       "crew_ops": "特略車長列車"
@@ -6815,183 +6815,183 @@
       "crew_ops": "特略車長列車"
     },
     "7403": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R150/180/190",
+      "formation": "花機11",
       "route": "花蓮=宜蘭",
       "crew_mech": "全區間(花H36)",
       "crew_ops": "全區間(宜)"
     },
     "7404": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "E200/300",
+      "formation": "七機19",
       "route": "宜蘭=蘇澳新",
       "crew_mech": "全區間(宜073)",
       "crew_ops": "特略車長列車"
     },
     "7413": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R180/190重聯",
+      "formation": "花機4",
       "route": "和平=永樂",
       "crew_mech": "全區間(花H41)",
       "crew_ops": "特略車長列車"
     },
     "7414": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R180/190重聯",
+      "formation": "花機4",
       "route": "永樂=和平",
       "crew_mech": "全區間(花H41)",
       "crew_ops": "特略車長列車"
     },
     "7415": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R180/190重聯",
+      "formation": "花機4",
       "route": "和平=永樂",
       "crew_mech": "全區間(宜062)",
       "crew_ops": "特略車長列車"
     },
     "7416": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R180/190重聯",
+      "formation": "花機4",
       "route": "永樂=和平",
       "crew_mech": "全區間(宜062)",
       "crew_ops": "特略車長列車"
     },
     "7417": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R180/190重聯",
+      "formation": "花機4",
       "route": "和平=永樂",
       "crew_mech": "全區間(宜062)",
       "crew_ops": "特略車長列車"
     },
     "7418": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R180/190重聯",
+      "formation": "花機4",
       "route": "永樂=和平",
       "crew_mech": "永樂=(宜062)=南澳=(花H42)=和平",
       "crew_ops": "特略車長列車"
     },
     "7419": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R180/190重聯",
+      "formation": "花機4",
       "route": "和平=永樂",
       "crew_mech": "全區間(花H42)",
       "crew_ops": "特略車長列車"
     },
     "7420": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R180/190重聯",
+      "formation": "花機4",
       "route": "永樂=和平",
       "crew_mech": "全區間(花H42)",
       "crew_ops": "特略車長列車"
     },
     "7432": {
-      "type_name": "",
-      "formation": "",
-      "route": "東澳=和仁",
+      "type_name": "R180/190重聯",
+      "formation": "花機6",
+      "route": "宜蘭=和仁",
       "crew_mech": "全區間(宜071)",
       "crew_ops": "特略車長列車"
     },
     "7433": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R180/190重聯",
+      "formation": "花機6",
       "route": "和仁=東澳",
       "crew_mech": "全區間(宜071)",
       "crew_ops": "特略車長列車"
     },
     "7434": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R180/190重聯",
+      "formation": "花機6",
       "route": "東澳=和仁",
       "crew_mech": "全區間(宜071)",
       "crew_ops": "特略車長列車"
     },
     "7435": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R180/190重聯",
+      "formation": "花機6",
       "route": "和仁=東澳",
       "crew_mech": "全區間(宜072)",
       "crew_ops": "特略車長列車"
     },
     "7436": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R180/190重聯",
+      "formation": "花機6",
       "route": "東澳=和仁",
       "crew_mech": "全區間(宜072)",
       "crew_ops": "特略車長列車"
     },
     "7437": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R180/190重聯",
+      "formation": "花機6",
       "route": "和仁=東澳",
       "crew_mech": "全區間(宜072)",
       "crew_ops": "特略車長列車"
     },
     "7438": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R180/190重聯",
+      "formation": "花機6",
       "route": "東澳=和仁",
       "crew_mech": "全區間(宜073)",
       "crew_ops": "特略車長列車"
     },
     "7439": {
-      "type_name": "",
-      "formation": "",
-      "route": "和仁=東澳",
+      "type_name": "R180/190重聯",
+      "formation": "花機6",
+      "route": "和仁=宜蘭",
       "crew_mech": "全區間(宜073)",
       "crew_ops": "特略車長列車"
     },
     "7454": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "E200/300",
+      "formation": "七機20",
       "route": "五堵貨場=和平",
       "crew_mech": "五堵貨場=(七1R6)=宜蘭=(宜0R12)=和平",
       "crew_ops": "特略車長列車"
     },
     "7455": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "E200/300",
+      "formation": "七機20",
       "route": "和平=五堵貨場",
       "crew_mech": "和平=(宜0R12)=宜蘭=(七1R6)=五堵貨場",
       "crew_ops": "特略車長列車"
     },
     "7501": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R150/180/190",
+      "formation": "花機7",
       "route": "花蓮=彰化",
       "crew_mech": "花蓮=(花H34)=宜蘭=(宜037)=七堵=(七151)=新竹貨=(彰585)=彰化",
       "crew_ops": "花蓮=(宜)=七堵=(竹)=彰化"
     },
     "7502": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "本線E200/400；宜蘭北迴R150/180/190",
+      "formation": "七機R3/花機11",
       "route": "彰化=花蓮",
       "crew_mech": "彰化=(彰583)=新竹貨=(竹331)=七堵=(宜032)=宜蘭=(花H32)=花蓮",
       "crew_ops": "彰化=(竹)=七堵=(宜)=花蓮"
     },
     "7503": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "北迴R180/190重聯/宜蘭E200/300",
+      "formation": "花機6/七機19",
       "route": "花蓮=五堵貨場",
       "crew_mech": "花蓮=(宜051)=羅東=(宜031)=五堵貨場",
       "crew_ops": "花蓮=(花)=羅東=(宜)=七堵"
     },
     "7504": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R180/190重聯",
+      "formation": "花機6",
       "route": "五堵貨場=花蓮",
       "crew_mech": "五堵貨場=(宜034)=宜蘭=(花H35)=花蓮",
       "crew_ops": "全區間(宜)"
     },
     "7505": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R150/180/190",
+      "formation": "花機11",
       "route": "東澳=五堵貨場",
-      "crew_mech": "全區間(宜032)",
+      "crew_mech": "東澳=(宜032)=七堵=(七165)=五堵貨場",
       "crew_ops": "特略車長列車"
     },
     "7508": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R150/180/190",
+      "formation": "花機11",
       "route": "五堵貨場=東澳",
       "crew_mech": "全區間(七165)",
       "crew_ops": "特略車長列車"
@@ -7025,57 +7025,57 @@
       "crew_ops": "特略車長列車"
     },
     "7525": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R200",
+      "formation": "花機21",
       "route": "和仁=五堵貨場",
       "crew_mech": "和仁=(花H35)=宜蘭=(宜036)=七堵=(宜035)=五堵貨場",
       "crew_ops": "特略車長列車"
     },
     "7526": {
-      "type_name": "",
-      "formation": "",
-      "route": "五堵貨場=和仁",
-      "crew_mech": "五堵貨場=(宜035)=宜蘭=(宜052)=和仁",
+      "type_name": "R200",
+      "formation": "花機21",
+      "route": "五堵貨場=花蓮",
+      "crew_mech": "五堵貨場=(宜035)=宜蘭=(宜052)=花蓮",
       "crew_ops": "特略車長列車"
     },
     "7527": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R150/180/190",
+      "formation": "花機7",
       "route": "東澳=五堵貨場",
       "crew_mech": "東澳=(宜053)=宜蘭=(七161)=七堵=(七162)=五堵貨場",
       "crew_ops": "特略車長列車"
     },
     "7528": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R150/180/190",
+      "formation": "花機7",
       "route": "五堵貨場=東澳",
       "crew_mech": "五堵貨場=(七162)=宜蘭=(宜053)=東澳",
       "crew_ops": "特略車長列車"
     },
     "7529": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R200",
+      "formation": "花機22",
       "route": "和仁=五堵貨場",
       "crew_mech": "和仁=(花H32)=宜蘭=(七164)=五堵貨場",
       "crew_ops": "特略車長列車"
     },
     "7530": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R200",
+      "formation": "花機22",
       "route": "五堵貨場=和仁",
       "crew_mech": "五堵貨場=(七164)=七堵=(宜031)=宜蘭=(花H34)=和仁",
       "crew_ops": "特略車長列車"
     },
     "7531": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "E200/300",
+      "formation": "七機18",
       "route": "和仁=五堵貨場",
       "crew_mech": "和仁=(花H37)=宜蘭=(宜042)=五堵貨場",
       "crew_ops": "特略車長列車"
     },
     "7532": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "E200/300",
+      "formation": "七機19",
       "route": "五堵貨場=和仁",
       "crew_mech": "五堵貨場=(宜042)=七堵=(七164)=宜蘭=(花H36)=和仁",
       "crew_ops": "特略車長列車"
@@ -7088,17 +7088,17 @@
       "crew_ops": "特略車長列車"
     },
     "7534": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "E200/400",
+      "formation": "七機R2",
       "route": "五堵貨場=和仁",
-      "crew_mech": "五堵貨場=(七163)=宜蘭=(花H39)=和仁",
+      "crew_mech": "五堵貨場=(宜043)=七堵=(七163)=宜蘭=(花H39)=和仁",
       "crew_ops": "特略車長列車"
     },
     "7538": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "E200/300",
+      "formation": "七機18",
       "route": "五堵貨場=花蓮",
-      "crew_mech": "五堵貨場=(宜044)=宜蘭=(花H33)=花蓮",
+      "crew_mech": "五堵貨場=(七167)=宜蘭=(花H33)=花蓮",
       "crew_ops": "七堵=(宜)=宜蘭=(花)=花蓮"
     },
     "7555": {
@@ -7109,50 +7109,50 @@
       "crew_ops": "全區間(宜)"
     },
     "7556": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R180/190重聯",
+      "formation": "花機6",
       "route": "五堵貨場=花蓮",
       "crew_mech": "五堵貨場=(宜037)=宜蘭=(花H38)=花蓮",
       "crew_ops": "全區間(宜)"
     },
     "7557": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R180/190重聯",
+      "formation": "花機6",
       "route": "花蓮=五堵貨場",
-      "crew_mech": "花蓮=(花H40)=宜蘭=(宜044)=五堵貨場",
+      "crew_mech": "花蓮=(花H40)=宜蘭=(七167)=五堵貨場",
       "crew_ops": "花蓮=(花)=宜蘭=(宜)=七堵"
     },
     "7558": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "E200/400",
+      "formation": "七機R1",
       "route": "五堵貨場=花蓮",
       "crew_mech": "五堵貨場=(宜042)=宜蘭=(花H40)=花蓮",
       "crew_ops": "七堵=(宜)=宜蘭=(花)=花蓮"
     },
     "7601": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R100",
+      "formation": "東機17",
       "route": "臺東=花蓮",
       "crew_mech": "臺東=(東T46)=玉里=(花H91)=花蓮",
       "crew_ops": "全區間(花)"
     },
     "7602": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R100",
+      "formation": "東機17",
       "route": "花蓮=臺東",
       "crew_mech": "花蓮=(花H91)=玉里=(東T46)=臺東",
       "crew_ops": "全區間(花)"
     },
     "7801": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R100",
+      "formation": "東機12",
       "route": "彰化=臺東",
       "crew_mech": "彰化=(彰582/588)=嘉義=(嘉762)=新左營=(左925)=枋寮=(東T72)=臺東",
       "crew_ops": "彰化=(嘉)=嘉義=(高)=臺東"
     },
     "7802": {
-      "type_name": "",
-      "formation": "",
+      "type_name": "R100",
+      "formation": "東機12",
       "route": "臺東=彰化",
       "crew_mech": "臺東=(東T72)=枋寮=(高870)=新左營=(嘉761)=嘉義=(彰581)=彰化",
       "crew_ops": "臺東=(高)=嘉義=(嘉)=彰化"
