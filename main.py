@@ -1,4 +1,6 @@
 import os
+import re
+import time
 import logging
 import secrets
 from contextlib import asynccontextmanager
@@ -69,6 +71,10 @@ _webhook_parser: Optional[WebhookParser] = None
 _line_config: Optional[Configuration] = None
 
 _http_security = HTTPBasic()
+
+# user_id → timestamp，記錄正在等待輸入車次的用戶（查編組對話流程）
+_pending_consist: dict[str, float] = {}
+_PENDING_TTL = 300  # 5 分鐘內有效
 
 
 def _require_env(name: str) -> str:
@@ -269,10 +275,22 @@ async def handle_train_query(reply_token: str, train_no: str, date: str, user_id
         authorized=authorized,
         image_url=img_url,
     )
+    consist_qr = None
+    if authorized:
+        consist_qr = QuickReply(items=[
+            QuickReplyItem(
+                action=PostbackAction(
+                    label="🔧 查編組",
+                    data=f"consist:{no_disp}",
+                    display_text=f"查 {no_disp} 次編組",
+                )
+            )
+        ])
     await _reply(reply_token, [
         FlexMessage(
             alt_text=f"{train['type_name']} {no_disp} 次 {date}",
             contents=FlexBubble.from_dict(bubble_dict),
+            quick_reply=consist_qr,
         )
     ])
 
@@ -530,6 +548,16 @@ async def webhook(request: Request):
             elif isinstance(event, MessageEvent) and isinstance(event.message, TextMessageContent):
                 text = event.message.text.strip()
                 user_id = event.source.user_id
+
+                # 待機狀態：用戶剛按「查編組」，等待輸入車次
+                if user_id in _pending_consist:
+                    if time.time() - _pending_consist[user_id] < _PENDING_TTL:
+                        if re.fullmatch(r"\d{1,4}[AB]?", text):
+                            del _pending_consist[user_id]
+                            await handle_consist_only(event.reply_token, text, user_id)
+                            continue
+                    del _pending_consist[user_id]
+
                 intent = parse_query(text)
 
                 if isinstance(intent, HelpQuery):
@@ -560,6 +588,8 @@ async def webhook(request: Request):
                     await handle_train_query(event.reply_token, intent.train_no, intent.date, user_id)
 
                 elif isinstance(intent, RichMenuGuideQuery):
+                    if intent.keyword == "查編組":
+                        _pending_consist[user_id] = time.time()
                     await _reply(event.reply_token, [TextMessage(text=intent.guide_text)])
 
                 elif isinstance(intent, UnknownQuery):
@@ -571,13 +601,18 @@ async def webhook(request: Request):
 
             elif isinstance(event, PostbackEvent):
                 data = event.postback.data
+                pb_user_id = event.source.user_id if event.source else ""
+
                 if data.startswith("schedule:"):
                     _, origin_raw, dest_raw, date, page_str = data.split(":", 4)
-                    pb_user_id = event.source.user_id if event.source else ""
                     await handle_od_query(
                         event.reply_token, origin_raw, dest_raw, date, int(page_str),
                         user_id=pb_user_id,
                     )
+
+                elif data.startswith("consist:"):
+                    train_no = data.split(":", 1)[1]
+                    await handle_consist_only(event.reply_token, train_no, pb_user_id)
 
         except Exception as exc:
             logger.error("Error handling event: %s", exc, exc_info=True)

@@ -59,6 +59,7 @@ class AuthListQuery:
 @dataclass
 class RichMenuGuideQuery:
     """圖文選單按鈕觸發的使用提示。"""
+    keyword: str
     guide_text: str
 
 
@@ -91,9 +92,9 @@ _RICHMENU_GUIDES: dict[str, str] = {
     ),
     "查編組": (
         "🔧 編組查詢\n\n"
-        "請輸入 ## 加車次號碼，例如：\n\n"
-        "  ##105\n"
-        "  ##1035\n\n"
+        "請直接輸入車次號碼：\n\n"
+        "  105\n"
+        "  1035\n\n"
         "⚠️ 此功能僅限授權員工使用"
     ),
 }
@@ -139,7 +140,7 @@ def parse_query(text: str) -> QueryIntent:
     text = text.strip()
 
     if text in _RICHMENU_GUIDES:
-        return RichMenuGuideQuery(guide_text=_RICHMENU_GUIDES[text])
+        return RichMenuGuideQuery(keyword=text, guide_text=_RICHMENU_GUIDES[text])
 
     if text.lower() in _HELP_WORDS:
         return HelpQuery()
