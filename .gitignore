@@ -1,0 +1,12 @@
+.env
+.venv/
+# TDX OAS spec（大型自動產生的規格文件）
+*.txt
+__pycache__/
+*.pyc
+*.pyo
+data/stations_cache.json
+*.pdf
+*.xls
+*.xlsx
+linebot/
