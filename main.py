@@ -55,7 +55,7 @@ STATIC_BASE_URL = os.getenv("STATIC_BASE_URL", "")
 _tdx: Optional[TDXClient] = None
 _consist_svc: Optional[ConsistService] = None
 _auth_svc: Optional[AuthService] = None
-_ai_svc: Optional[GeminiService] = None
+_ai_svc: Optional[GemmaAIService] = None
 _webhook_parser: Optional[WebhookParser] = None
 _line_config: Optional[Configuration] = None
 
