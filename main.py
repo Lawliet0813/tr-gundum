@@ -33,7 +33,9 @@ from services.parser import (
     parse_query,
     ODQuery, TrainQuery, ConsistOnlyQuery, HelpQuery,
     MyIdQuery, AuthAddQuery, AuthRemoveQuery, AuthListQuery,
+    UnknownQuery,
 )
+from services.ai import GeminiService
 from services.formatter import (
     PAGE_SIZE,
     build_schedule_flex,
@@ -49,6 +51,7 @@ logger = logging.getLogger(__name__)
 _tdx: Optional[TDXClient] = None
 _consist_svc: Optional[ConsistService] = None
 _auth_svc: Optional[AuthService] = None
+_ai_svc: Optional[GeminiService] = None
 _webhook_parser: Optional[WebhookParser] = None
 _line_config: Optional[Configuration] = None
 
@@ -62,12 +65,16 @@ def _require_env(name: str) -> str:
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    global _tdx, _consist_svc, _webhook_parser, _line_config
+    global _tdx, _consist_svc, _ai_svc, _webhook_parser, _line_config
 
     _line_config = Configuration(access_token=_require_env("LINE_CHANNEL_ACCESS_TOKEN"))
     _webhook_parser = WebhookParser(_require_env("LINE_CHANNEL_SECRET"))
     _consist_svc = ConsistService()
     _auth_svc = AuthService()
+    gemini_key = os.getenv("GEMINI_API_KEY", "")
+    if gemini_key:
+        _ai_svc = GeminiService(api_key=gemini_key)
+        logger.info("Gemini AI service initialized.")
 
     _tdx = TDXClient(
         client_id=os.getenv("TDX_CLIENT_ID", ""),
@@ -294,11 +301,12 @@ async def webhook(request: Request):
                 elif isinstance(intent, TrainQuery):
                     await handle_train_query(event.reply_token, intent.train_no, intent.date, user_id)
 
-                else:
-                    await _reply(
-                        event.reply_token,
-                        [TextMessage(text="輸入「幫助」查看使用說明。\n\n範例：台北 高雄　/　105　/　##105")],
-                    )
+                elif isinstance(intent, UnknownQuery):
+                    if _ai_svc:
+                        ai_text = await _ai_svc.reply(intent.text)
+                    else:
+                        ai_text = "輸入「幫助」查看使用說明。\n\n範例：台北 高雄　/　105　/　##105"
+                    await _reply(event.reply_token, [TextMessage(text=ai_text)])
 
             elif isinstance(event, PostbackEvent):
                 data = event.postback.data
