@@ -312,8 +312,9 @@ def build_train_detail_flex(
             "type": "image",
             "url": image_url,
             "size": "full",
-            "aspectRatio": "20:9",
-            "aspectMode": "cover",
+            "aspectRatio": "17:4",
+            "aspectMode": "fit",
+            "backgroundColor": "#f0f4f8",
         }
 
     return bubble
@@ -327,8 +328,53 @@ def build_consist_flex(
     version_date: str,
     image_url: Optional[str] = None,
 ) -> dict:
-    """給 ## 指令用，顯示完整編組運用資訊。"""
-    bubble: dict = {
+    """橫向卡片：左圖右文（有圖時），或純直向資訊（無圖時）。"""
+    type_name = consist.get("type_name", "—")
+
+    info_items = [
+        {"type": "text", "text": f"{train_no} 次", "weight": "bold",
+         "size": "md", "color": "#1a1a2e"},
+        {"type": "text", "text": type_name, "size": "xs",
+         "color": "#555577", "wrap": True},
+        {"type": "separator", "margin": "sm"},
+        _info_row("編組", consist.get("formation", "—")),
+        _info_row("區間", consist.get("route", "—"), wrap=True),
+        _info_row("機務乘務", consist.get("crew_mech", "—"), wrap=True),
+        _info_row("運務乘務", consist.get("crew_ops", "—"), wrap=True),
+        {"type": "text", "text": version_date,
+         "size": "xxs", "color": "#aaaaaa", "margin": "sm"},
+    ]
+
+    if image_url:
+        return {
+            "type": "bubble",
+            "size": "kilo",
+            "body": {
+                "type": "box",
+                "layout": "horizontal",
+                "paddingAll": "0px",
+                "contents": [
+                    {
+                        "type": "image",
+                        "url": image_url,
+                        "size": "full",
+                        "aspectRatio": "1:1",
+                        "aspectMode": "cover",
+                        "flex": 2,
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "flex": 3,
+                        "paddingAll": "10px",
+                        "spacing": "xs",
+                        "contents": info_items,
+                    },
+                ],
+            },
+        }
+
+    return {
         "type": "bubble",
         "size": "kilo",
         "header": {
@@ -337,19 +383,10 @@ def build_consist_flex(
             "backgroundColor": "#37474f",
             "paddingAll": "12px",
             "contents": [
-                {
-                    "type": "text",
-                    "text": f"{train_no} 次　編組運用",
-                    "color": "#ffffff",
-                    "weight": "bold",
-                    "size": "md",
-                },
-                {
-                    "type": "text",
-                    "text": f"資料日期：{version_date}",
-                    "color": "#b0bec5",
-                    "size": "xs",
-                },
+                {"type": "text", "text": f"{train_no} 次　編組運用",
+                 "color": "#ffffff", "weight": "bold", "size": "md"},
+                {"type": "text", "text": f"資料日期：{version_date}",
+                 "color": "#b0bec5", "size": "xs"},
             ],
         },
         "body": {
@@ -358,7 +395,7 @@ def build_consist_flex(
             "spacing": "sm",
             "paddingAll": "12px",
             "contents": [
-                _info_row("車型",     consist.get("type_name", "—")),
+                _info_row("車型",     type_name),
                 _info_row("編組",     consist.get("formation", "—")),
                 _info_row("區間",     consist.get("route", "—")),
                 _info_row("機務乘務", consist.get("crew_mech", "—"), wrap=True),
@@ -366,17 +403,6 @@ def build_consist_flex(
             ],
         },
     }
-
-    if image_url:
-        bubble["hero"] = {
-            "type": "image",
-            "url": image_url,
-            "size": "full",
-            "aspectRatio": "20:9",
-            "aspectMode": "cover",
-        }
-
-    return bubble
 
 
 def _crew_route_body(crew_text: str) -> list:
