@@ -76,6 +76,8 @@ _http_security = HTTPBasic()
 _pending_consist: dict[str, float] = {}
 _PENDING_TTL = 300  # 5 分鐘內有效
 
+_bot_user_id: Optional[str] = None  # 啟動時從 LINE API 取得
+
 
 def _require_env(name: str) -> str:
     val = os.getenv(name)
@@ -111,6 +113,17 @@ async def lifespan(app: FastAPI):
     if gemini_key:
         _ai_svc = GemmaAIService(api_key=gemini_key, tdx=_tdx, consist=_consist_svc)
         logger.info("Gemma AI service initialized (gemma-4-31b-it, tool use).")
+
+    global _bot_user_id
+    try:
+        async with AsyncApiClient(_line_config) as api_client:
+            api = AsyncMessagingApi(api_client)
+            bot_info = await api.get_bot_info()
+            _bot_user_id = bot_info.user_id
+            logger.info("Bot user ID: %s", _bot_user_id)
+    except Exception as exc:
+        logger.warning("Failed to get bot user ID: %s", exc)
+
     yield
 
 
@@ -173,6 +186,37 @@ def _check_admin_auth(credentials: HTTPBasicCredentials = Depends(_http_security
             detail="Incorrect password",
             headers={"WWW-Authenticate": "Basic"},
         )
+
+
+# ── Group mention helpers ──────────────────────────────────────────────────────
+
+def _is_bot_mentioned(event: MessageEvent) -> bool:
+    if not event.source or event.source.type not in ("group", "room"):
+        return False
+    if not _bot_user_id:
+        return False
+    mention = getattr(event.message, "mention", None)
+    if mention and mention.mentionees:
+        return any(getattr(m, "user_id", None) == _bot_user_id for m in mention.mentionees)
+    return False
+
+
+def _strip_bot_mention(text: str, message) -> str:
+    mention = getattr(message, "mention", None)
+    if not mention or not mention.mentionees:
+        return text
+    spans = sorted(
+        [
+            (m.index, m.index + m.length)
+            for m in mention.mentionees
+            if getattr(m, "user_id", None) == _bot_user_id
+        ],
+        reverse=True,
+    )
+    result = text
+    for start, end in spans:
+        result = result[:start] + result[end:]
+    return result.strip()
 
 
 # ── Query handlers ─────────────────────────────────────────────────────────────
@@ -546,7 +590,13 @@ async def webhook(request: Request):
                 await handle_follow(event.reply_token, user_id)
 
             elif isinstance(event, MessageEvent) and isinstance(event.message, TextMessageContent):
-                text = event.message.text.strip()
+                source_type = event.source.type if event.source else "user"
+                if source_type in ("group", "room"):
+                    if not _is_bot_mentioned(event):
+                        continue
+                    text = _strip_bot_mention(event.message.text, event.message)
+                else:
+                    text = event.message.text.strip()
                 user_id = event.source.user_id
 
                 # 待機狀態：用戶剛按「查編組」，等待輸入車次
