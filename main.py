@@ -223,14 +223,14 @@ def _strip_bot_mention(text: str, message) -> str:
 # ── Query handlers ─────────────────────────────────────────────────────────────
 
 async def handle_follow(reply_token: str, user_id: str) -> None:
-    liff_hint = f"\n🔐 有員工邀請碼？\n點選單的「輸入邀請碼」按鈕即可啟用完整功能。" if LIFF_ID else ""
+    liff_hint = "\n\n🔐 員工專區\n持有邀請碼者請點「輸入邀請碼」啟用完整功能。" if LIFF_ID else ""
     text = (
         "🚂 歡迎使用臺鐵小鋼彈！\n\n"
-        "我可以幫你：\n"
-        "• 查詢台鐵時刻表（輸入：台北 高雄）\n"
-        "• 查詢特定車次資訊（輸入：105）\n"
-        "• 回答台鐵相關問題\n\n"
-        "點下方選單按鈕開始使用。"
+        "我能幫你：\n"
+        "・查 OD 時刻表（例：台北 高雄）\n"
+        "・查特定車次（例：105）\n"
+        "・用自然語言問台鐵問題\n\n"
+        "點下方選單快速開始 👇"
         + liff_hint
     )
     await _reply(reply_token, [TextMessage(text=text)])
@@ -244,10 +244,10 @@ async def handle_od_query(
     dest = _tdx.find_station(dest_raw)
 
     if not origin:
-        await _reply(reply_token, [TextMessage(text=f"找不到車站「{origin_raw}」，請確認站名。")])
+        await _reply(reply_token, [TextMessage(text=f"找不到「{origin_raw}」這個站，請確認站名是否正確。")])
         return
     if not dest:
-        await _reply(reply_token, [TextMessage(text=f"找不到車站「{dest_raw}」，請確認站名。")])
+        await _reply(reply_token, [TextMessage(text=f"找不到目的地「{dest_raw}」，請確認站名是否正確。")])
         return
 
     origin_id, origin_name = origin
@@ -255,7 +255,7 @@ async def handle_od_query(
 
     trains = await _tdx.query_od(origin_id, dest_id, date)
     if not trains:
-        await _reply(reply_token, [TextMessage(text=f"{date} {origin_name}→{dest_name} 無班次資料。")])
+        await _reply(reply_token, [TextMessage(text=f"{date} {origin_name} → {dest_name} 查無班次，請確認日期或起訖站。")])
         return
 
     authorized = _auth_svc.is_authorized(user_id)
@@ -286,13 +286,13 @@ async def handle_train_query(reply_token: str, train_no: str, date: str, user_id
         is_freight = False
 
     if is_freight and not authorized:
-        await _reply(reply_token, [TextMessage(text="此車次資訊不對外開放。")])
+        await _reply(reply_token, [TextMessage(text="⚠️ 此車次為內部班次，資訊不對外開放。")])
         return
 
     if is_freight:
         consist = _consist_svc.get(train_no)
         if not consist:
-            await _reply(reply_token, [TextMessage(text=f"查無 {no_disp} 次的編組資料。\n資料版本：{_consist_svc.updated_at}")])
+            await _reply(reply_token, [TextMessage(text=f"查無 {no_disp} 次的編組資料。\n（資料版本：{_consist_svc.updated_at}）")])
             return
         img_url = train_image_url(consist.get("type_name", ""), STATIC_BASE_URL)
         bubble_dict = build_consist_flex(no_disp, consist, _consist_svc.updated_at, image_url=img_url)
@@ -311,7 +311,7 @@ async def handle_train_query(reply_token: str, train_no: str, date: str, user_id
         if consist:
             await handle_consist_only(reply_token, no_disp, user_id)
         else:
-            await _reply(reply_token, [TextMessage(text=f"{date} 查無 {no_disp} 次資料。")])
+            await _reply(reply_token, [TextMessage(text=f"{date} 找不到 {no_disp} 次的班次，請確認車次號碼與日期。")])
         return
 
     img_url = train_image_url(train.get("type_name", ""), STATIC_BASE_URL)
@@ -343,13 +343,13 @@ async def handle_train_query(reply_token: str, train_no: str, date: str, user_id
 async def handle_consist_only(reply_token: str, train_no: str, user_id: str) -> None:
     if not _auth_svc.is_authorized(user_id):
         await _reply(reply_token, [TextMessage(
-            text="⛔ 編組查詢為員工授權功能。\n\n持有邀請碼者請點選單的「輸入邀請碼」按鈕啟用。"
+            text="🔒 完整編組資料為員工專屬功能。\n\n持有邀請碼者請點選單「輸入邀請碼」啟用。"
         )])
         return
 
     consist = _consist_svc.get(train_no)
     if not consist:
-        await _reply(reply_token, [TextMessage(text=f"查無 {train_no} 次的編組資料。\n資料版本：{_consist_svc.updated_at}")])
+        await _reply(reply_token, [TextMessage(text=f"查無 {train_no} 次的編組資料。\n（資料版本：{_consist_svc.updated_at}）")])
         return
 
     img_url = train_image_url(consist.get("type_name", ""), STATIC_BASE_URL)
@@ -365,14 +365,14 @@ async def handle_consist_only(reply_token: str, train_no: str, user_id: str) -> 
 async def handle_crew_query(reply_token: str, train_no: str, crew_type: str, user_id: str) -> None:
     if not _auth_svc.is_authorized(user_id):
         await _reply(reply_token, [TextMessage(
-            text="⛔ 乘務查詢為員工授權功能。\n\n持有邀請碼者請點選單的「輸入邀請碼」按鈕啟用。"
+            text="🔒 乘務查詢為員工專屬功能。\n\n持有邀請碼者請點選單「輸入邀請碼」啟用。"
         )])
         return
 
     consist = _consist_svc.get(train_no)
     if not consist:
         await _reply(reply_token, [TextMessage(
-            text=f"查無 {train_no} 次的編組資料。\n資料版本：{_consist_svc.updated_at}"
+            text=f"查無 {train_no} 次的編組資料。\n（資料版本：{_consist_svc.updated_at}）"
         )])
         return
 
@@ -398,7 +398,7 @@ async def handle_crew_query(reply_token: str, train_no: str, crew_type: str, use
 
 async def handle_my_id(reply_token: str, user_id: str) -> None:
     await _reply(reply_token, [TextMessage(
-        text=f"您的 LINE User ID：\n{user_id}"
+        text=f"你的 LINE User ID：\n{user_id}"
     )])
 
 
@@ -418,7 +418,7 @@ async def _switch_rich_menu(user_id: str, authorized: bool) -> None:
 
 async def handle_auth_add(reply_token: str, sender_id: str, target_id: str) -> None:
     if not _auth_svc.is_admin(sender_id):
-        await _reply(reply_token, [TextMessage(text="⛔ 僅管理員可執行此指令。")])
+        await _reply(reply_token, [TextMessage(text="⚠️ 此指令僅限管理員使用。")])
         return
     added = _auth_svc.add(target_id)
     msg = f"✅ 已授權 {target_id}" if added else f"ℹ️ {target_id} 已在授權清單中"
@@ -429,7 +429,7 @@ async def handle_auth_add(reply_token: str, sender_id: str, target_id: str) -> N
 
 async def handle_auth_remove(reply_token: str, sender_id: str, target_id: str) -> None:
     if not _auth_svc.is_admin(sender_id):
-        await _reply(reply_token, [TextMessage(text="⛔ 僅管理員可執行此指令。")])
+        await _reply(reply_token, [TextMessage(text="⚠️ 此指令僅限管理員使用。")])
         return
     removed = _auth_svc.remove(target_id)
     msg = f"✅ 已移除 {target_id}" if removed else f"ℹ️ {target_id} 不在授權清單中"
@@ -440,11 +440,11 @@ async def handle_auth_remove(reply_token: str, sender_id: str, target_id: str) -
 
 async def handle_auth_list(reply_token: str, sender_id: str) -> None:
     if not _auth_svc.is_admin(sender_id):
-        await _reply(reply_token, [TextMessage(text="⛔ 僅管理員可執行此指令。")])
+        await _reply(reply_token, [TextMessage(text="⚠️ 此指令僅限管理員使用。")])
         return
     users = _auth_svc.list_authorized()
     if not users:
-        await _reply(reply_token, [TextMessage(text="授權清單目前為空。")])
+        await _reply(reply_token, [TextMessage(text="目前尚無已授權員工。")])
     else:
         lines = "\n".join(f"• {uid}" for uid in users)
         await _reply(reply_token, [TextMessage(text=f"授權清單（{len(users)} 人）：\n{lines}")])
@@ -486,7 +486,9 @@ async def api_redeem(body: RedeemRequest):
     _auth_svc.add(body.user_id)
     try:
         await _switch_rich_menu(body.user_id, authorized=True)
-        await _push(body.user_id, [TextMessage(text="✅ 授權成功！現在可以使用完整的員工功能了。")])
+        await _push(body.user_id, [TextMessage(
+            text="✅ 員工授權啟用成功！\n\n你現在可以使用：\n・##車次 — 完整編組運用查詢\n・機務／運務乘務查詢\n\n歡迎使用！ 🚂"
+        )])
     except Exception as exc:
         logger.warning("Post-redeem push/menu failed for %s: %s", body.user_id, exc)
 
@@ -686,7 +688,7 @@ async def webhook(request: Request):
                     if _ai_svc:
                         ai_text = await _ai_svc.reply(intent.text)
                     else:
-                        ai_text = "輸入「幫助」查看使用說明。\n\n範例：台北 高雄　/　105　/　##105"
+                        ai_text = "抱歉，這個問題我目前無法回答。\n輸入「幫助」可查看功能說明。"
                     await _reply(event.reply_token, [TextMessage(text=ai_text)])
 
             elif isinstance(event, PostbackEvent):

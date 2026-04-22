@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>臺鐵小鋼彈 — 員工授權</title>
+  <title>臺鐵小鋼彈｜員工邀請碼啟用</title>
   <script>var LIFF_ID = "{{LIFF_ID}}";</script>
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <style>
@@ -69,14 +69,14 @@
 <div class="card">
   <div class="logo">🚂</div>
   <h1>臺鐵小鋼彈</h1>
-  <div class="subtitle">輸入員工邀請碼以啟用完整功能</div>
+  <div class="subtitle">輸入邀請碼，解鎖員工專屬功能</div>
 
   <div class="input-group">
-    <label>邀請碼（6 位）</label>
+    <label>邀請碼（6 碼英數字）</label>
     <input type="text" id="code" maxlength="6" placeholder="XXXXXX"
            autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false">
   </div>
-  <button id="btn" onclick="submitCode()">確認啟用</button>
+  <button id="btn" onclick="submitCode()">啟用員工功能</button>
   <div id="msg"></div>
 </div>
 
@@ -90,18 +90,18 @@
       var profile = await liff.getProfile();
       userId = profile.userId;
     } catch (e) {
-      showMsg("初始化失敗，請關閉後重試。", false);
+      showMsg("載入失敗，請關閉後重新開啟。", false);
     }
   }
 
   async function submitCode() {
     var code = document.getElementById("code").value.trim().toUpperCase();
-    if (code.length !== 6) { showMsg("請輸入完整的 6 位邀請碼。", false); return; }
-    if (!userId) { showMsg("尚未取得用戶資訊，請關閉後重試。", false); return; }
+    if (code.length !== 6) { showMsg("請輸入完整的 6 碼邀請碼。", false); return; }
+    if (!userId) { showMsg("無法取得帳號資訊，請關閉後重新開啟。", false); return; }
 
     var btn = document.getElementById("btn");
     btn.disabled = true;
-    btn.textContent = "驗證中…";
+    btn.textContent = "驗證中，請稍候…";
 
     try {
       var res = await fetch("/api/redeem", {
@@ -111,18 +111,18 @@
       });
       var data = await res.json();
       if (data.ok) {
-        showMsg("✅ 授權成功！選單已更新，請關閉此頁面。", true);
+        showMsg("✅ 啟用成功！選單已更新，請關閉此頁面。", true);
         btn.style.display = "none";
         setTimeout(function() { liff.closeWindow(); }, 2500);
       } else {
-        showMsg(data.message || "❌ 邀請碼無效或已使用。", false);
+        showMsg(data.message || "❌ 邀請碼無效或已使用，請確認後再試。", false);
         btn.disabled = false;
-        btn.textContent = "確認啟用";
+        btn.textContent = "啟用員工功能";
       }
     } catch (e) {
-      showMsg("網路錯誤，請稍後再試。", false);
+      showMsg("連線失敗，請稍後再試。", false);
       btn.disabled = false;
-      btn.textContent = "確認啟用";
+      btn.textContent = "啟用員工功能";
     }
   }
 
