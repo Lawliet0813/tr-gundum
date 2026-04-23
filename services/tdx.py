@@ -199,3 +199,42 @@ class TDXClient:
                 } for i, s in enumerate(stops)
             ]
         }
+
+    def get_train_location(self, train_no: str, current_time: str) -> str:
+        """推算車次在給定時間(HH:MM)的大約位置"""
+        clean_no = train_no.lstrip('0')
+        data = self._full_timetables.get(clean_no)
+        if not data:
+            return "查無此車次的時刻資料"
+            
+        stops = data.get("stops", [])
+        if not stops:
+            return "此車次無停靠站資料"
+
+        # 轉為分鐘數方便比較
+        def to_min(t):
+            h, m = map(int, t.split(':'))
+            return h * 60 + m
+
+        now_m = to_min(current_time)
+        start_m = to_min(stops[0]["t"])
+        end_m = to_min(stops[-1]["t"])
+
+        if now_m < start_m:
+            return f"尚未發車（預計 {stops[0]['t']} 從 {stops[0]['s']} 發車）"
+        if now_m > end_m:
+            return f"已經抵達終點站 {stops[-1]['s']}（抵達時間 {stops[-1]['t']}）"
+
+        # 找尋所在的區間
+        for i in range(len(stops) - 1):
+            s1, s2 = stops[i], stops[i+1]
+            t1_m, t2_m = to_min(s1["t"]), to_min(s2["t"])
+            
+            if t1_m <= now_m <= t2_m:
+                if now_m == t1_m:
+                    return f"正停靠在 {s1['s']}（{s1['t']}）"
+                if now_m == t2_m:
+                    return f"即將抵達 {s2['s']}（{s2['t']}）"
+                return f"約在 {s1['s']} 與 {s2['s']} 之間"
+
+        return "無法推算位置"
