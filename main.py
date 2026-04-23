@@ -323,7 +323,10 @@ async def handle_train_query(reply_token: str, train_no: str, date: str, user_id
             train["start_name"] = route_parts[0].strip()
             train["end_name"] = route_parts[-1].strip()
 
-    img_url = train_image_url(train.get("type_name", ""), STATIC_BASE_URL)
+    # 優先用 consist 的具體車型（E500+PP+E500 / EMU500 / TEMU2000…）抓圖；
+    # train.type_name 是 ODS 的營運等級（自強/區間車），不在 _TYPE_IMAGE_MAP。
+    img_type = (consist.get("type_name") if consist else "") or train.get("type_name", "")
+    img_url = train_image_url(img_type, STATIC_BASE_URL)
     bubble_dict = build_train_detail_flex(
         train, consist, date,
         authorized=authorized,

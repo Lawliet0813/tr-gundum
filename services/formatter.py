@@ -260,16 +260,36 @@ def build_train_detail_flex(
     ]
 
     if consist:
-        # 編組資訊
+        # 編組 + 機務資訊
+        depot = consist.get("depot", "")
+        unit_code = consist.get("unit_code", "")
+        depot_line_parts = []
+        if depot:
+            depot_line_parts.append(depot)
+        if unit_code:
+            depot_line_parts.append(f"運用 {unit_code}")
+        depot_line = "・".join(depot_line_parts)
+
+        flags = [f for f in (consist.get("flags") or []) if f != "ㄏㄙ"]
+        flag_tokens = [f"{f}線" if f in ("山", "海") else f for f in flags]
+        if consist.get("is_deadhead"):
+            flag_tokens.insert(0, "ㄏㄙ 回送")
+
+        consist_block = [
+            {"type": "text", "text": "車型與編組", "size": "xs", "color": "#888888", "weight": "bold"},
+            {"type": "text", "text": f"{consist.get('type_name') or train.get('type_name')} {consist.get('formation', '—')}", "size": "sm", "weight": "bold", "color": "#112a4d", "margin": "xs"},
+            {"type": "text", "text": f"營運區間：{consist.get('route', '—')}", "size": "xs", "color": "#444444", "margin": "xs", "wrap": True},
+        ]
+        if depot_line:
+            consist_block.append({"type": "text", "text": f"機務：{depot_line}", "size": "xs", "color": "#444444", "margin": "xs"})
+        if flag_tokens:
+            consist_block.append({"type": "text", "text": "・".join(flag_tokens), "size": "xs", "color": "#c6623d", "margin": "xs", "weight": "bold"})
+
         body_contents.append({
             "type": "box",
             "layout": "vertical",
             "margin": "lg",
-            "contents": [
-                {"type": "text", "text": "車型與編組", "size": "xs", "color": "#888888", "weight": "bold"},
-                {"type": "text", "text": f"{train.get('type_name')} {consist.get('formation', '—')}", "size": "sm", "weight": "bold", "color": "#112a4d", "margin": "xs"},
-                {"type": "text", "text": f"營運區間：{consist.get('route', '—')}", "size": "xs", "color": "#444444", "margin": "xs", "wrap": True}
-            ]
+            "contents": consist_block,
         })
 
         if authorized:
@@ -319,6 +339,32 @@ def build_train_detail_flex(
 
 def build_consist_flex(train_no: str, consist: dict, version_date: str, image_url: Optional[str] = None) -> dict:
     type_name = consist.get("type_name", "—")
+    level = consist.get("train_level", "")
+    title_parts = [type_name]
+    if level and level != type_name:
+        title_parts.append(f"({level})")
+    title = " ".join(title_parts)
+
+    depot = consist.get("depot", "")
+    unit_code = consist.get("unit_code", "")
+    run_type = consist.get("run_type", "")
+    depot_line_parts = [x for x in (depot, f"運用 {unit_code}" if unit_code else "", run_type) if x]
+
+    flags = [f for f in (consist.get("flags") or []) if f != "ㄏㄙ"]
+    flag_tokens = [f"{f}線" if f in ("山", "海") else f for f in flags]
+    if consist.get("is_deadhead"):
+        flag_tokens.insert(0, "ㄏㄙ 回送")
+
+    body_contents = [
+        {"type": "text", "text": f"{train_no} 次  {title}", "weight": "bold", "size": "md", "color": "#112a4d", "wrap": True},
+        _info_row("編組", consist.get("formation", "—")),
+        _info_row("區間", consist.get("route", "—"), wrap=True),
+    ]
+    if depot_line_parts:
+        body_contents.append(_info_row("機務", "・".join(depot_line_parts), wrap=True))
+    if flag_tokens:
+        body_contents.append(_info_row("標記", "・".join(flag_tokens)))
+
     return {
         "type": "bubble",
         "size": "kilo",
@@ -326,13 +372,9 @@ def build_consist_flex(train_no: str, consist: dict, version_date: str, image_ur
             "type": "box",
             "layout": "vertical",
             "paddingAll": "12px",
-            "contents": [
-                {"type": "text", "text": f"{train_no} 次", "weight": "bold", "size": "md", "color": "#112a4d"},
-                _info_row("編組", consist.get("formation", "—")),
-                _info_row("區間", consist.get("route", "—"), wrap=True)
-            ]
+            "contents": body_contents,
         },
-        "hero": {"type": "image", "url": image_url, "size": "full", "aspectRatio": "20:7", "aspectMode": "cover"} if image_url else None
+        "hero": {"type": "image", "url": image_url, "size": "full", "aspectRatio": "20:7", "aspectMode": "cover"} if image_url else None,
     }
 
 def build_crew_route_flex(train_no: str, type_name: str, crew_type: str, crew_text: str, version_date: str) -> dict:
