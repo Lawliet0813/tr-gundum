@@ -308,7 +308,9 @@ async def handle_train_query(reply_token: str, train_no: str, date: str, user_id
     consist = _consist_svc.get(train_no)
 
     if not train:
-        if consist:
+        # 授權員工：TDX 查無時 fallback 到編組查詢（離線資料仍有用）
+        # 一般用戶：直接回報查無，避免 handle_consist_only 顯示「員工專屬」造成混淆
+        if consist and authorized:
             await handle_consist_only(reply_token, no_disp, user_id)
         else:
             await _reply(reply_token, [TextMessage(text=f"{date} 找不到 {no_disp} 次的班次，請確認車次號碼與日期。")])

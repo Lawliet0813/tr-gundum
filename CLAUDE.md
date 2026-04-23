@@ -49,8 +49,8 @@ tr_gundum/
 | `CrewQuery` | 含「機務」或「運務」關鍵字 |
 | `HelpQuery` | `說明` / `?` / `help` 等 |
 | `MyIdQuery` | `/myid` |
-| `AuthAddQuery` | `+auth Uxx...`（admin） |
-| `AuthRemoveQuery` | `-auth Uxx...`（admin） |
+| `AuthAddQuery` | `/auth add Uxx...`（admin） |
+| `AuthRemoveQuery` | `/auth remove Uxx...`（admin） |
 | `RichMenuGuideQuery` | 圖文選單按鈕 |
 | `UnknownQuery` | 其他，交給 AI fallback |
 

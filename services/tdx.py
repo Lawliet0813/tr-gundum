@@ -135,11 +135,19 @@ class TDXClient:
         sid = self._alias_map.get(key) or self._alias_map.get(key.lower())
         if sid:
             return sid, self._stations[sid]["name_zh"]
-        # Partial match fallback (first hit)
+        # Partial match fallback：只在輸入 ≥2 字時，且「輸入包含已知站名」時才命中。
+        # 避免「北」一字命中任意含「北」的站。
+        if len(key) < 2:
+            return None
+        key_lower = key.lower()
+        best: Optional[tuple[str, str]] = None
+        best_len = 0
         for mapped_name, mid in self._alias_map.items():
-            if key in mapped_name or mapped_name in key:
-                return mid, self._stations[mid]["name_zh"]
-        return None
+            if len(mapped_name) >= 2 and mapped_name in key_lower:
+                if len(mapped_name) > best_len:
+                    best = (mid, self._stations[mid]["name_zh"])
+                    best_len = len(mapped_name)
+        return best
 
     def station_name(self, station_id: str) -> str:
         info = self._stations.get(station_id)

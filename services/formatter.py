@@ -44,9 +44,7 @@ def _duration(dep: str, arr: str) -> str:
     try:
         d = datetime.strptime(dep, "%H:%M")
         a = datetime.strptime(arr, "%H:%M")
-        diff = (a - d).seconds // 60
-        if diff < 0:
-            diff += 1440
+        diff = (a - d).seconds // 60  # .seconds 對跨夜 timedelta 已自動正確（永遠 >= 0）
         h, m = divmod(diff, 60)
         return f"{h}時{m:02d}分" if h else f"{m}分"
     except Exception:
@@ -253,9 +251,19 @@ def build_train_detail_flex(
     for i, s in enumerate(stops):
         is_first = i == 0
         is_last = i == len(stops) - 1
-        time_text = s["departure"] if is_first else s["arrival"]
         color = "#1a73e8" if (is_first or is_last) else "#333333"
         weight = "bold" if (is_first or is_last) else "regular"
+
+        arr = s.get("arrival", "")
+        dep = s.get("departure", "")
+        if is_first:
+            time_text = dep
+        elif is_last:
+            time_text = arr
+        elif arr and dep and arr != dep:
+            time_text = f"{arr}~{dep}"
+        else:
+            time_text = arr or dep
 
         stop_rows.append({
             "type": "box",
