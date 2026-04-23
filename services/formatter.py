@@ -44,6 +44,58 @@ def _duration(dep: str, arr: str) -> str:
         return f"{h}h {m:02d}m" if h else f"{m}m"
     except Exception: return ""
 
+def _info_row(label: str, value: str, wrap: bool = False) -> dict:
+    return {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "xs",
+        "contents": [
+            {"type": "text", "text": label, "size": "xs", "color": "#888888"},
+            {"type": "text", "text": value or "—", "size": "sm", "color": "#1a1a2e", "wrap": wrap},
+        ],
+    }
+
+def _crew_route_body(crew_text: str) -> list:
+    segments_raw = [s.strip() for s in crew_text.split("，") if s.strip()]
+    contents = []
+    for seg_idx, seg_text in enumerate(segments_raw):
+        if seg_idx > 0:
+            contents.append({"type": "separator", "margin": "sm"})
+        if "=" in seg_text:
+            parts = [p.strip() for p in seg_text.split("=") if p.strip()]
+            for i, part in enumerate(parts):
+                if i % 2 == 0:
+                    contents.append({
+                        "type": "box",
+                        "layout": "horizontal",
+                        "spacing": "sm",
+                        "contents": [
+                            {"type": "text", "text": "●", "color": "#1a73e8", "size": "xs", "flex": 0},
+                            {"type": "text", "text": part, "size": "sm", "weight": "bold", "color": "#1a1a2e", "flex": 1},
+                        ],
+                    })
+                else:
+                    seg = part.strip("()")
+                    contents.append({
+                        "type": "box",
+                        "layout": "horizontal",
+                        "spacing": "sm",
+                        "paddingStart": "4px",
+                        "contents": [
+                            {"type": "text", "text": "│", "color": "#c0c8d8", "size": "xs", "flex": 0},
+                            {"type": "text", "text": seg, "size": "xs", "color": "#555577", "flex": 1},
+                        ],
+                    })
+        else:
+            contents.append({
+                "type": "text",
+                "text": seg_text,
+                "size": "sm",
+                "color": "#1a1a2e",
+                "wrap": True,
+            })
+    return contents
+
 # ── 時刻列表 Flex (專業簡約風) ──────────────────────────────────────────────────
 
 def build_schedule_flex(
@@ -119,7 +171,7 @@ def build_schedule_flex(
         })
         rows.append({"type": "separator", "color": "#f0f0f0"})
 
-    if rows: rows.pop() # 移除最後一個 separator
+    if rows: rows.pop()
 
     return {
         "type": "bubble",
@@ -163,7 +215,6 @@ def build_train_detail_flex(
     train_no_disp = train["train_no"].lstrip("0") or "0"
     wd = _weekday(date)
     
-    # 只取第一站跟最後一站
     stops = train.get("stops", [])
     origin_stop = stops[0] if stops else {"station_name": train.get("start_name", ""), "departure": ""}
     dest_stop = stops[-1] if stops else {"station_name": train.get("end_name", ""), "arrival": ""}
@@ -234,7 +285,7 @@ def build_train_detail_flex(
         },
         "hero": {
             "type": "image",
-            "url": image_url or "https://placeholder.com", # 確保有圖或佔位
+            "url": image_url,
             "size": "full",
             "aspectRatio": "17:4",
             "aspectMode": "fit"
@@ -253,24 +304,82 @@ def build_train_detail_flex(
         }
     }
 
-# ── 其餘方法 (Consist/Help) 保持風格一致或維持現狀 ───────────────────────────────
+def build_consist_flex(
+    train_no: str,
+    consist: dict,
+    version_date: str,
+    image_url: Optional[str] = None,
+) -> dict:
+    type_name = consist.get("type_name", "—")
+    info_items = [
+        {"type": "text", "text": f"{train_no} 次", "weight": "bold", "size": "md", "color": "#112a4d"},
+        {"type": "text", "text": type_name, "size": "xs", "color": "#555577", "wrap": True},
+        {"type": "separator", "margin": "sm"},
+        _info_row("編組", consist.get("formation", "—")),
+        _info_row("區間", consist.get("route", "—"), wrap=True),
+        {"type": "separator", "margin": "sm"},
+        {"type": "text", "text": "機務乘務", "size": "xs", "color": "#888888"},
+        {"type": "box", "layout": "vertical", "contents": _crew_route_body(consist.get("crew_mech", ""))},
+        {"type": "separator", "margin": "sm"},
+        {"type": "text", "text": "運務乘務", "size": "xs", "color": "#888888"},
+        {"type": "box", "layout": "vertical", "contents": _crew_route_body(consist.get("crew_ops", ""))},
+        {"type": "text", "text": version_date, "size": "xxs", "color": "#aaaaaa", "margin": "sm"},
+    ]
+    return {
+        "type": "bubble",
+        "size": "kilo",
+        "body": {
+            "type": "box",
+            "layout": "vertical",
+            "paddingAll": "12px",
+            "contents": info_items
+        },
+        "hero": {
+            "type": "image",
+            "url": image_url,
+            "size": "full",
+            "aspectRatio": "17:4",
+            "aspectMode": "fit"
+        } if image_url else None
+    }
+
+def build_crew_route_flex(
+    train_no: str,
+    type_name: str,
+    crew_type: str,
+    crew_text: str,
+    version_date: str,
+) -> dict:
+    label = "機務乘務" if crew_type == "mech" else "運務乘務"
+    return {
+        "type": "bubble",
+        "size": "kilo",
+        "header": {
+            "type": "box",
+            "layout": "vertical",
+            "backgroundColor": "#112a4d",
+            "contents": [
+                {"type": "text", "text": f"{train_no} 次 {type_name}", "color": "#ffffff", "weight": "bold", "size": "md"},
+                {"type": "text", "text": label, "color": "#b0bec5", "size": "xs"}
+            ],
+        },
+        "body": {
+            "type": "box",
+            "layout": "vertical",
+            "paddingAll": "12px",
+            "contents": _crew_route_body(crew_text),
+        },
+    }
 
 def build_help_text() -> str:
     return (
         "🚂 臺鐵小鋼彈 專業版說明\n"
         "────────────────\n"
         "🕐 時刻查詢\n"
-        "  輸入 [起點] [終點] [日期]\n"
-        "  例：台北 高雄 明天\n\n"
+        "  輸入 [起點] [終點] [日期]\n\n"
         "🚞 車次查詢 (精簡版)\n"
-        "  直接輸入 [車次]\n"
-        "  例：111\n\n"
+        "  直接輸入 [車次]\n\n"
         "🤖 AI 位置推算 (Gemma 4)\n"
-        "  詢問車次目前位置\n"
         "  例：4191現在在哪\n"
         "────────────────"
     )
-
-def build_consist_flex(train_no: str, consist: dict, version_date: str, image_url: Optional[str] = None) -> dict:
-    # 這裡維持原本邏輯但微調視覺...
-    return {"type": "bubble", "body": {"type": "box", "layout": "vertical", "contents": [{"type": "text", "text": f"{train_no} 次編組: {consist.get('formation', '—')}"}]}}
