@@ -24,14 +24,18 @@ class TDXClient:
         self._full_timetables: dict = {}
 
     async def init(self) -> None:
-        if self._client_id and self._client_secret:
-            await self._ensure_token()
         try:
+            if self._client_id and self._client_secret:
+                await self._ensure_token()
             await self._load_stations()
             await self._load_full_timetables()
         except Exception as exc:
             import logging
-            logging.getLogger(__name__).warning("Initialisation failed: %s", exc)
+            logging.getLogger(__name__).warning("TDX Initialisation failed (using offline mode where possible): %s", exc)
+            # 即使失敗，也嘗試載入本地時刻表
+            try:
+                await self._load_full_timetables()
+            except: pass
 
     async def _load_full_timetables(self) -> None:
         if FULL_TIMETABLE_PATH.exists():
