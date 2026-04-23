@@ -135,6 +135,26 @@ class TDXClient:
         info = self._stations.get(station_id)
         return info["name_zh"] if info else station_id
 
+    def resolve_ods_name(self, ods_name: str) -> str:
+        """將 ODS 簡寫還原為完整站名 (例如 '高' -> '高雄')"""
+        if len(ods_name) >= 2:
+            # 已經是完整站名或特殊站名 (如 '新左營')
+            return ods_name
+        
+        # 尋找以該字開頭的最短站名 (通常就是正確的)
+        matches = []
+        for sid, info in self._stations.items():
+            full_name = info["name_zh"]
+            if full_name.startswith(ods_name) and len(full_name) >= 2:
+                matches.append(full_name)
+        
+        if matches:
+            # 優先取長度為 2 的 (如 '高' 匹配到 '高雄', '高架' -> 取 '高雄')
+            matches.sort(key=len)
+            return matches[0]
+            
+        return ods_name
+
     # ── Local Query Methods ──────────────────────────────────────────────────
 
     def _match_station(self, target_full: str, ods_name: str) -> bool:
@@ -164,11 +184,11 @@ class TDXClient:
                 results.append({
                     "train_no": t_no,
                     "type_name": data["type"],
-                    "type_id": "", # 本地資料無 ID
+                    "type_id": "", 
                     "departure": stops[o_idx]["t"],
                     "arrival": stops[d_idx]["t"],
-                    "start_name": stops[0]["s"],
-                    "end_name": stops[-1]["s"]
+                    "start_name": self.resolve_ods_name(stops[0]["s"]),
+                    "end_name": self.resolve_ods_name(stops[-1]["s"])
                 })
         
         results.sort(key=lambda x: x["departure"])
@@ -188,12 +208,12 @@ class TDXClient:
             "train_no": train_no,
             "type_name": data["type"],
             "type_id": "",
-            "start_name": stops[0]["s"],
-            "end_name": stops[-1]["s"],
+            "start_name": self.resolve_ods_name(stops[0]["s"]),
+            "end_name": self.resolve_ods_name(stops[-1]["s"]),
             "stops": [
                 {
                     "seq": i + 1,
-                    "station_name": s["s"],
+                    "station_name": self.resolve_ods_name(s["s"]),
                     "arrival": s["t"],
                     "departure": s["t"]
                 } for i, s in enumerate(stops)
