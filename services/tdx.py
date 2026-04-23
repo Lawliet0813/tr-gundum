@@ -36,9 +36,8 @@ class TDXClient:
     async def _load_full_timetables(self) -> None:
         if FULL_TIMETABLE_PATH.exists():
             self._full_timetables = json.loads(FULL_TIMETABLE_PATH.read_text(encoding="utf-8"))
-            print(f"Loaded {len(self._full_timetables)} local train timetables.")
 
-    # ── Token & Station methods remain unchanged... ──────────────────────────
+    # ── Token & Station methods ──────────────────────────────────────────────
 
     async def _ensure_token(self) -> str:
         if self._token and time.time() < self._token_expires_at - 60:
@@ -132,27 +131,36 @@ class TDXClient:
         info = self._stations.get(station_id)
         return info["name_zh"] if info else station_id
 
-    # ── Local Query Methods (Replacing TDX API) ───────────────────────────────
+    # ── Local Query Methods ──────────────────────────────────────────────────
+
+    def _match_station(self, target_full: str, ods_name: str) -> bool:
+        """比對標準站名與 ODS 簡寫站名 (例如 高雄 vs 高)"""
+        target = target_full.replace("臺", "台")
+        ods = ods_name.replace("臺", "台")
+        # 如果 ODS 只有一個字，檢查是否為開頭
+        if len(ods) == 1:
+            return target.startswith(ods)
+        # 否則檢查是否包含
+        return ods in target or target in ods
 
     async def query_od(self, origin_id: str, dest_id: str, date: str) -> list[dict]:
-        """從本地 ODS 資料庫執行站到站查詢"""
         if not self._full_timetables:
             await self._load_full_timetables()
         
-        origin_name = self.station_name(origin_id).replace("臺", "台")
-        dest_name = self.station_name(dest_id).replace("臺", "台")
+        origin_full = self.station_name(origin_id)
+        dest_full = self.station_name(dest_id)
         
         results = []
         for t_no, data in self._full_timetables.items():
             stops = data.get("stops", [])
-            # 找起點與終點
-            o_idx = next((i for i, s in enumerate(stops) if s["s"] in (origin_name, origin_name.replace("台", "臺"))), -1)
-            d_idx = next((i for i, s in enumerate(stops) if s["s"] in (dest_name, dest_name.replace("台", "臺"))), -1)
+            o_idx = next((i for i, s in enumerate(stops) if self._match_station(origin_full, s["s"])), -1)
+            d_idx = next((i for i, s in enumerate(stops) if self._match_station(dest_full, s["s"])), -1)
             
             if o_idx != -1 and d_idx != -1 and o_idx < d_idx:
                 results.append({
                     "train_no": t_no,
                     "type_name": data["type"],
+                    "type_id": "", # 本地資料無 ID
                     "departure": stops[o_idx]["t"],
                     "arrival": stops[d_idx]["t"],
                     "start_name": stops[0]["s"],
@@ -163,11 +171,11 @@ class TDXClient:
         return results
 
     async def query_train(self, train_no: str, date: str) -> Optional[dict]:
-        """從本地 ODS 資料庫查詢單一車次時刻表"""
         if not self._full_timetables:
             await self._load_full_timetables()
         
-        data = self._full_timetables.get(train_no.lstrip('0'))
+        clean_no = train_no.lstrip('0')
+        data = self._full_timetables.get(clean_no)
         if not data:
             return None
             
@@ -175,6 +183,7 @@ class TDXClient:
         return {
             "train_no": train_no,
             "type_name": data["type"],
+            "type_id": "",
             "start_name": stops[0]["s"],
             "end_name": stops[-1]["s"],
             "stops": [
