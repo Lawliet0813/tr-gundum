@@ -1,7 +1,7 @@
 {
   "version": "1150120",
-  "updated_at": "2026-01-20",
-  "source": "Merged from PDF Consist and ODS Timetables",
+  "updated_at": "2026-04-24",
+  "source": "Merged from PDF Consist and ODS Timetables + route field HH:MM bug fix",
   "trains": {
     "1": {
       "type_name": "DRC1000",
@@ -1613,7 +1613,7 @@
     "1006": {
       "type_name": "EMU900",
       "formation": "七機U1",
-      "route": "10:15",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "潮州",
@@ -1631,7 +1631,7 @@
     "1034": {
       "type_name": "EMU900",
       "formation": "七機U1",
-      "route": "17:33",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "新左營",
@@ -1640,7 +1640,7 @@
     "1038": {
       "type_name": "EMU800",
       "formation": "竹機U6",
-      "route": "18:17",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "潮州",
@@ -1695,7 +1695,7 @@
     "1105": {
       "type_name": "EMU900",
       "formation": "竹機U11",
-      "route": "06:25",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "北湖",
@@ -1713,7 +1713,7 @@
     "1107": {
       "type_name": "EMU900",
       "formation": "七機U3A",
-      "route": "07:17",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "七堵",
@@ -1758,7 +1758,7 @@
     "1117": {
       "type_name": "EMU900",
       "formation": "竹機U10",
-      "route": "07:58",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "基隆",
@@ -1812,7 +1812,7 @@
     "1127": {
       "type_name": "EMU700",
       "formation": "竹機U12",
-      "route": "09:16",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "七堵",
@@ -1893,7 +1893,7 @@
     "1137": {
       "type_name": "EMU900",
       "formation": "七機U5A",
-      "route": "10:10",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "基隆",
@@ -1956,7 +1956,7 @@
     "1147": {
       "type_name": "EMU900",
       "formation": "七機U3A",
-      "route": "11:19",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "基隆",
@@ -2001,7 +2001,7 @@
     "1157": {
       "type_name": "EMU900",
       "formation": "七機U3A",
-      "route": "12:19",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "基隆",
@@ -2071,7 +2071,7 @@
     "1167": {
       "type_name": "EMU900",
       "formation": "竹機U15",
-      "route": "13:07",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "基隆",
@@ -2125,7 +2125,7 @@
     "1177": {
       "type_name": "EMU900",
       "formation": "竹機U14",
-      "route": "14:04",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "基隆",
@@ -2186,7 +2186,7 @@
     "1187": {
       "type_name": "EMU700",
       "formation": "竹機U12",
-      "route": "15:03",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "基隆",
@@ -2231,7 +2231,7 @@
     "1197": {
       "type_name": "EMU900",
       "formation": "竹機U13",
-      "route": "16:07",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "基隆",
@@ -2276,7 +2276,7 @@
     "1207": {
       "type_name": "EMU900",
       "formation": "竹機U9A",
-      "route": "17:04",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "基隆",
@@ -2321,7 +2321,7 @@
     "1217": {
       "type_name": "EMU900",
       "formation": "竹機U9A",
-      "route": "17:58",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "基隆",
@@ -2375,7 +2375,7 @@
     "1227": {
       "type_name": "EMU900",
       "formation": "七機U3A",
-      "route": "19:13",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "基隆",
@@ -2429,7 +2429,7 @@
     "1237": {
       "type_name": "EMU900",
       "formation": "竹機U10",
-      "route": "20:26",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "基隆",
@@ -2483,7 +2483,7 @@
     "1247": {
       "type_name": "EMU900",
       "formation": "竹機U9A",
-      "route": "21:09",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "基隆",
@@ -2508,7 +2508,7 @@
     "1251": {
       "type_name": "EMU900",
       "formation": "竹機U14",
-      "route": "21:30",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "基隆",
@@ -2535,7 +2535,7 @@
     "1257": {
       "type_name": "EMU900",
       "formation": "七機U4A",
-      "route": "22:22",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "基隆",
@@ -2580,7 +2580,7 @@
     "1265": {
       "type_name": "EMU900",
       "formation": "七機U3A",
-      "route": "22:50",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "北湖",
@@ -2589,7 +2589,7 @@
     "1267": {
       "type_name": "EMU900",
       "formation": "七機U5A",
-      "route": "23:17",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "基隆",
@@ -2835,7 +2835,7 @@
     "1702": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "06:00",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -2853,7 +2853,7 @@
     "1704": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "06:29",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -2871,7 +2871,7 @@
     "1706": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "06:59",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -2889,7 +2889,7 @@
     "1708": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "07:32",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -2914,7 +2914,7 @@
     "1712": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "07:59",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -2932,7 +2932,7 @@
     "1714": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "08:30",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -2950,7 +2950,7 @@
     "1716": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "08:56",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -2968,7 +2968,7 @@
     "1718": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "09:29",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -2986,7 +2986,7 @@
     "1722": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "09:56",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3004,7 +3004,7 @@
     "1724": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "10:29",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3022,7 +3022,7 @@
     "1726": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "10:56",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3040,7 +3040,7 @@
     "1728": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "11:29",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3058,7 +3058,7 @@
     "1732": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "11:56",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3076,7 +3076,7 @@
     "1734": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "12:29",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3094,7 +3094,7 @@
     "1736": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "12:56",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3112,7 +3112,7 @@
     "1738": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "13:29",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3130,7 +3130,7 @@
     "1742": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "13:56",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3148,7 +3148,7 @@
     "1744": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "14:29",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3166,7 +3166,7 @@
     "1746": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "14:56",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3184,7 +3184,7 @@
     "1748": {
       "type_name": "EMU500",
       "formation": "彰機U4",
-      "route": "15:29",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3202,7 +3202,7 @@
     "1752": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "15:56",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3220,7 +3220,7 @@
     "1754": {
       "type_name": "EMU500",
       "formation": "彰機U4",
-      "route": "16:29",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3238,7 +3238,7 @@
     "1756": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "16:56",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3256,7 +3256,7 @@
     "1758": {
       "type_name": "EMU500",
       "formation": "彰機U4",
-      "route": "17:29",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3274,7 +3274,7 @@
     "1762": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "17:56",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3292,7 +3292,7 @@
     "1764": {
       "type_name": "EMU500",
       "formation": "彰機U4",
-      "route": "18:29",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3310,7 +3310,7 @@
     "1766": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "18:56",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3328,7 +3328,7 @@
     "1768": {
       "type_name": "EMU500",
       "formation": "彰機U4",
-      "route": "19:29",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3353,7 +3353,7 @@
     "1772": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "19:56",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3371,7 +3371,7 @@
     "1774": {
       "type_name": "EMU500",
       "formation": "彰機U4",
-      "route": "20:29",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3389,7 +3389,7 @@
     "1776": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "20:56",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3407,7 +3407,7 @@
     "1778": {
       "type_name": "EMU500",
       "formation": "彰機U4",
-      "route": "21:29",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3432,7 +3432,7 @@
     "1782": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "21:56",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3450,7 +3450,7 @@
     "1784": {
       "type_name": "EMU500",
       "formation": "彰機U4",
-      "route": "22:29",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3468,7 +3468,7 @@
     "1786": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "23:02",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3477,7 +3477,7 @@
     "1801": {
       "type_name": "DRC1000",
       "formation": "彰機K12+彰機K14+彰機K15",
-      "route": "05:13",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3486,7 +3486,7 @@
     "1802": {
       "type_name": "DRC1000",
       "formation": "彰機K11+彰機K14+彰機K15",
-      "route": "05:02",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3495,7 +3495,7 @@
     "1803": {
       "type_name": "DRC1000",
       "formation": "彰機K11+彰機K14+彰機K15",
-      "route": "06:07",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3504,7 +3504,7 @@
     "1804": {
       "type_name": "DRC1000",
       "formation": "彰機K12+彰機K14+彰機K15",
-      "route": "06:36",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3513,7 +3513,7 @@
     "1805": {
       "type_name": "DRC1000",
       "formation": "彰機K12+彰機K14+彰機K15",
-      "route": "07:47",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3522,7 +3522,7 @@
     "1806": {
       "type_name": "DRC1000",
       "formation": "彰機K11+彰機K14+彰機K15",
-      "route": "07:40",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3531,7 +3531,7 @@
     "1807": {
       "type_name": "DRC1000",
       "formation": "彰機K11+彰機K14+彰機K15",
-      "route": "08:47",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3549,7 +3549,7 @@
     "1811": {
       "type_name": "DRC1000",
       "formation": "彰機K12+彰機K14+彰機K15",
-      "route": "09:47",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3567,7 +3567,7 @@
     "1813": {
       "type_name": "DRC1000",
       "formation": "彰機K11+彰機K14+彰機K15",
-      "route": "10:47",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3585,7 +3585,7 @@
     "1815": {
       "type_name": "DRC1000",
       "formation": "彰機K14+彰機K15",
-      "route": "11:47",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3603,7 +3603,7 @@
     "1817": {
       "type_name": "DRC1000",
       "formation": "彰機K12",
-      "route": "11:47",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3621,7 +3621,7 @@
     "1819": {
       "type_name": "DRC1000",
       "formation": "彰機K11+彰機K14+彰機K15",
-      "route": "12:47",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3630,7 +3630,7 @@
     "1820": {
       "type_name": "DRC1000",
       "formation": "彰機K13",
-      "route": "12:35",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3639,7 +3639,7 @@
     "1821": {
       "type_name": "DRC1000",
       "formation": "彰機K13+彰機K14+彰機K15",
-      "route": "13:47",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3657,7 +3657,7 @@
     "1823": {
       "type_name": "DRC1000",
       "formation": "彰機K11+彰機K14+彰機K15",
-      "route": "14:47",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3675,7 +3675,7 @@
     "1825": {
       "type_name": "DRC1000",
       "formation": "彰機K13+彰機K14+彰機K15",
-      "route": "15:47",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3693,7 +3693,7 @@
     "1827": {
       "type_name": "DRC1000",
       "formation": "彰機K14+彰機K15",
-      "route": "16:47",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3711,7 +3711,7 @@
     "1831": {
       "type_name": "DRC1000",
       "formation": "彰機K11",
-      "route": "16:47",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3729,7 +3729,7 @@
     "1833": {
       "type_name": "DRC1000",
       "formation": "彰機K13+彰機K14+彰機K15",
-      "route": "17:47",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3738,7 +3738,7 @@
     "1834": {
       "type_name": "DRC1000",
       "formation": "彰機K12",
-      "route": "17:35",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3747,7 +3747,7 @@
     "1835": {
       "type_name": "DRC1000",
       "formation": "彰機K12+彰機K14+彰機K15",
-      "route": "18:47",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3765,7 +3765,7 @@
     "1837": {
       "type_name": "DRC1000",
       "formation": "彰機K13",
-      "route": "19:47",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3783,7 +3783,7 @@
     "1839": {
       "type_name": "DRC1000",
       "formation": "彰機K14+彰機K15",
-      "route": "19:47",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3792,7 +3792,7 @@
     "1841": {
       "type_name": "DRC1000",
       "formation": "彰機K12+彰機K14+彰機K15",
-      "route": "20:47",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3801,7 +3801,7 @@
     "1842": {
       "type_name": "DRC1000",
       "formation": "彰機K11+彰機K14+彰機K15",
-      "route": "21:35",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3810,7 +3810,7 @@
     "1843": {
       "type_name": "DRC1000",
       "formation": "彰機K11+彰機K14+彰機K15",
-      "route": "22:47",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3819,7 +3819,7 @@
     "1844": {
       "type_name": "DRC1000",
       "formation": "彰機K12+彰機K14+彰機K15",
-      "route": "22:35",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3828,7 +3828,7 @@
     "1845": {
       "type_name": "DRC1000",
       "formation": "彰機K13",
-      "route": "07:05",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3837,7 +3837,7 @@
     "1846": {
       "type_name": "DRC1000",
       "formation": "彰機K13",
-      "route": "05:54",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3846,7 +3846,7 @@
     "1847": {
       "type_name": "DRC1000",
       "formation": "彰機K13",
-      "route": "21:47",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -3887,7 +3887,7 @@
     "2004": {
       "type_name": "EMU800",
       "formation": "彰機U5",
-      "route": "07:53",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "嘉義",
@@ -3896,7 +3896,7 @@
     "2005": {
       "type_name": "EMU900",
       "formation": "七機U1",
-      "route": "06:42",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "七堵",
@@ -3914,7 +3914,7 @@
     "2008": {
       "type_name": "EMU900",
       "formation": "七機U1",
-      "route": "05:58",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "彰化",
@@ -3932,7 +3932,7 @@
     "2015": {
       "type_name": "EMU900",
       "formation": "七機U4A",
-      "route": "12:31",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "南港",
@@ -3941,7 +3941,7 @@
     "2016": {
       "type_name": "EMU900",
       "formation": "七機U1",
-      "route": "12:03",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "二水",
@@ -3995,7 +3995,7 @@
     "2032": {
       "type_name": "EMU800",
       "formation": "彰機U5",
-      "route": "14:44",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4004,7 +4004,7 @@
     "2033": {
       "type_name": "EMU900",
       "formation": "七機U1",
-      "route": "18:54",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "七堵",
@@ -4013,7 +4013,7 @@
     "2036": {
       "type_name": "EMU900",
       "formation": "七機U4A",
-      "route": "16:34",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "彰化",
@@ -4022,7 +4022,7 @@
     "2037": {
       "type_name": "EMU900",
       "formation": "竹機U16",
-      "route": "20:03",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "七堵",
@@ -4031,7 +4031,7 @@
     "2042": {
       "type_name": "EMU900",
       "formation": "七機U1",
-      "route": "17:33",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "二水",
@@ -4040,7 +4040,7 @@
     "2046": {
       "type_name": "EMU900",
       "formation": "竹機U16",
-      "route": "20:07",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "彰化",
@@ -4083,7 +4083,7 @@
     "2114": {
       "type_name": "EMU900",
       "formation": "竹機U14",
-      "route": "05:00",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "彰化",
@@ -4101,7 +4101,7 @@
     "2116": {
       "type_name": "EMU500",
       "formation": "彰機U3",
-      "route": "05:44",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4110,7 +4110,7 @@
     "2120": {
       "type_name": "EMU700",
       "formation": "竹機U2",
-      "route": "05:51",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "二水",
@@ -4119,7 +4119,7 @@
     "2122": {
       "type_name": "EMU800",
       "formation": "嘉機U2",
-      "route": "06:02",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4137,7 +4137,7 @@
     "2124": {
       "type_name": "EMU700",
       "formation": "竹機U5",
-      "route": "06:24",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "嘉義",
@@ -4146,7 +4146,7 @@
     "2128": {
       "type_name": "EMU700",
       "formation": "竹機U5",
-      "route": "06:43",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "嘉義",
@@ -4173,7 +4173,7 @@
     "2134": {
       "type_name": "EMU900",
       "formation": "七機U3A",
-      "route": "06:59",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "嘉義",
@@ -4182,7 +4182,7 @@
     "2138": {
       "type_name": "優化EMU500",
       "formation": "高機U4",
-      "route": "07:26",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "新營",
@@ -4200,7 +4200,7 @@
     "2144": {
       "type_name": "EMU700",
       "formation": "竹機U5",
-      "route": "08:12",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "嘉義",
@@ -4209,7 +4209,7 @@
     "2146": {
       "type_name": "EMU800",
       "formation": "彰機U5",
-      "route": "08:25",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4227,7 +4227,7 @@
     "2154": {
       "type_name": "EMU900",
       "formation": "七機U5A",
-      "route": "09:19",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "嘉義",
@@ -4254,7 +4254,7 @@
     "2166": {
       "type_name": "EMU800",
       "formation": "彰機U5",
-      "route": "10:34",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4272,7 +4272,7 @@
     "2174": {
       "type_name": "EMU900",
       "formation": "竹機U15",
-      "route": "11:16",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "嘉義",
@@ -4290,7 +4290,7 @@
     "2184": {
       "type_name": "EMU700",
       "formation": "竹機U5",
-      "route": "12:11",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "嘉義",
@@ -4299,7 +4299,7 @@
     "2190": {
       "type_name": "EMU800",
       "formation": "彰機U7",
-      "route": "13:03",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4326,7 +4326,7 @@
     "2194": {
       "type_name": "EMU900",
       "formation": "竹機U11",
-      "route": "13:10",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "嘉義",
@@ -4344,7 +4344,7 @@
     "2204": {
       "type_name": "EMU700",
       "formation": "竹機U5",
-      "route": "14:12",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "嘉義",
@@ -4362,7 +4362,7 @@
     "2214": {
       "type_name": "EMU900",
       "formation": "竹機U9A",
-      "route": "15:06",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "嘉義",
@@ -4380,7 +4380,7 @@
     "2224": {
       "type_name": "EMU700",
       "formation": "竹機U5",
-      "route": "16:02",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "嘉義",
@@ -4389,7 +4389,7 @@
     "2226": {
       "type_name": "EMU800",
       "formation": "彰機U7",
-      "route": "16:24",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4407,7 +4407,7 @@
     "2234": {
       "type_name": "EMU900",
       "formation": "七機U2A",
-      "route": "17:05",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "嘉義",
@@ -4416,7 +4416,7 @@
     "2236": {
       "type_name": "EMU800",
       "formation": "彰機U5",
-      "route": "17:17",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4425,7 +4425,7 @@
     "2237": {
       "type_name": "EMU700",
       "formation": "竹機U2",
-      "route": "18:20",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "北湖",
@@ -4443,7 +4443,7 @@
     "2244": {
       "type_name": "EMU800",
       "formation": "竹機U6",
-      "route": "18:12",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "嘉義",
@@ -4452,7 +4452,7 @@
     "2246": {
       "type_name": "EMU800",
       "formation": "彰機U5",
-      "route": "18:24",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4470,7 +4470,7 @@
     "2254": {
       "type_name": "EMU900",
       "formation": "竹機U11",
-      "route": "19:20",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "嘉義",
@@ -4497,7 +4497,7 @@
     "2264": {
       "type_name": "EMU700",
       "formation": "竹機U5",
-      "route": "20:13",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "嘉義",
@@ -4533,7 +4533,7 @@
     "2272": {
       "type_name": "EMU800",
       "formation": "彰機U5",
-      "route": "20:25",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "斗六",
@@ -4542,7 +4542,7 @@
     "2273": {
       "type_name": "EMU900",
       "formation": "竹機U14",
-      "route": "21:59",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "基隆",
@@ -4551,7 +4551,7 @@
     "2274": {
       "type_name": "EMU900",
       "formation": "竹機U10",
-      "route": "21:21",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "嘉義",
@@ -4560,7 +4560,7 @@
     "2275": {
       "type_name": "EMU900",
       "formation": "竹機U14",
-      "route": "21:59",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "基隆",
@@ -4610,7 +4610,7 @@
     "2503": {
       "type_name": "EMU500",
       "formation": "彰機U1A",
-      "route": "04:53",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4619,7 +4619,7 @@
     "2504": {
       "type_name": "EMU500",
       "formation": "彰機U1A",
-      "route": "05:04",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "彰化",
@@ -4628,7 +4628,7 @@
     "2507": {
       "type_name": "EMU500",
       "formation": "彰機U4",
-      "route": "05:31",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4637,7 +4637,7 @@
     "2511": {
       "type_name": "EMU700",
       "formation": "竹機U2",
-      "route": "06:34",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4646,7 +4646,7 @@
     "2512": {
       "type_name": "EMU500",
       "formation": "彰機U2",
-      "route": "06:09",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4655,7 +4655,7 @@
     "2513": {
       "type_name": "EMU500",
       "formation": "彰機U2",
-      "route": "08:23",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4664,7 +4664,7 @@
     "2514": {
       "type_name": "EMU500",
       "formation": "彰機U1A",
-      "route": "07:17",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4673,7 +4673,7 @@
     "2517": {
       "type_name": "EMU500",
       "formation": "彰機U1A",
-      "route": "09:07",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "湖口",
@@ -4682,7 +4682,7 @@
     "2518": {
       "type_name": "EMU500",
       "formation": "彰機U3",
-      "route": "08:06",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "田中",
@@ -4691,7 +4691,7 @@
     "2521": {
       "type_name": "EMU500",
       "formation": "彰機U1A",
-      "route": "10:05",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4700,7 +4700,7 @@
     "2522": {
       "type_name": "EMU700",
       "formation": "竹機U2",
-      "route": "09:25",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "彰化",
@@ -4709,7 +4709,7 @@
     "2523": {
       "type_name": "EMU500",
       "formation": "彰機U3",
-      "route": "11:13",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4718,7 +4718,7 @@
     "2524": {
       "type_name": "EMU500",
       "formation": "彰機U1A",
-      "route": "10:23",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4736,7 +4736,7 @@
     "2528": {
       "type_name": "EMU500",
       "formation": "彰機U2",
-      "route": "11:03",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4761,7 +4761,7 @@
     "2532": {
       "type_name": "EMU500",
       "formation": "彰機U1A",
-      "route": "11:58",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4779,7 +4779,7 @@
     "2534": {
       "type_name": "EMU500",
       "formation": "彰機U4",
-      "route": "12:58",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4788,7 +4788,7 @@
     "2535": {
       "type_name": "EMU700",
       "formation": "竹機U2",
-      "route": "15:18",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "北湖",
@@ -4797,7 +4797,7 @@
     "2538": {
       "type_name": "EMU500",
       "formation": "彰機U3",
-      "route": "13:50",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "彰化",
@@ -4815,7 +4815,7 @@
     "2540": {
       "type_name": "EMU500",
       "formation": "彰機U1A",
-      "route": "14:33",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4824,7 +4824,7 @@
     "2541": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "16:20",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "竹北",
@@ -4833,7 +4833,7 @@
     "2542": {
       "type_name": "EMU500",
       "formation": "彰機U1A",
-      "route": "15:18",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "彰化",
@@ -4842,7 +4842,7 @@
     "2543": {
       "type_name": "EMU500",
       "formation": "彰機U3",
-      "route": "17:23",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "北湖",
@@ -4851,7 +4851,7 @@
     "2544": {
       "type_name": "EMU500",
       "formation": "彰機U2",
-      "route": "16:16",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4860,7 +4860,7 @@
     "2547": {
       "type_name": "EMU500",
       "formation": "彰機U1A",
-      "route": "18:27",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "竹北",
@@ -4869,7 +4869,7 @@
     "2548": {
       "type_name": "EMU500",
       "formation": "彰機U1A",
-      "route": "16:56",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4878,7 +4878,7 @@
     "2550": {
       "type_name": "EMU700",
       "formation": "竹機U2",
-      "route": "17:51",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4887,7 +4887,7 @@
     "2551": {
       "type_name": "EMU500",
       "formation": "彰機U2",
-      "route": "19:44",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4896,7 +4896,7 @@
     "2552": {
       "type_name": "EMU700",
       "formation": "竹機U2",
-      "route": "17:51",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4905,7 +4905,7 @@
     "2553": {
       "type_name": "EMU700",
       "formation": "竹機U2",
-      "route": "20:31",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4914,7 +4914,7 @@
     "2554": {
       "type_name": "EMU500",
       "formation": "彰機U1A",
-      "route": "18:56",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "彰化",
@@ -4923,7 +4923,7 @@
     "2557": {
       "type_name": "EMU500",
       "formation": "彰機U1A",
-      "route": "21:24",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4932,7 +4932,7 @@
     "2558": {
       "type_name": "EMU500",
       "formation": "彰機U1A",
-      "route": "20:34",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4941,7 +4941,7 @@
     "2561": {
       "type_name": "EMU500",
       "formation": "彰機U1A",
-      "route": "22:05",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "竹北",
@@ -4950,7 +4950,7 @@
     "2562": {
       "type_name": "EMU500",
       "formation": "彰機U6",
-      "route": "22:02",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -4959,7 +4959,7 @@
     "2564": {
       "type_name": "EMU700",
       "formation": "竹機U2",
-      "route": "22:54",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -5495,7 +5495,7 @@
     "3010": {
       "type_name": "EMU800",
       "formation": "竹機U6",
-      "route": "15:26",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "潮州",
@@ -5788,7 +5788,7 @@
     "3118": {
       "type_name": "EMU800",
       "formation": "嘉機U3",
-      "route": "08:55",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "高雄",
@@ -5824,7 +5824,7 @@
     "3128": {
       "type_name": "EMU800",
       "formation": "嘉機U4",
-      "route": "09:50",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "潮州",
@@ -5842,7 +5842,7 @@
     "3132": {
       "type_name": "EMU800",
       "formation": "嘉機U6",
-      "route": "10:08",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "潮州",
@@ -5860,7 +5860,7 @@
     "3138": {
       "type_name": "EMU800",
       "formation": "嘉機U5",
-      "route": "10:51",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "潮州",
@@ -5914,7 +5914,7 @@
     "3146": {
       "type_name": "EMU800",
       "formation": "嘉機U3",
-      "route": "11:47",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "潮州",
@@ -5932,7 +5932,7 @@
     "3148": {
       "type_name": "EMU800",
       "formation": "嘉機U3",
-      "route": "11:47",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "潮州",
@@ -5968,7 +5968,7 @@
     "3158": {
       "type_name": "EMU800",
       "formation": "嘉機U6",
-      "route": "12:42",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "潮州",
@@ -6022,7 +6022,7 @@
     "3168": {
       "type_name": "EMU800",
       "formation": "嘉機U6",
-      "route": "13:39",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "潮州",
@@ -6058,7 +6058,7 @@
     "3178": {
       "type_name": "EMU800",
       "formation": "嘉機U4",
-      "route": "14:57",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "潮州",
@@ -6094,7 +6094,7 @@
     "3188": {
       "type_name": "EMU800",
       "formation": "嘉機U6",
-      "route": "15:46",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "潮州",
@@ -6130,7 +6130,7 @@
     "3198": {
       "type_name": "EMU800",
       "formation": "嘉機U5",
-      "route": "16:40",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "潮州",
@@ -6166,7 +6166,7 @@
     "3208": {
       "type_name": "EMU800",
       "formation": "嘉機U4",
-      "route": "17:44",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "潮州",
@@ -6202,7 +6202,7 @@
     "3218": {
       "type_name": "EMU800",
       "formation": "嘉機U2",
-      "route": "18:48",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "潮州",
@@ -6238,7 +6238,7 @@
     "3228": {
       "type_name": "EMU700",
       "formation": "竹機U5",
-      "route": "19:48",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "潮州",
@@ -6283,7 +6283,7 @@
     "3238": {
       "type_name": "EMU800",
       "formation": "嘉機U2",
-      "route": "20:52",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "潮州",
@@ -6319,7 +6319,7 @@
     "3248": {
       "type_name": "EMU800",
       "formation": "嘉機U4",
-      "route": "21:57",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "屏東",
@@ -6353,7 +6353,7 @@
     "3252": {
       "type_name": "EMU800",
       "formation": "嘉機U4",
-      "route": "22:22",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "潮州",
@@ -6389,7 +6389,7 @@
     "3262": {
       "type_name": "EMU800",
       "formation": "嘉機U5",
-      "route": "23:12",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "潮州",
@@ -6730,7 +6730,7 @@
     "3705": {
       "type_name": "EMU500",
       "formation": "嘉機U8",
-      "route": "06:06",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -6762,7 +6762,7 @@
     "3709": {
       "type_name": "EMU500",
       "formation": "嘉機U7",
-      "route": "07:16",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -6771,7 +6771,7 @@
     "3711": {
       "type_name": "EMU500",
       "formation": "嘉機U7",
-      "route": "07:44",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -6787,7 +6787,7 @@
     "3713": {
       "type_name": "EMU500",
       "formation": "嘉機U8",
-      "route": "08:17",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -6803,7 +6803,7 @@
     "3715": {
       "type_name": "EMU500",
       "formation": "嘉機U7",
-      "route": "08:47",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -6835,7 +6835,7 @@
     "3721": {
       "type_name": "EMU500",
       "formation": "嘉機U7",
-      "route": "09:23",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -6867,7 +6867,7 @@
     "3725": {
       "type_name": "EMU500",
       "formation": "嘉機U8",
-      "route": "10:25",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -6931,7 +6931,7 @@
     "3735": {
       "type_name": "EMU500",
       "formation": "嘉機U7",
-      "route": "12:31",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -6979,7 +6979,7 @@
     "3743": {
       "type_name": "EMU500",
       "formation": "嘉機U7",
-      "route": "14:18",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -7027,7 +7027,7 @@
     "3751": {
       "type_name": "EMU500",
       "formation": "嘉機U7",
-      "route": "15:42",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -7075,7 +7075,7 @@
     "3757": {
       "type_name": "EMU500",
       "formation": "嘉機U7",
-      "route": "17:06",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -7153,7 +7153,7 @@
     "3771": {
       "type_name": "EMU500",
       "formation": "嘉機U8",
-      "route": "19:41",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -7201,7 +7201,7 @@
     "3777": {
       "type_name": "EMU500",
       "formation": "嘉機U8",
-      "route": "20:50",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -7263,7 +7263,7 @@
     "3861": {
       "type_name": "EMU500",
       "formation": "嘉機U8",
-      "route": "17:28",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -7272,7 +7272,7 @@
     "3863": {
       "type_name": "EMU500",
       "formation": "嘉機U7",
-      "route": "18:32",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -7396,7 +7396,7 @@
     "4031": {
       "type_name": "EMU500",
       "formation": "東機U1A",
-      "route": "15:50",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -7414,7 +7414,7 @@
     "4033": {
       "type_name": "EMU800",
       "formation": "竹機U7",
-      "route": "16:27",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -7459,7 +7459,7 @@
     "4042": {
       "type_name": "EMU800",
       "formation": "竹機U7",
-      "route": "19:37",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -7468,7 +7468,7 @@
     "4043": {
       "type_name": "EMU800",
       "formation": "竹機U7",
-      "route": "22:45",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -7502,7 +7502,7 @@
     "4102": {
       "type_name": "EMU500",
       "formation": "北機U1",
-      "route": "05:33",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -7561,7 +7561,7 @@
     "4114": {
       "type_name": "EMU700",
       "formation": "竹機U1",
-      "route": "07:09",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -7570,7 +7570,7 @@
     "4117": {
       "type_name": "EMU500",
       "formation": "花機U3",
-      "route": "04:55",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -7613,7 +7613,7 @@
     "4124": {
       "type_name": "EMU500",
       "formation": "花機U3",
-      "route": "08:01",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -7654,7 +7654,7 @@
     "4133": {
       "type_name": "EMU500",
       "formation": "東機U1A",
-      "route": "07:35",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -7706,7 +7706,7 @@
     "4146": {
       "type_name": "EMU500",
       "formation": "東機U1A",
-      "route": "10:17",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -7758,7 +7758,7 @@
     "4161": {
       "type_name": "EMU700",
       "formation": "竹機U1",
-      "route": "09:28",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -7839,7 +7839,7 @@
     "4184": {
       "type_name": "EMU500",
       "formation": "花機U4",
-      "route": "15:58",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -7848,7 +7848,7 @@
     "4187": {
       "type_name": "EMU500",
       "formation": "花機U4",
-      "route": "13:27",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -7909,7 +7909,7 @@
     "4206": {
       "type_name": "EMU500",
       "formation": "花機U3",
-      "route": "18:20",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -7918,7 +7918,7 @@
     "4207": {
       "type_name": "EMU500",
       "formation": "花機U3",
-      "route": "15:39",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -8020,7 +8020,7 @@
     "4227": {
       "type_name": "EMU500",
       "formation": "花機U4",
-      "route": "17:35",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -8029,7 +8029,7 @@
     "4228": {
       "type_name": "EMU500",
       "formation": "花機U4",
-      "route": "20:20",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -8136,7 +8136,7 @@
     "4247": {
       "type_name": "EMU500",
       "formation": "花機U2A",
-      "route": "20:20",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -8195,7 +8195,7 @@
     "4507": {
       "type_name": "EMU500",
       "formation": "東機U1A",
-      "route": "05:17",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -8213,7 +8213,7 @@
     "4509": {
       "type_name": "EMU500",
       "formation": "東機U1A",
-      "route": "05:30",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -8231,7 +8231,7 @@
     "4513": {
       "type_name": "EMU500",
       "formation": "花機U2A",
-      "route": "07:07",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -8240,7 +8240,7 @@
     "4514": {
       "type_name": "EMU500",
       "formation": "花機U4",
-      "route": "05:30",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -8249,7 +8249,7 @@
     "4516": {
       "type_name": "EMU500",
       "formation": "花機U2A",
-      "route": "06:18",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -8258,7 +8258,7 @@
     "4517": {
       "type_name": "EMU500",
       "formation": "東機U1A",
-      "route": "06:53",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -8267,7 +8267,7 @@
     "4519": {
       "type_name": "EMU500",
       "formation": "花機U1A",
-      "route": "07:20",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -8276,7 +8276,7 @@
     "4521": {
       "type_name": "EMU500",
       "formation": "花機U1A",
-      "route": "10:00",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -8285,7 +8285,7 @@
     "4528": {
       "type_name": "EMU500",
       "formation": "東機U1A",
-      "route": "12:00",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -8301,7 +8301,7 @@
     "4534": {
       "type_name": "EMU500",
       "formation": "東機U1A",
-      "route": "13:21",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -8310,7 +8310,7 @@
     "4537": {
       "type_name": "EMU500",
       "formation": "花機U2A",
-      "route": "14:23",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -8346,7 +8346,7 @@
     "4547": {
       "type_name": "EMU500",
       "formation": "東機U1A",
-      "route": "16:54",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -8364,7 +8364,7 @@
     "4550": {
       "type_name": "EMU500",
       "formation": "花機U1A",
-      "route": "17:55",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -8373,7 +8373,7 @@
     "4552": {
       "type_name": "EMU500",
       "formation": "花機U1A",
-      "route": "17:55",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -8382,7 +8382,7 @@
     "4553": {
       "type_name": "EMU500",
       "formation": "東機U1A",
-      "route": "19:16",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -8391,7 +8391,7 @@
     "4556": {
       "type_name": "EMU500",
       "formation": "東機U1A",
-      "route": "19:20",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",
@@ -8400,7 +8400,7 @@
     "4558": {
       "type_name": "EMU500",
       "formation": "花機U2A",
-      "route": "21:03",
+      "route": "",
       "crew_mech": "",
       "crew_ops": "",
       "origin": "",

@@ -9,6 +9,7 @@ TDX_TOKEN_URL = "https://tdx.transportdata.tw/auth/realms/TDXConnect/protocol/op
 TDX_BASE_URL = "https://tdx.transportdata.tw/api/basic"
 STATION_CACHE_PATH = Path(__file__).parent.parent / "data" / "stations_cache.json"
 FULL_TIMETABLE_PATH = Path(__file__).parent.parent / "data" / "full_timetables.json"
+TRAIN_LIST_PATH = Path(__file__).parent.parent / "data" / "train_list.json"
 CACHE_TTL_SECONDS = 86400  # 24 hours
 TW_TZ = timezone(timedelta(hours=8))
 
@@ -22,6 +23,7 @@ class TDXClient:
         self._stations: dict[str, dict] = {}
         self._alias_map: dict[str, str] = {}
         self._full_timetables: dict = {}
+        self._train_meta: dict = {}  # train_no -> {train_no, type, origin, destination, route, source_file}
 
     async def init(self) -> None:
         try:
@@ -29,17 +31,23 @@ class TDXClient:
                 await self._ensure_token()
             await self._load_stations()
             await self._load_full_timetables()
+            await self._load_train_list()
         except Exception as exc:
             import logging
             logging.getLogger(__name__).warning("TDX Initialisation failed (using offline mode where possible): %s", exc)
-            # 即使失敗，也嘗試載入本地時刻表
             try:
                 await self._load_full_timetables()
+                await self._load_train_list()
             except: pass
 
     async def _load_full_timetables(self) -> None:
         if FULL_TIMETABLE_PATH.exists():
             self._full_timetables = json.loads(FULL_TIMETABLE_PATH.read_text(encoding="utf-8"))
+
+    async def _load_train_list(self) -> None:
+        if TRAIN_LIST_PATH.exists():
+            raw = json.loads(TRAIN_LIST_PATH.read_text(encoding="utf-8"))
+            self._train_meta = {t["train_no"].lstrip("0"): t for t in raw}
 
     # ── Token & Station methods ──────────────────────────────────────────────
 
@@ -136,23 +144,20 @@ class TDXClient:
         return info["name_zh"] if info else station_id
 
     def resolve_ods_name(self, ods_name: str) -> str:
-        """將 ODS 簡寫還原為完整站名 (例如 '高' -> '高雄')"""
-        if len(ods_name) >= 2:
-            # 已經是完整站名或特殊站名 (如 '新左營')
+        """將 ODS 顯示用簡寫還原為完整站名。
+
+        策略：在 stations 裡找「嚴格長於 ods_name」的 prefix 匹配，取最短者。
+        stations_cache.json 本身混雜了簡寫 entries（例如同時有「新左」「新左營」），
+        若不強制 strict longer，「新左」會被當成完整站名而不展開為「新左營」。
+        """
+        if not ods_name:
             return ods_name
-        
-        # 尋找以該字開頭的最短站名 (通常就是正確的)
-        matches = []
-        for sid, info in self._stations.items():
-            full_name = info["name_zh"]
-            if full_name.startswith(ods_name) and len(full_name) >= 2:
-                matches.append(full_name)
-        
+        L = len(ods_name)
+        matches = [info["name_zh"] for info in self._stations.values()
+                   if len(info["name_zh"]) > L and info["name_zh"].startswith(ods_name)]
         if matches:
-            # 優先取長度為 2 的 (如 '高' 匹配到 '高雄', '高架' -> 取 '高雄')
             matches.sort(key=len)
             return matches[0]
-            
         return ods_name
 
     # ── Local Query Methods ──────────────────────────────────────────────────
@@ -167,57 +172,67 @@ class TDXClient:
         # 否則檢查是否包含
         return ods in target or target in ods
 
+    def _route_names(self, clean_no: str, stops: list) -> tuple[str, str]:
+        """營運區間起訖：優先用 train_list 的 origin/destination，fallback 到 stops 首末站。"""
+        meta = self._train_meta.get(clean_no) or {}
+        start = meta.get("origin") or (self.resolve_ods_name(stops[0]["s"]) if stops else "")
+        end = meta.get("destination") or (self.resolve_ods_name(stops[-1]["s"]) if stops else "")
+        return start, end
+
     async def query_od(self, origin_id: str, dest_id: str, date: str) -> list[dict]:
         if not self._full_timetables:
             await self._load_full_timetables()
-        
+
         origin_full = self.station_name(origin_id)
         dest_full = self.station_name(dest_id)
-        
+
         results = []
         for t_no, data in self._full_timetables.items():
             stops = data.get("stops", [])
             o_idx = next((i for i, s in enumerate(stops) if self._match_station(origin_full, s["s"])), -1)
             d_idx = next((i for i, s in enumerate(stops) if self._match_station(dest_full, s["s"])), -1)
-            
+
             if o_idx != -1 and d_idx != -1 and o_idx < d_idx:
+                start_name, end_name = self._route_names(t_no, stops)
                 results.append({
                     "train_no": t_no,
                     "type_name": data["type"],
-                    "type_id": "", 
+                    "type_id": "",
                     "departure": stops[o_idx]["t"],
                     "arrival": stops[d_idx]["t"],
-                    "start_name": self.resolve_ods_name(stops[0]["s"]),
-                    "end_name": self.resolve_ods_name(stops[-1]["s"])
+                    "start_name": start_name,
+                    "end_name": end_name,
                 })
-        
+
         results.sort(key=lambda x: x["departure"])
         return results
 
     async def query_train(self, train_no: str, date: str) -> Optional[dict]:
         if not self._full_timetables:
             await self._load_full_timetables()
-        
+
         clean_no = train_no.lstrip('0')
         data = self._full_timetables.get(clean_no)
         if not data:
             return None
-            
+
         stops = data.get("stops", [])
+        start_name, end_name = self._route_names(clean_no, stops)
+
         return {
             "train_no": train_no,
             "type_name": data["type"],
             "type_id": "",
-            "start_name": self.resolve_ods_name(stops[0]["s"]),
-            "end_name": self.resolve_ods_name(stops[-1]["s"]),
+            "start_name": start_name,
+            "end_name": end_name,
             "stops": [
                 {
                     "seq": i + 1,
                     "station_name": self.resolve_ods_name(s["s"]),
                     "arrival": s["t"],
-                    "departure": s["t"]
+                    "departure": s["t"],
                 } for i, s in enumerate(stops)
-            ]
+            ],
         }
 
     def get_train_location(self, train_no: str, current_time: str) -> str:
