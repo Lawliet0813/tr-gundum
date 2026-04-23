@@ -184,39 +184,16 @@ def build_train_detail_flex(
     wd = _weekday(date)
     
     stops = train.get("stops", [])
-    origin_name = train.get("start_name", "")
-    dest_name = train.get("end_name", "")
-    
-    # 建立時刻表區塊
-    stop_rows = []
-    for i, s in enumerate(stops):
-        is_first = (i == 0)
-        is_last = (i == len(stops) - 1)
-        dot_color = "#1a73e8" if (is_first or is_last) else "#cccccc"
-        text_color = "#112a4d" if (is_first or is_last) else "#666666"
-        weight = "bold" if (is_first or is_last) else "regular"
-
-        stop_rows.append({
-            "type": "box",
-            "layout": "horizontal",
-            "spacing": "sm",
-            "contents": [
-                {
-                    "type": "box",
-                    "layout": "vertical",
-                    "flex": 0,
-                    "contents": [
-                        {"type": "text", "text": "●", "size": "xxs", "color": dot_color, "align": "center"}
-                    ],
-                    "paddingTop": "2px"
-                },
-                {"type": "text", "text": s["station_name"], "size": "xs", "color": text_color, "weight": weight, "flex": 4},
-                {"type": "text", "text": s["arrival"] or s["departure"], "size": "xs", "color": text_color, "weight": weight, "align": "end", "flex": 2}
-            ]
-        })
+    # 票頭要顯示的是「時刻實際對應的站」— 用 stops 首末站，而不是營運 start/end
+    # （時刻表 ODS 頁面未必涵蓋完整營運區間，e.g. 3131 營運「二水→潮州」但此頁從新左營才開始）
+    origin_name = stops[0]["station_name"] if stops else train.get("start_name", "")
+    dest_name = stops[-1]["station_name"] if stops else train.get("end_name", "")
+    dep_time = stops[0]["departure"] if stops else ""
+    arr_time = stops[-1]["arrival"] if stops else ""
+    duration = _duration(dep_time, arr_time) if dep_time and arr_time else ""
 
     body_contents = [
-        # 頂部票頭
+        # 票頭：起站・時間  ▶  終站・時間
         {
             "type": "box",
             "layout": "horizontal",
@@ -227,36 +204,34 @@ def build_train_detail_flex(
                     "flex": 5,
                     "contents": [
                         {"type": "text", "text": origin_name, "size": "xl", "weight": "bold", "align": "center", "color": "#112a4d"},
-                        {"type": "text", "text": stops[0]["departure"] if stops else "", "size": "sm", "align": "center", "color": "#666666"}
-                    ]
+                        {"type": "text", "text": dep_time, "size": "sm", "align": "center", "color": "#666666"},
+                    ],
                 },
-                {"type": "box", "layout": "vertical", "flex": 2, "paddingTop": "10px", "contents": [{"type": "text", "text": "▶", "size": "sm", "align": "center", "color": "#1a73e8"}]},
+                {
+                    "type": "box",
+                    "layout": "vertical",
+                    "flex": 2,
+                    "paddingTop": "10px",
+                    "contents": (
+                        [
+                            {"type": "text", "text": "▶", "size": "sm", "align": "center", "color": "#1a73e8"},
+                            {"type": "text", "text": duration, "size": "xxs", "align": "center", "color": "#999999", "margin": "xs"},
+                        ] if duration else
+                        [{"type": "text", "text": "▶", "size": "sm", "align": "center", "color": "#1a73e8"}]
+                    ),
+                },
                 {
                     "type": "box",
                     "layout": "vertical",
                     "flex": 5,
                     "contents": [
                         {"type": "text", "text": dest_name, "size": "xl", "weight": "bold", "align": "center", "color": "#112a4d"},
-                        {"type": "text", "text": stops[-1]["arrival"] if stops else "", "size": "sm", "align": "center", "color": "#666666"}
-                    ]
-                }
-            ]
+                        {"type": "text", "text": arr_time, "size": "sm", "align": "center", "color": "#666666"},
+                    ],
+                },
+            ],
         },
         {"type": "separator", "margin": "lg"},
-        
-        # 時刻表區域
-        {
-            "type": "box",
-            "layout": "vertical",
-            "margin": "lg",
-            "spacing": "sm",
-            "backgroundColor": "#f8f9fa",
-            "paddingAll": "10px",
-            "cornerRadius": "md",
-            "contents": [
-                {"type": "text", "text": "停靠站時刻表", "size": "xxs", "color": "#999999", "margin": "none"}
-            ] + stop_rows
-        }
     ]
 
     if consist:
