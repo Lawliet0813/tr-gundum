@@ -316,6 +316,13 @@ async def handle_train_query(reply_token: str, train_no: str, date: str, user_id
             await _reply(reply_token, [TextMessage(text=f"{date} 找不到 {no_disp} 次的班次，請確認車次號碼與日期。")])
         return
 
+    # 修正起訖站顯示，使其與營運區間一致
+    if consist and consist.get("route"):
+        route_parts = re.split(r"[－—~-]", consist["route"])
+        if len(route_parts) >= 2:
+            train["start_name"] = route_parts[0].strip()
+            train["end_name"] = route_parts[-1].strip()
+
     img_url = train_image_url(train.get("type_name", ""), STATIC_BASE_URL)
     bubble_dict = build_train_detail_flex(
         train, consist, date,
