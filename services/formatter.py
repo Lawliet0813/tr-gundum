@@ -171,7 +171,7 @@ def build_schedule_flex(
         }
     }
 
-# ── 車次詳細 Flex (專業電子車票版) ────────────────────────────────────────────────
+# ── 車次詳細 Flex (時刻整合版) ───────────────────────────────────────────────────
 
 def build_train_detail_flex(
     train: dict,
@@ -184,17 +184,39 @@ def build_train_detail_flex(
     wd = _weekday(date)
     
     stops = train.get("stops", [])
-    origin_stop = stops[0] if stops else {"station_name": train.get("start_name", ""), "departure": "—"}
-    dest_stop = stops[-1] if stops else {"station_name": train.get("end_name", ""), "arrival": "—"}
-    duration = _duration(origin_stop.get("departure", "00:00"), dest_stop.get("arrival", "00:00"))
+    origin_name = train.get("start_name", "")
+    dest_name = train.get("end_name", "")
+    
+    # 建立時刻表區塊
+    stop_rows = []
+    for i, s in enumerate(stops):
+        is_first = (i == 0)
+        is_last = (i == len(stops) - 1)
+        dot_color = "#1a73e8" if (is_first or is_last) else "#cccccc"
+        text_color = "#112a4d" if (is_first or is_last) else "#666666"
+        weight = "bold" if (is_first or is_last) else "regular"
 
-    # 如果站名太長，稍微縮小字體
-    o_name = origin_stop["station_name"]
-    d_name = dest_stop["station_name"]
-    o_size = "xxl" if len(o_name) <= 3 else "xl"
-    d_size = "xxl" if len(d_name) <= 3 else "xl"
+        stop_rows.append({
+            "type": "box",
+            "layout": "horizontal",
+            "spacing": "sm",
+            "contents": [
+                {
+                    "type": "box",
+                    "layout": "vertical",
+                    "flex": 0,
+                    "contents": [
+                        {"type": "text", "text": "●", "size": "xxs", "color": dot_color, "align": "center"}
+                    ],
+                    "paddingTop": "2px"
+                },
+                {"type": "text", "text": s["station_name"], "size": "xs", "color": text_color, "weight": weight, "flex": 4},
+                {"type": "text", "text": s["arrival"] or s["departure"], "size": "xs", "color": text_color, "weight": weight, "align": "end", "flex": 2}
+            ]
+        })
 
     body_contents = [
+        # 頂部票頭
         {
             "type": "box",
             "layout": "horizontal",
@@ -204,37 +226,42 @@ def build_train_detail_flex(
                     "layout": "vertical",
                     "flex": 5,
                     "contents": [
-                        {"type": "text", "text": o_name, "size": o_size, "weight": "bold", "align": "center", "color": "#112a4d"},
-                        {"type": "text", "text": origin_stop.get("departure", ""), "size": "md", "align": "center", "color": "#666666", "weight": "bold"}
+                        {"type": "text", "text": origin_name, "size": "xl", "weight": "bold", "align": "center", "color": "#112a4d"},
+                        {"type": "text", "text": stops[0]["departure"] if stops else "", "size": "sm", "align": "center", "color": "#666666"}
                     ]
                 },
-                {
-                    "type": "box",
-                    "layout": "vertical",
-                    "flex": 2,
-                    "paddingTop": "15px",
-                    "contents": [
-                        {"type": "text", "text": "▶", "size": "md", "align": "center", "color": "#1a73e8"},
-                        {"type": "text", "text": duration, "size": "xxs", "align": "center", "color": "#aaaaaa"}
-                    ]
-                },
+                {"type": "box", "layout": "vertical", "flex": 2, "paddingTop": "10px", "contents": [{"type": "text", "text": "▶", "size": "sm", "align": "center", "color": "#1a73e8"}]},
                 {
                     "type": "box",
                     "layout": "vertical",
                     "flex": 5,
                     "contents": [
-                        {"type": "text", "text": d_name, "size": d_size, "weight": "bold", "align": "center", "color": "#112a4d"},
-                        {"type": "text", "text": dest_stop.get("arrival", ""), "size": "md", "align": "center", "color": "#666666", "weight": "bold"}
+                        {"type": "text", "text": dest_name, "size": "xl", "weight": "bold", "align": "center", "color": "#112a4d"},
+                        {"type": "text", "text": stops[-1]["arrival"] if stops else "", "size": "sm", "align": "center", "color": "#666666"}
                     ]
                 }
             ]
         },
-        {"type": "separator", "margin": "lg"}
+        {"type": "separator", "margin": "lg"},
+        
+        # 時刻表區域
+        {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "lg",
+            "spacing": "sm",
+            "backgroundColor": "#f8f9fa",
+            "paddingAll": "10px",
+            "cornerRadius": "md",
+            "contents": [
+                {"type": "text", "text": "停靠站時刻表", "size": "xxs", "color": "#999999", "margin": "none"}
+            ] + stop_rows
+        }
     ]
 
     if consist:
-        # 基礎編組資訊
-        info_box = {
+        # 編組資訊
+        body_contents.append({
             "type": "box",
             "layout": "vertical",
             "margin": "lg",
@@ -243,10 +270,8 @@ def build_train_detail_flex(
                 {"type": "text", "text": f"{train.get('type_name')} {consist.get('formation', '—')}", "size": "sm", "weight": "bold", "color": "#112a4d", "margin": "xs"},
                 {"type": "text", "text": f"營運區間：{consist.get('route', '—')}", "size": "xs", "color": "#444444", "margin": "xs", "wrap": True}
             ]
-        }
-        body_contents.append(info_box)
+        })
 
-        # 授權用戶專屬：顯示乘務資訊
         if authorized:
             body_contents.append({"type": "separator", "margin": "md"})
             body_contents.append({
@@ -254,10 +279,8 @@ def build_train_detail_flex(
                 "layout": "vertical",
                 "margin": "md",
                 "contents": [
-                    {"type": "text", "text": "機務乘務（司機員）", "size": "xs", "color": "#888888"},
-                    {"type": "box", "layout": "vertical", "margin": "xs", "contents": _crew_route_body(consist.get("crew_mech", ""))},
-                    {"type": "text", "text": "運務乘務（車長）", "size": "xs", "color": "#888888", "margin": "md"},
-                    {"type": "box", "layout": "vertical", "margin": "xs", "contents": _crew_route_body(consist.get("crew_ops", ""))}
+                    {"type": "text", "text": "機務/運務乘務", "size": "xs", "color": "#888888"},
+                    {"type": "box", "layout": "vertical", "margin": "xs", "contents": _crew_route_body(consist.get("crew_mech", "") + " / " + consist.get("crew_ops", ""))}
                 ]
             })
 
@@ -294,27 +317,8 @@ def build_train_detail_flex(
         }
     }
 
-def build_consist_flex(
-    train_no: str,
-    consist: dict,
-    version_date: str,
-    image_url: Optional[str] = None,
-) -> dict:
+def build_consist_flex(train_no: str, consist: dict, version_date: str, image_url: Optional[str] = None) -> dict:
     type_name = consist.get("type_name", "—")
-    info_items = [
-        {"type": "text", "text": f"{train_no} 次", "weight": "bold", "size": "md", "color": "#112a4d"},
-        {"type": "text", "text": type_name, "size": "xs", "color": "#555577", "wrap": True},
-        {"type": "separator", "margin": "sm"},
-        _info_row("編組", consist.get("formation", "—")),
-        _info_row("區間", consist.get("route", "—"), wrap=True),
-        {"type": "separator", "margin": "sm"},
-        {"type": "text", "text": "機務乘務", "size": "xs", "color": "#888888"},
-        {"type": "box", "layout": "vertical", "contents": _crew_route_body(consist.get("crew_mech", ""))},
-        {"type": "separator", "margin": "sm"},
-        {"type": "text", "text": "運務乘務", "size": "xs", "color": "#888888"},
-        {"type": "box", "layout": "vertical", "contents": _crew_route_body(consist.get("crew_ops", ""))},
-        {"type": "text", "text": version_date, "size": "xxs", "color": "#aaaaaa", "margin": "sm"},
-    ]
     return {
         "type": "bubble",
         "size": "kilo",
@@ -322,54 +326,21 @@ def build_consist_flex(
             "type": "box",
             "layout": "vertical",
             "paddingAll": "12px",
-            "contents": info_items
+            "contents": [
+                {"type": "text", "text": f"{train_no} 次", "weight": "bold", "size": "md", "color": "#112a4d"},
+                _info_row("編組", consist.get("formation", "—")),
+                _info_row("區間", consist.get("route", "—"), wrap=True)
+            ]
         },
-        "hero": {
-            "type": "image",
-            "url": image_url,
-            "size": "full",
-            "aspectRatio": "20:7",
-            "aspectMode": "cover"
-        } if image_url else None
+        "hero": {"type": "image", "url": image_url, "size": "full", "aspectRatio": "20:7", "aspectMode": "cover"} if image_url else None
     }
 
-def build_crew_route_flex(
-    train_no: str,
-    type_name: str,
-    crew_type: str,
-    crew_text: str,
-    version_date: str,
-) -> dict:
-    label = "機務乘務" if crew_type == "mech" else "運務乘務"
+def build_crew_route_flex(train_no: str, type_name: str, crew_type: str, crew_text: str, version_date: str) -> dict:
     return {
         "type": "bubble",
-        "size": "kilo",
-        "header": {
-            "type": "box",
-            "layout": "vertical",
-            "backgroundColor": "#112a4d",
-            "contents": [
-                {"type": "text", "text": f"{train_no} 次 {type_name}", "color": "#ffffff", "weight": "bold", "size": "md"},
-                {"type": "text", "text": label, "color": "#b0bec5", "size": "xs"}
-            ],
-        },
-        "body": {
-            "type": "box",
-            "layout": "vertical",
-            "paddingAll": "12px",
-            "contents": _crew_route_body(crew_text),
-        },
+        "header": {"type": "box", "layout": "vertical", "backgroundColor": "#112a4d", "contents": [{"type": "text", "text": f"{train_no} 次 {type_name}", "color": "#ffffff"}]},
+        "body": {"type": "box", "layout": "vertical", "contents": _crew_route_body(crew_text)}
     }
 
 def build_help_text() -> str:
-    return (
-        "🚂 臺鐵小鋼彈 專業版說明\n"
-        "────────────────\n"
-        "🕐 時刻查詢\n"
-        "  輸入 [起點] [終點] [日期]\n\n"
-        "🚞 車次查詢\n"
-        "  直接輸入 [車次]\n\n"
-        "🤖 AI 位置推算 (Gemma 4)\n"
-        "  例：4191現在在哪\n"
-        "────────────────"
-    )
+    return "🚂 臺鐵小鋼彈 專業版\n─\n🕐 起站 終站 (例: 台北 高雄)\n🚞 車次 (例: 111)\n🤖 詢問位置 (例: 111現在在哪)"
