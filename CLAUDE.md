@@ -22,11 +22,17 @@ uvicorn main:app --reload --port 8000
 # 建立 / 更新 Rich Menu（首次部署後、richmenu_*.png 有變更時執行）
 python scripts/setup_richmenu.py
 
-# 匯入 / 重建編組資料（把 xlsx 轉成 data/consist.json）
+# 匯入 / 重建編組資料（把 xlsx 轉成 data/consist.json 的 formation/crew 欄位）
 python scripts/import_consist.py
 
 # 重建時刻表（讀 data/timetables/*.ods → 產生 full_timetables.json + train_list.json）
 python scripts/build_timetables.py
+
+# 從 PDF 抽取機車運用資訊（depot、運用碼、flags、ㄏㄙ 回送標記等）→ consist_from_pdf.json
+.venv/bin/python3 scripts/parse_consist_pdf.py
+
+# 合併 PDF + xlsx + ODS → 最終 consist.json（schema v2）
+.venv/bin/python3 scripts/merge_consist.py
 
 # 產生 / 推播 bot 頭像
 python scripts/make_avatar.py
@@ -52,7 +58,7 @@ tr_gundum/
 │   ├── invite.py            # 邀請碼系統（LIFF 相關）
 │   └── ai.py                # Gemma 4 AI fallback（google-genai function calling）
 ├── data/
-│   ├── consist.json         # 編組資料庫（手動維護，載入於 ConsistService）
+│   ├── consist.json         # 編組資料庫（schema v2，載入於 ConsistService）。由 scripts/merge_consist.py 從 PDF + ODS + train_list 三源合併
 │   ├── authorized_users.json
 │   ├── stations_cache.json  # TDX 車站快取（混雜 13 個真正 TRA StationID + 184 個從 ODS 抽出的衍生 999* 項，部分為 ODS 簡寫；有 TDX 憑證時重抓才乾淨）
 │   ├── full_timetables.json # 本地時刻表快取（services/tdx.py 啟動時載入），由 scripts/build_timetables.py 產生
@@ -64,6 +70,8 @@ tr_gundum/
 │   ├── setup_richmenu.py    # 建立兩份 Rich Menu、與上面兩張 PNG 綁定
 │   ├── import_consist.py    # xlsx → consist.json
 │   ├── build_timetables.py  # data/timetables/*.ods → full_timetables.json + train_list.json
+│   ├── parse_consist_pdf.py # 從 PDF 抽機車運用（pdfplumber，獨立產物 data/consist_from_pdf.json）
+│   ├── merge_consist.py     # PDF + xlsx + ODS 合併 → data/consist.json（schema v2）
 │   ├── make_avatar.py / send_avatar.py
 │   └── extract_from_new_py.py
 ├── templates/
