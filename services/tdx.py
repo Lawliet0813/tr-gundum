@@ -129,9 +129,10 @@ class TDXClient:
 
         self._alias_map = alias_map
 
-    def find_station(self, name: str) -> Optional[tuple[str, str]]:
-        """Return (station_id, display_name) or None."""
-        key = name.strip()
+    def find_station(self, key: str) -> Optional[tuple[str, str]]:
+        if not key:
+            return None
+        # Exact match (including aliases)
         sid = self._alias_map.get(key) or self._alias_map.get(key.lower())
         if sid:
             return sid, self._stations[sid]["name_zh"]
