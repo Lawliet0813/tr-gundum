@@ -121,8 +121,8 @@ def build_schedule_flex(
         train_no_disp = t["train_no"].lstrip("0") or "0"
         consist = consists.get(t["train_no"])
         formation = consist.get("formation", "") if consist else ""
-        
-        rows.append({
+
+        main_row = {
             "type": "box",
             "layout": "horizontal",
             "contents": [
@@ -145,9 +145,22 @@ def build_schedule_flex(
                     ]
                 }
             ],
-            "paddingTop": "10px",
-            "paddingBottom": "10px"
-        })
+        }
+        notes = (t.get("notes") or "").strip()
+        if notes:
+            row_box = {
+                "type": "box",
+                "layout": "vertical",
+                "paddingTop": "10px",
+                "paddingBottom": "10px",
+                "contents": [
+                    main_row,
+                    {"type": "text", "text": f"⚠ {notes}", "size": "xxs", "color": "#c6623d", "margin": "xs", "wrap": True},
+                ],
+            }
+        else:
+            row_box = {**main_row, "paddingTop": "10px", "paddingBottom": "10px"}
+        rows.append(row_box)
         rows.append({"type": "separator", "color": "#f0f0f0"})
 
     if rows: rows.pop()
@@ -233,6 +246,20 @@ def build_train_detail_flex(
         },
         {"type": "separator", "margin": "lg"},
     ]
+
+    notes = (train.get("notes") or "").strip()
+    if notes:
+        body_contents.append({
+            "type": "box",
+            "layout": "vertical",
+            "margin": "md",
+            "paddingAll": "8px",
+            "backgroundColor": "#fff7e6",
+            "cornerRadius": "4px",
+            "contents": [
+                {"type": "text", "text": f"⚠ {notes}", "size": "xs", "color": "#c6623d", "weight": "bold", "wrap": True},
+            ],
+        })
 
     if consist:
         # 編組 + 機務資訊

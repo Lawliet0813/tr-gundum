@@ -30,6 +30,9 @@ TT_DIR = ROOT / "data" / "timetables"
 OUT_TIMETABLES = ROOT / "data" / "full_timetables.json"
 OUT_TRAIN_LIST = ROOT / "data" / "train_list.json"
 
+sys.path.insert(0, str(Path(__file__).parent))
+from _xlsx_supplement import load_train_notes  # noqa: E402
+
 NS = {
     "office": "urn:oasis:names:tc:opendocument:xmlns:office:1.0",
     "table": "urn:oasis:names:tc:opendocument:xmlns:table:1.0",
@@ -432,11 +435,15 @@ def main() -> int:
         merge_train_stops(full, trains, f.name, meta)
         print(f"  {f.name}: {len(trains)} trains")
 
-    # train_list 拿掉內部 _stop_count
+    # 從 完整時刻表.xlsx 車次總覽抽備註欄（如「逢週五行駛」「團體列車」「親子車廂」）
+    notes = load_train_notes()
+
+    # train_list 拿掉內部 _stop_count，補上 xlsx 的備註
     train_list = []
     for no in sorted(meta.keys(), key=lambda x: int(x)):
         m = dict(meta[no])
         m.pop("_stop_count", None)
+        m["notes"] = notes.get(no, "")
         train_list.append(m)
 
     OUT_TIMETABLES.write_text(
@@ -451,6 +458,8 @@ def main() -> int:
     print()
     print(f"full_timetables.json: {len(full)} trains")
     print(f"train_list.json:      {len(train_list)} trains")
+    notes_filled = sum(1 for t in train_list if t.get("notes"))
+    print(f"train_list notes:     {notes_filled} trains (from 完整時刻表.xlsx)")
 
     # sanity
     long_haul_ok = [no for no in ("105", "109", "111", "117") if no in full and len(full[no]["stops"]) >= 15]

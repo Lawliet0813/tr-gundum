@@ -78,13 +78,28 @@ class TDXClient:
         return {"Authorization": f"Bearer {token}"}
 
     async def _load_stations(self) -> None:
-        if STATION_CACHE_PATH.exists():
+        cache_exists = STATION_CACHE_PATH.exists()
+        cache_fresh = False
+        if cache_exists:
             mtime = STATION_CACHE_PATH.stat().st_mtime
-            if time.time() - mtime < CACHE_TTL_SECONDS:
+            cache_fresh = time.time() - mtime < CACHE_TTL_SECONDS
+            if cache_fresh:
                 self._stations = json.loads(STATION_CACHE_PATH.read_text(encoding="utf-8"))
                 self._build_alias_map()
                 return
-        await self._fetch_and_cache_stations()
+        try:
+            await self._fetch_and_cache_stations()
+        except Exception as exc:
+            if cache_exists:
+                # Why: TDX 重抓失敗（如停權 / 限流）時，使用過期 cache 比沒站名好。
+                import logging
+                logging.getLogger(__name__).warning(
+                    "Station refetch failed (%s), falling back to stale cache", exc
+                )
+                self._stations = json.loads(STATION_CACHE_PATH.read_text(encoding="utf-8"))
+                self._build_alias_map()
+            else:
+                raise
 
     async def _fetch_and_cache_stations(self) -> None:
         headers = await self._auth_headers()
@@ -194,6 +209,7 @@ class TDXClient:
 
             if o_idx != -1 and d_idx != -1 and o_idx < d_idx:
                 start_name, end_name = self._route_names(t_no, stops)
+                meta = self._train_meta.get(t_no) or {}
                 results.append({
                     "train_no": t_no,
                     "type_name": data["type"],
@@ -202,6 +218,7 @@ class TDXClient:
                     "arrival": stops[d_idx]["t"],
                     "start_name": start_name,
                     "end_name": end_name,
+                    "notes": meta.get("notes", ""),
                 })
 
         results.sort(key=lambda x: x["departure"])
@@ -218,6 +235,7 @@ class TDXClient:
 
         stops = data.get("stops", [])
         start_name, end_name = self._route_names(clean_no, stops)
+        meta = self._train_meta.get(clean_no) or {}
 
         return {
             "train_no": train_no,
@@ -225,6 +243,7 @@ class TDXClient:
             "type_id": "",
             "start_name": start_name,
             "end_name": end_name,
+            "notes": meta.get("notes", ""),
             "stops": [
                 {
                     "seq": i + 1,

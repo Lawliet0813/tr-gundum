@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from datetime import date
 from pathlib import Path
 
@@ -32,6 +33,9 @@ SRC_TL = ROOT / "data" / "train_list.json"
 SRC_FT = ROOT / "data" / "full_timetables.json"
 OUT = ROOT / "data" / "consist.json"
 
+sys.path.insert(0, str(Path(__file__).parent))
+from _xlsx_supplement import load_crew_supplement  # noqa: E402
+
 
 def load():
     cj = json.loads(SRC_CONSIST.read_text(encoding="utf-8"))
@@ -39,11 +43,12 @@ def load():
     tl_raw = json.loads(SRC_TL.read_text(encoding="utf-8"))
     ft = json.loads(SRC_FT.read_text(encoding="utf-8"))
     tl = {t["train_no"].lstrip("0"): t for t in tl_raw}
-    return cj, pdf, tl, ft
+    crew_xlsx = load_crew_supplement()
+    return cj, pdf, tl, ft, crew_xlsx
 
 
 def merge() -> dict:
-    cj, pdf, tl, ft = load()
+    cj, pdf, tl, ft, crew_xlsx = load()
     pdf_trains = pdf["trains"]
     existing = cj["trains"]
 
@@ -77,6 +82,11 @@ def merge() -> dict:
             f"{origin}－{dest}" if origin and dest else ""
         )
 
+        # 乘務補充：從 完整時刻表.xlsx LINEBOT_JSON sheet 取，僅當原欄位為空時填入
+        xlsx_crew = crew_xlsx.get(no, {})
+        crew_mech = ex.get("crew_mech") or xlsx_crew.get("driver_route", "")
+        crew_ops = ex.get("crew_ops") or xlsx_crew.get("conductor_route", "")
+
         merged[no] = {
             # 核心識別
             "train_no": no,
@@ -103,9 +113,9 @@ def merge() -> dict:
             "flags": pd.get("flags", []) or [],
             "day_conditions": pd.get("day_conditions", ""),
             "is_deadhead": pd.get("is_deadhead", False),
-            # 乘務（保留原欄位，先前應為 xlsx 提供）
-            "crew_mech": ex.get("crew_mech", ""),
-            "crew_ops": ex.get("crew_ops", ""),
+            # 乘務（既有為主，xlsx 補空）
+            "crew_mech": crew_mech,
+            "crew_ops": crew_ops,
             # 來源追蹤
             "pdf_page": pd.get("page", 0),
             # 有時刻表：帶後綴版本（105A）的時刻表不算（suffix 通常是回送/備援）
@@ -117,7 +127,8 @@ def merge() -> dict:
         "updated_at": date.today().isoformat(),
         "source": (
             "PDF consist (114.12.23 微調, 自 115.01.20 起實施) + "
-            "TRA ODS timetables (115.04.09) + xlsx crew/formation"
+            "TRA ODS timetables (115.04.09) + xlsx crew/formation + "
+            "完整時刻表.xlsx (2024-12-21) crew supplement"
         ),
         "schema_version": 2,
         "trains": merged,
@@ -143,6 +154,8 @@ def report(out: dict) -> None:
     with_unit = sum(1 for t in trains.values() if t["unit_code"])
     with_form = sum(1 for t in trains.values() if t["formation"])
     with_tt = sum(1 for t in trains.values() if t["has_timetable"])
+    with_mech = sum(1 for t in trains.values() if t["crew_mech"])
+    with_ops = sum(1 for t in trains.values() if t["crew_ops"])
     deadheads = sum(1 for t in trains.values() if t["is_deadhead"])
 
     print(f"  origin/destination   : {pct(with_od, total)}")
@@ -150,6 +163,8 @@ def report(out: dict) -> None:
     print(f"  unit_code (運用碼)    : {pct(with_unit, total)}")
     print(f"  formation (機車編號)  : {pct(with_form, total)}")
     print(f"  has_timetable         : {pct(with_tt, total)}")
+    print(f"  crew_mech (機務乘務)  : {pct(with_mech, total)}")
+    print(f"  crew_ops (運務乘務)   : {pct(with_ops, total)}")
     print(f"  deadhead (ㄏㄙ)        : {deadheads}")
 
     # 三個樣本
